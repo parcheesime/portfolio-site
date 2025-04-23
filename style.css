@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: #fff;
+  color: #333;
+}
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+}
+header {
+  background: #6f4ca4;
+  color: white;
+  padding: 2rem 1rem;
+}
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+.contact-info {
+  flex: 1;
+}
+.profile-pic-wrapper {
+  flex-shrink: 0;
+}
+.profile-pic {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+}
+a {
+  color: #ffd700;
+  text-decoration: none;
+}
+h2 {
+  border-bottom: 2px solid #6f4ca4;
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+}
+.project {
+  border: 1px solid #eee;
+  border-left: 4px solid #6f4ca4;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #f9f9f9;
+}
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.skills-grid img {
+  max-height: 80px;
+  max-width: 120px;
+  object-fit: contain;
+  padding: 0.5rem;
+}
+footer {
+  background: #6f4ca4;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .profile-pic {
+    margin-bottom: 1rem;
+  }
+}
