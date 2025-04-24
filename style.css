@@ -83,3 +83,13 @@ footer {
     margin-bottom: 1rem;
   }
 }
+#key-tech {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: #6f4ca4;
+  z-index: 999;
+}
