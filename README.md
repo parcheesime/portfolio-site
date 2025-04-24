@@ -5,7 +5,7 @@ This is a responsive single-page site built with HTML and CSS to showcase my exp
 
 ## 🌐 Live Site(under construction)
 
-[Visit Portfolio](https://yourusername.github.io/aletia-portfolio/) *(Update after publishing with GitHub Pages)*
+[Visit Portfolio](https://parcheesime.github.io/aletia-portfolio/) *(Update after publishing with GitHub Pages)*
 
 ---
 
