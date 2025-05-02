@@ -26,6 +26,30 @@
     <div class="container">
       <h2>About Me</h2>
       <p><em>A problem solver who automates processes, develops SQL models, ensures data quality, builds backend pipelines, and communicates clearly — all while staying grounded in civic, educational, or financial mission-driven work.</em></p>
+    </section>
+    <section>
+      <div class="fun-fact-container">
+        <button class="fun-fact-button" onclick="showRandomFact()">💡 Click for a fun fact</button>
+        <p id="fact-box" class="fun-fact-text"></p>
+      </div>
+      
+      <script>
+        const facts = [
+        "Debugging live-streaming data? I’ve got it covered.",
+        "Python is my comfort language — clean, fast, and flexible.",
+        "I mentor students in computer science and robotics — it keeps me humble.",
+        "I built my first API tool before I even had a GitHub account.",
+        "I started college as a physics major — I genuinely loved the math in modern physics. It’s weird, but beautiful.",
+        "My favorite math proof is Euler’s formula — I even have it as a tattoo. That’s how deep the math love goes.",
+        "I love building data tools that do the work for you — automation, analytics, and a little AI magic go a long way."
+      ];      
+      
+      function showRandomFact() {
+        const randomIndex = Math.floor(Math.random() * facts.length);
+        document.getElementById("fact-box").innerText = facts[randomIndex];
+      }
+      </script>
+    
     </div>
   </section>
 
@@ -169,19 +193,31 @@
   </table>  
 
   <section id="skills">
-    <div class="container">
-      <h2>Tools & Skills</h2>
-      <div class="skills-grid">
+    <div class="skills-container">
+      <div class="tooltip" data-tooltip="Python: scripting, data analysis, and automation.">
         <img src="assets/icons/python.jpg" alt="Python" />
+      </div>
+      <div class="tooltip" data-tooltip="SQL: querying and modeling data for insights.">
         <img src="assets/icons/sql.png" alt="SQL" />
+      </div>
+      <div class="tooltip" data-tooltip="AWS: cloud-based storage and data workflows.">
         <img src="assets/icons/aws.png" alt="AWS" />
+      </div>
+      <div class="tooltip" data-tooltip="dbt: transforming and modeling data with clarity.">
         <img src="assets/icons/dbt.png" alt="dbt" />
-        <img src="assets/icons/ged.png" alt="google educator"/>
-        <img src="assets/icons/gdac.jpg" alt="google data analytics"/>
-        <img src="assets\icons\github.png" alt="github"/>
+      </div>
+      <div class="tooltip" data-tooltip="Google Educator: certified classroom tech integration.">
+        <img src="assets/icons/ged.png" alt="google educator" />
+      </div>
+      <div class="tooltip" data-tooltip="Google Data Analytics: certification in EDA and visualization.">
+        <img src="assets/icons/gdac.jpg" alt="google data analytics" />
+      </div>
+      <div class="tooltip" data-tooltip="GitHub: version control and collaboration.">
+        <img src="assets/icons/github.png" alt="GitHub" />
       </div>
     </div>
   </section>
+  
 
   <footer>
     <p>© 2025 Aletia Trepte</p>
