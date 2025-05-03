@@ -1,3 +1,6 @@
+html {
+  scroll-padding-top: 220px; 
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -15,7 +18,7 @@ body {
 header {
   background: #6f4ca4;
   color: white;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
 }
 .header-container {
   display: flex;
@@ -53,6 +56,24 @@ h2 {
   margin-bottom: 1rem;
   background: #f9f9f9;
 }
+.project-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.project-text {
+  flex: 1;
+  min-width: 300px;
+}
+.project-code {
+  flex: 1;
+  background: #eee;
+  padding: 10px;
+  overflow-x: auto;
+  min-width: 300px;
+}
+
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
@@ -102,12 +123,12 @@ header {
 .tooltip::after {
   content: attr(data-tooltip);
   position: absolute;
-  bottom: 120%; /* position the tooltip above the icon */
+  bottom: 50%; 
   left: 50%;
   transform: translateX(-50%);
   background: #fefefe;
   color: #333;
-  padding: 8px 12px;
+  padding: 8px 8px;
   border-radius: 8px;
   font-size: 0.9em;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -123,26 +144,38 @@ header {
 }
 
 .fun-fact-container {
-  text-align: center;
-  margin: 2em auto;
+  background-color: #f0f7ff;
+  border: 2px solid #cce3ff;
+  border-radius: 16px;
+  padding: 20px 30px;
+  margin: 40px auto;
   max-width: 600px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.fun-fact-container h3 {
+  font-size: 1.4em;
+  margin-bottom: 12px;
+  color: #4B0082;
 }
 
 .fun-fact-button {
-  background-color: #38ca64;
-  color: #6f4ca4;
+  background-color: #15ab42;
+  color: white;
   font-size: 1.1em;
-  font-style: bold;
   padding: 0.7em 1.2em;
   border: none;
   border-radius: 12px;
   cursor: pointer;
+  font-weight: bold;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .fun-fact-button:hover {
   background-color: #38ca64;
+  transform: scale(1.05);
 }
 
 .fun-fact-text {
@@ -150,7 +183,10 @@ header {
   margin-top: 1.2em;
   font-size: 1.1em;
   color: #333;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
+
 img {
   width: 128px;
   height: 128px;
@@ -166,4 +202,59 @@ img {
   justify-content: center;
   gap: 16px;
   padding: 20px 0;
+}
+.top-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 5px;
+}
+.top-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 7px;
+}
+.top-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+#skill-path {
+  margin: 100px auto;
+  padding: 20px;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+}
+
+.timeline-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+  max-width: 100%;
+}
+
+.timeline-step {
+  flex: 0 0 auto;
+  min-width: 180px;
+  padding: 12px 20px;
+  background-color: #4B0082;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  scroll-snap-align: start;
+  text-align: center;
+  white-space: nowrap;
+  transition: transform 0.2s ease;
+}
+
+.timeline-step:hover {
+  transform: scale(1.05);
+  background-color: #6a0dad;
 }

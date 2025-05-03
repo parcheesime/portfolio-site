@@ -14,44 +14,62 @@
         <h1>Aletia Trepte</h1>
         <p>📞 (619) 707-8130</p>
         <p>📧 aletia.trepte@gmail.com</p>
-        <p>🌐 <a href="#">linkedin.com/in/aletia-trepte</a></p>
+        <p>🌐 <a href="https://www.linkedin.com/in/aletia-trepte" target="_blank" rel="noopener noreferrer">linkedin.com/in/aletia-trepte</a></p>
       </div>
       <div class="profile-pic-wrapper">
         <img src="assets/profile.png" alt="Aletia Trepte" class="profile-pic" />
       </div>
     </div>
   </header>
+  
+      <!-- NEW: Nav bar added inside header -->
+      <nav class="top-nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#key-tech">Skills</a></li>
+          <li><a href="#skill-path">Journey</a></li>
+        </ul>
+      </nav>
 
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p><em>A problem solver who automates processes, develops SQL models, ensures data quality, builds backend pipelines, and communicates clearly — all while staying grounded in civic, educational, or financial mission-driven work.</em></p>
-    </section>
-    <section>
-      <div class="fun-fact-container">
-        <button class="fun-fact-button" onclick="showRandomFact()">💡 Click for a fun fact</button>
-        <p id="fact-box" class="fun-fact-text"></p>
-      </div>
+      <section id="about">
+        <div class="container">
+          <h2>About Me</h2>
+          <p><em>A problem solver who automates processes, develops SQL models, ensures data quality, builds backend pipelines, and communicates clearly — all while staying grounded in civic, educational, or financial mission-driven work.</em></p>
+        </div>
+      </section>
+      
+      <section id="fun-fact">
+        <div class="fun-fact-container">
+          <h3>💡 Fun Fact About Me</h3>
+          <button class="fun-fact-button" onclick="showNextFact()">Click for fun fact</button>
+          <p id="fact-box" class="fun-fact-text"></p>
+        </div>
+      </section>
       
       <script>
         const facts = [
-        "Debugging live-streaming data? I’ve got it covered.",
-        "Python is my comfort language — clean, fast, and flexible.",
-        "I mentor students in computer science and robotics — it keeps me humble.",
-        "I built my first API tool before I even had a GitHub account.",
-        "I started college as a physics major — I genuinely loved the math in modern physics. It’s weird, but beautiful.",
-        "My favorite math proof is Euler’s formula — I even have it as a tattoo. That’s how deep the math love goes.",
-        "I love building data tools that do the work for you — automation, analytics, and a little AI magic go a long way."
-      ];      
+          "Debugging live-streaming data? I’ve got it covered.",
+          "Python is my comfort language — clean, fast, and flexible.",
+          "I mentor students in computer science and robotics — it keeps me humble.",
+          "In the chaos of COVID, I wrangled hundreds of senior video clips (in every format imaginable) to build our virtual graduation.",
+          "I started college as a physics major — I genuinely loved the math in modern physics. It’s weird, but beautiful.",
+          "My favorite math proof is Euler’s formula — I even have it as a tattoo. That’s how deep the math love goes.",
+          "I love building data tools that do the work for you — automation, analytics, and a little AI magic go a long way."
+        ];
       
-      function showRandomFact() {
-        const randomIndex = Math.floor(Math.random() * facts.length);
-        document.getElementById("fact-box").innerText = facts[randomIndex];
-      }
-      </script>
-    
-    </div>
-  </section>
+        let currentFactIndex = 0;
+      
+        function showNextFact() {
+          const factBox = document.getElementById("fact-box");
+          factBox.style.opacity = 0;
+          setTimeout(() => {
+            factBox.innerText = facts[currentFactIndex];
+            factBox.style.opacity = 1;
+            currentFactIndex = (currentFactIndex + 1) % facts.length; // loop back to start
+          }, 150);
+        }
+      </script>          
 
   <section id="projects">
     <div class="container">
@@ -217,7 +235,23 @@
       </div>
     </div>
   </section>
-  
+
+  <section id="skill-path">
+    <h2>🧭 My Engineering Journey</h2>
+    <div class="timeline-container">
+      <div class="timeline-step">📐 Math / MATLAB</div>
+      <div class="timeline-step">🐍 Python</div>
+      <div class="timeline-step">🖥️ Linux</div>
+      <div class="timeline-step">🌐 HTML / CSS / JS</div>
+      <div class="timeline-step">🔗 APIs</div>
+      <div class="timeline-step">⚙️ Automation</div>
+      <div class="timeline-step">📊 Dashboards & Observability</div>
+      <div class="timeline-step">🧪 TDD</div>
+      <div class="timeline-step">🔁 Pipelines</div>
+      <div class="timeline-step">⚡ Streaming Data</div>
+      <div class="timeline-step">📦 dbt (new)</div>
+    </div>
+  </section>  
 
   <footer>
     <p>© 2025 Aletia Trepte</p>
