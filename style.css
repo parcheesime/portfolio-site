@@ -1,12 +1,12 @@
 html {
-  scroll-padding-top: 220px; 
+  scroll-padding-top: 290px; 
 }
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: #fff;
+  background: #eee;
   color: #333;
 }
 .container {
@@ -144,8 +144,8 @@ header {
 }
 
 .fun-fact-container {
-  background-color: #f0f7ff;
-  border: 2px solid #cce3ff;
+  background-color: white;
+  border: 2px solid #fff;
   border-radius: 16px;
   padding: 20px 30px;
   margin: 40px auto;
@@ -203,24 +203,24 @@ img {
   gap: 16px;
   padding: 20px 0;
 }
-.top-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 5px;
-}
 .top-nav ul {
   display: flex;
   justify-content: center;
+  gap: 16px;
   list-style: none;
-  gap: 7px;
+  padding: 0;
 }
-.top-nav a {
-  color: white;
+
+.top-nav li a {
   text-decoration: none;
   font-weight: bold;
+  color: #4B0082;
 }
+
+.top-nav {
+  padding: 10px;
+}
+
 #skill-path {
   margin: 100px auto;
   padding: 20px;
@@ -238,6 +238,7 @@ img {
   padding: 20px;
   scroll-snap-type: x mandatory;
   max-width: 100%;
+  white-space: nowrap;
 }
 
 .timeline-step {
@@ -251,7 +252,6 @@ img {
   scroll-snap-align: start;
   text-align: center;
   white-space: nowrap;
-  transition: transform 0.2s ease;
 }
 
 .timeline-step:hover {

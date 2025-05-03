@@ -9,6 +9,16 @@
 <body>
 
   <header>
+          <!-- NEW: Nav bar added inside header -->
+          <nav class="top-nav">
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#key-tech">Skills</a></li>
+              <li><a href="#skill-path">Journey</a></li>
+            </ul>
+          </nav>
+
     <div class="header-container">
       <div class="contact-info">
         <h1>Aletia Trepte</h1>
@@ -21,16 +31,6 @@
       </div>
     </div>
   </header>
-  
-      <!-- NEW: Nav bar added inside header -->
-      <nav class="top-nav">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#key-tech">Skills</a></li>
-          <li><a href="#skill-path">Journey</a></li>
-        </ul>
-      </nav>
 
       <section id="about">
         <div class="container">
@@ -73,7 +73,7 @@
 
   <section id="projects">
     <div class="container">
-      <h2>Projects</h2>
+      <h2>Some Projects</h2>
 
       <div style="border: 1px solid #ccc; border-radius: 10px; padding: 20px; margin: 20px 0; background: #f9f9f9; font-family: Arial, sans-serif;">
         <h3 style="margin-top: 0; color: #4B0082;">🔁 Databricks Job Backup & Rebuild System</h3>
@@ -237,21 +237,24 @@
   </section>
 
   <section id="skill-path">
-    <h2>🧭 My Engineering Journey</h2>
-    <div class="timeline-container">
-      <div class="timeline-step">📐 Math / MATLAB</div>
-      <div class="timeline-step">🐍 Python</div>
-      <div class="timeline-step">🖥️ Linux</div>
-      <div class="timeline-step">🌐 HTML / CSS / JS</div>
-      <div class="timeline-step">🔗 APIs</div>
-      <div class="timeline-step">⚙️ Automation</div>
-      <div class="timeline-step">📊 Dashboards & Observability</div>
-      <div class="timeline-step">🧪 TDD</div>
-      <div class="timeline-step">🔁 Pipelines</div>
-      <div class="timeline-step">⚡ Streaming Data</div>
-      <div class="timeline-step">📦 dbt (new)</div>
+    <h2 style="padding-left: 1em;">🧭 My Engineering Journey</h2>
+    <div style="overflow-x: auto; background: #f9f9f9; padding: 1em 0;">
+      <div class="timeline-container">
+        <div class="timeline-step">📐 Math / MATLAB</div>
+        <div class="timeline-step">🐍 Python</div>
+        <div class="timeline-step">🖥️ Linux</div>
+        <div class="timeline-step">🌐 HTML / CSS / JS</div>
+        <div class="timeline-step">🔗 APIs</div>
+        <div class="timeline-step">⚙️ Automation</div>
+        <div class="timeline-step">📊 Dashboards & Observability</div>
+        <div class="timeline-step">🧪 TDD</div>
+        <div class="timeline-step">🔁 Pipelines</div>
+        <div class="timeline-step">⚡ Streaming Data</div>
+        <div class="timeline-step">📦 dbt (new)</div>
+      </div>
     </div>
-  </section>  
+  </section>
+  
 
   <footer>
     <p>© 2025 Aletia Trepte</p>
