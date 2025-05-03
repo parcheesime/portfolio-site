@@ -2,7 +2,7 @@ html {
   scroll-padding-top: 290px; 
 }
 body {
-  font-family: Arial, sans-serif;
+  font-family: georgia;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -193,7 +193,8 @@ img {
   object-fit: contain;
   padding: 6px;
   border-radius: 8px; 
-  background-color: #fff; 
+  background-color: white;
+  ; 
   box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
 }
 .skills-container {
@@ -213,8 +214,8 @@ img {
 
 .top-nav li a {
   text-decoration: none;
-  font-weight: bold;
-  color: #4B0082;
+  font-weight: semi-bold;
+  color: #ffd700;
 }
 
 .top-nav {
