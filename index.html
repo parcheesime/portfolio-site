@@ -9,16 +9,6 @@
 <body>
 
   <header>
-          <!-- NEW: Nav bar added inside header -->
-          <nav class="top-nav">
-            <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#key-tech">Skills</a></li>
-              <li><a href="#skill-path">Journey</a></li>
-            </ul>
-          </nav>
-
     <div class="header-container">
       <div class="contact-info">
         <h1>Aletia Trepte</h1>
@@ -30,6 +20,15 @@
         <img src="assets/profile.png" alt="Aletia Trepte" class="profile-pic" />
       </div>
     </div>
+              <!-- NEW: Nav bar added inside header -->
+              <nav class="top-nav">
+                <ul>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#projects">Projects</a></li>
+                  <li><a href="#key-tech">Skills</a></li>
+                  <li><a href="#skill-path">Journey</a></li>
+                </ul>
+              </nav>
   </header>
 
       <section id="about">
@@ -52,7 +51,6 @@
           "I started college as a physics major — I genuinely loved the math in modern physics. It’s weird, but beautiful.",
           "Debugging live-streaming data? I’ve got it covered.",
           "Python is my comfort language — clean, fast, and flexible.",
-          "In the chaos of COVID, I wrangled hundreds of senior video clips (in every format imaginable) to build our virtual graduation.",
           "My favorite math proof is Euler’s formula — I even have it as a tattoo. That’s how deep the math love goes.",
           "I love building data tools that do the work for you — automation, analytics, and a little AI magic go a long way.",
           "I mentor students in computer science and robotics — it keeps me humble."
@@ -74,18 +72,17 @@
   <section id="projects">
     <div class="container">
       <h2>Some Projects</h2>
-
-      <div style="border: 1px solid #ccc; border-radius: 10px; padding: 20px; margin: 20px 0; background: #f9f9f9; font-family: Arial, sans-serif;">
-        <h3 style="margin-top: 0; color: #4B0082;">🔁 Databricks Job Backup & Rebuild System</h3>
+      <div class="project-block">
+        <h3>🔁 Databricks Job Backup & Rebuild System</h3>
         <p>
           I designed and led the development of a Python-based automation system to back up and recreate Databricks jobs for production stability, disaster recovery, and workflow portability.
         </p>
-        <ul style="padding-left: 20px;">
+        <ul>
           <li><strong>🧩 Tools Used:</strong> Databricks REST API, AWS S3, Python, Boto3, JSON</li>
           <li><strong>🔍 Highlights:</strong> Pulled job metadata and run settings, handled edge cases for missing runs, stored backups in S3 by job and date</li>
           <li><strong>⚙️ Recovery Feature:</strong> Automatically reconstructs job configs and submits new jobs via API based on latest valid settings</li>
         </ul>
-        <pre style="background: #eee; padding: 12px; overflow-x: auto;">
+        <pre>
       # Example: Save job settings to S3
       key = f"backup_jobs/job_{job_id}_{today}.json"
       
@@ -96,24 +93,25 @@
         ContentType="application/json"
       )
         </pre>
-        <p style="font-size: 14px; color: #444;">
+        <p>
           This system reduced recovery time from hours to minutes and ensured traceable versioning of all production-critical ETL pipelines.
-        </p>        <p style="font-size: 13px; color: #ff6600; margin-top: 12px;">
+        </p>        
+        <p>
           <strong>Technologies:</strong> SQL, Sigma, Delta Tables, Python, Databricks, APIs, JSON Data, Sheets, AWS S3
         </p>
       </div>      
 
-      <div style="border: 1px solid #ccc; border-radius: 10px; padding: 20px; margin: 20px 0; background: #f9f9f9; font-family: Arial, sans-serif;">
-        <h3 style="margin-top: 0; color: #4B0082;">🧹 Back4App Class & Data Automation (Setup + Teardown)</h3>
+      <div class="project-block">
+        <h3>🧹 Back4App Class & Data Automation (Setup + Teardown)</h3>
         <p>
           Built a modular JavaScript automation system to manage test environments for a Back4App-powered iOS app. Streamlined the creation, population, and cleanup of database classes to support consistent testing and rapid development.
         </p>
-        <ul style="padding-left: 20px;">
+        <ul>
           <li>✅ <strong>Setup Scripts:</strong> <code>classCreate.mjs</code> and <code>dataUpload.mjs</code> dynamically generated class schemas and populated them with test data.</li>
           <li>✅ <strong>Teardown Script:</strong> <code>teardown.mjs</code> removed data and deleted classes to reset environments between test runs.</li>
           <li>✅ <strong>Environment Handling:</strong> Used <code>.env</code> variables and <code>Node.js</code> for flexible, secure config management.</li>
         </ul>
-        <pre style="background: #eee; padding: 12px; overflow-x: auto;">
+        <pre>
       // teardown.mjs: Delete all data in a class
       import fetch from 'node-fetch';
       import dotenv from 'dotenv';
@@ -128,27 +126,27 @@
         }
       });
         </pre>
-        <p style="font-size: 14px; color: #444;">
+        <p>
           This automation supported Test-Driven Development (TDD) by enabling clean database states and faster iteration cycles during iOS development with Core Data.
         </p>
-        <p style="font-size: 13px; color: #ff6600; margin-top: 12px;">
+        <p>
           <strong>Technologies:</strong> JavaScript (ES Modules), Node.js, RESTful APIs, Back4App (Parse), Environment Variables, Data Lifecycle Automation
         </p>
       </div>
-      <div style="border: 1px solid #ccc; border-radius: 10px; padding: 20px; margin: 20px 0; background: #f9f9f9; font-family: Arial, sans-serif;">
-        <h3 style="margin-top: 0; color: #4B0082;">💹 Institutional Bond Market Trends & Data Adoption</h3>
+      <div class="project-block">
+        <h3>💹 Institutional Bond Market Trends & Data Adoption</h3>
         <p>
           Revamped a bond quote visualization system for institutional finance using a combination of <strong>data engineering, business intelligence, and advanced SQL</strong>. The updated dashboards now power live insights on the BondCliQ platform.
         </p>
       
-        <ul style="padding-left: 20px;">
+        <ul>
           <li><strong>🧪 Data Engineering:</strong> Created Delta Tables from raw sources using Python; cleaned, structured, and optimized pipelines for accuracy and speed.</li>
           <li><strong>🔍 SQL Computation:</strong> Developed <code>complex queries</code>, rolling averages, and window functions to support historical + real-time data accuracy.</li>
           <li><strong>📊 Visualization:</strong> Designed Sigma dashboards to support financial trend analysis and reporting using integrated table views.</li>
           <li><strong>📈 Impact:</strong> Reduced query time and improved access for users analyzing institutional bond activity.</li>
         </ul>
       
-        <pre style="background: #eee; padding: 12px; overflow-x: auto;">
+        <pre>
       -- Example: Rolling 7-day average of daily volume
       SELECT trade_date,
              AVG(volume) OVER (
@@ -159,56 +157,62 @@
       FROM delta_bond_quotes
         </pre>
       
-        <p style="font-size: 14px; color: #444;">
+        <p>
           This work improved both backend query efficiency and the visibility of financial activity trends for institutional clients.
         </p>
-        <p style="font-size: 13px; color: #ff6600; margin-top: 12px;">
+        <p>
           <strong>Technologies:</strong> SQL, Delta Tables, Python, Databricks, Sigma, API Data, Table Views
         </p>
       </div>
-      
     </div>
   </section>
+
   <section id="key-tech">
     <div class="container">
-      <h3 style="font-family: Arial, sans-serif; font-size: 22px; color: #4B0082; margin-bottom: 10px;">🧰 Key Technologies & Engineering Skills</h3>
-      <p style="font-size: 14px; color: #444;">A blend of backend development, automation, and real-time data engineering powering civic, financial, and educational tools.</p>
+      <h3 class="tech-title">🧰 Key Technologies & Engineering Skills</h3>
+      <p class="tech-description">
+        A blend of backend development, automation, and real-time data engineering powering civic, financial, and educational tools.
+      </p>
   
-      <table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
-        <tr style="background: #f5f5f5; font-weight: bold; font-size: 16px;">
-          <th style="padding: 12px;">🧠 Skill</th>
-          <th style="padding: 12px;">🛠️ Tools</th>
-          <th style="padding: 12px;">💡 Use Case</th>
-        </tr> 
-        <tr style="background-color: #ffffff; border-top: 1px solid #ddd;">
-          <td style="padding: 8px;">Custom Reporting</td>
-          <td style="padding: 8px;">HTML, MailChimp API</td>
-          <td style="padding: 8px;">Daily client quote summaries</td>
-        </tr> 
-        <tr style="background-color: #ffffff; border-top: 1px solid #ddd;">
-          <td style="padding: 8px;">API Automation</td>
-          <td style="padding: 8px;">JavaScript, Node.js</td>
-          <td style="padding: 8px;">Back4App class setup & teardown</td>
-        </tr> 
-        <tr style="background-color: #ffffff; border-top: 1px solid #ddd;">
-          <td style="padding: 10px;">Data Modeling</td>
-          <td style="padding: 10px;">SQL, Delta Tables, Sigma</td>
-          <td style="padding: 10px;">Rolling averages, trade volume trends, and live data dashboards</td>
-        </tr>         
-        <tr style="background-color: #ffffff; border-top: 1px solid #ddd;">
-          <td style="padding: 10px;">Core Data Design</td>
-          <td style="padding: 10px;">Swift, XCTest</td>
-          <td style="padding: 10px;">iOS data persistence, testable backend storage</td>
-        </tr>
-        <tr style="background-color: #ffffff; border-top: 1px solid #ddd;">
-          <td style="padding: 10px;">Real-time Pipelines</td>
-          <td style="padding: 10px;">PySpark, Delta Lake</td>
-          <td style="padding: 10px;">Streaming trade logs, Databricks → S3</td>
-        </tr>    
+      <table class="tech-table">
+        <thead>
+          <tr>
+            <th>🧠 Skill</th>
+            <th>🛠️ Tools</th>
+            <th>💡 Use Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Custom Reporting</td>
+            <td>HTML, MailChimp API</td>
+            <td>Daily client quote summaries</td>
+          </tr>
+          <tr>
+            <td>API Automation</td>
+            <td>JavaScript, Node.js</td>
+            <td>Back4App class setup & teardown</td>
+          </tr>
+          <tr>
+            <td>Data Modeling</td>
+            <td>SQL, Delta Tables, Sigma</td>
+            <td>Rolling averages, trade volume trends, and live data dashboards</td>
+          </tr>
+          <tr>
+            <td>Core Data Design</td>
+            <td>Swift, XCTest</td>
+            <td>iOS data persistence, testable backend storage</td>
+          </tr>
+          <tr>
+            <td>Real-time Pipelines</td>
+            <td>PySpark, Delta Lake</td>
+            <td>Streaming trade logs, Databricks → S3</td>
+          </tr>
+        </tbody>
       </table>
     </div>
-  </section>  
-  </table>  
+  </section>
+   
 
   <section id="skills">
     <div class="skills-container">
@@ -237,8 +241,8 @@
   </section>
 
   <section id="skill-path">
-    <h2 style="padding-left: 1em;">🧭 My Engineering Journey</h2>
-    <div style="overflow-x: auto; background: #f9f9f9; padding: 1em 0;">
+    <h2 class="section-title">🧭 My Engineering Journey</h2>
+    <div class="timeline-scroll-wrapper">
       <div class="timeline-container">
         <div class="timeline-step">📐 Math / MATLAB</div>
         <div class="timeline-step">🐍 Python</div>
@@ -255,7 +259,7 @@
     </div>
   </section>
   
-
+  
   <footer>
     <p>© 2025 Aletia Trepte</p>
   </footer>
