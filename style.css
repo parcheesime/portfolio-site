@@ -31,10 +31,11 @@ html, body {
 }
 .container {
   width: 100%;
-  max-width: 900px;
-  margin: auto;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 1rem;
 }
+
 header {
   background: var(--primary);
   color: white;
@@ -73,6 +74,7 @@ h2 {
   padding-bottom: 0.3rem;
   margin-top: 2rem;
 }
+
 .project {
   border: 1px solid #f4f4f4;
   border-left: 4px solid #4B0082;
@@ -80,14 +82,20 @@ h2 {
   margin-bottom: 1rem;
   background: #f9f9f9;
 }
+
 .project-block {
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 20px;
   margin: 20px 0;
   background: #f9f9f9;
-  font-family: geogia;
+  font-family: georgia;
   box-sizing: border-box;
+
+  /* === TEMPORARY STYLES FOR LAYOUT TESTING === */
+  background-color: #eef;       /* helps see layout */
+  border: 2px dashed #4B0082;   /* helps see boundaries */
+  min-height: 100px;            /* gives visual space */
 }
 
 .project-block h3 {
@@ -122,6 +130,20 @@ h2 {
   background: #f4f4f4;
   padding: 2px 6px;
   border-radius: 4px;
+}
+
+/* === GRID LAYOUT FOR MULTI-COLUMN PROJECTS === */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* === TEMPORARY WIDTH SETTING TO FORCE SIDE-BY-SIDE === */
+.project-grid .project-block {
+  flex: 1 1 calc(50% - 20px);
+  width: 48%; /* TEMPORARY: helps layout with 3 cards */
 }
 
 .skills-grid {

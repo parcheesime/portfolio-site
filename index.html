@@ -14,6 +14,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aletia Trepte | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+/>
 </head>
 <body>
 
@@ -24,6 +28,12 @@
         <p>📞 (619) 707-8130</p>
         <p>📧 aletia.trepte@gmail.com</p>
         <p>🌐 <a href="https://www.linkedin.com/in/aletia-trepte" target="_blank" rel="noopener noreferrer">linkedin.com/in/aletia-trepte</a></p>
+        <p>
+          <i class="fab fa-github" style="margin-right: 8px;"></i>
+          <a href="https://github.com/parcheesime" target="_blank" rel="noopener noreferrer">
+            github.com/parcheesime
+          </a>
+        </p>        
       </div>
       <div class="profile-pic-wrapper">
         <img src="assets/profile.png" alt="Aletia Trepte" class="profile-pic" />
@@ -81,6 +91,32 @@
   <section id="projects">
     <div class="container">
       <h2>Some Projects</h2>
+      <div class="project-grid">
+
+        <div class="project-block">
+          <h3>🚚 FreightFlow DBT + Pub/Sub Pipeline</h3>
+          <p>
+            Built a modern freight tracking simulation using <strong>dbt</strong> for data transformation and enrichment, <strong>Google Pub/Sub</strong> for real-time event streams, and <strong>Python</strong> scripts to simulate and publish shipping activity.
+          </p>
+          <ul>
+            <li><strong>📦 Data Modeling:</strong> Created staging, intermediate, and mart models in dbt; enriched shipments with coordinate data and calculated distances using geopy.</li>
+            <li><strong>🔄 Real-Time Messaging:</strong> Used <code>publisher.py</code> and <code>subscriber.py</code> to stream and receive updates over Google Pub/Sub.</li>
+            <li><strong>🧪 Synthetic Data:</strong> Simulated freight events using <code>faker</code> and location enrichment via <code>geopy</code> for realistic test data.</li>
+          </ul>
+          <pre>
+        # Example: Simulate event stream
+        python3 pubsub_sim/publisher.py
+        python3 pubsub_sim/subscriber.py
+          </pre>
+          <p>
+            This project showcases how to architect streaming pipelines, integrate dbt transformations, and simulate freight tracking in a cloud environment.
+          </p>
+          <p>
+            <strong>Technologies:</strong> dbt, DuckDB, Python, Google Pub/Sub, geopy, faker
+          </p>
+        </div>
+        
+
       <div class="project-block">
         <h3>🔁 Databricks Job Backup & Rebuild System</h3>
         <p>
@@ -142,6 +178,7 @@
           <strong>Technologies:</strong> JavaScript (ES Modules), Node.js, RESTful APIs, Back4App (Parse), Environment Variables, Data Lifecycle Automation
         </p>
       </div>
+
       <div class="project-block">
         <h3>💹 Institutional Bond Market Trends & Data Adoption</h3>
         <p>
@@ -174,6 +211,7 @@
         </p>
       </div>
     </div>
+    </div>
   </section>
 
   <section id="key-tech">
@@ -189,44 +227,51 @@
             <th>🧠 Skill</th>
             <th>🔧 Tools</th>
             <th>💡 Use Case</th>
-            <th>📈 Level</th>
+            <th>📊 Proficiency</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Data Modeling</td>
             <td>SQL, Sigma, Delta Tables</td>
-            <td>Pipeline monitoring & data dashboards</td>
-            <td>⭐️⭐️⭐️⭐️</td>
+            <td>Pipeline monitoring & dashboards</td>
+            <td>⭐️⭐️⭐️⭐️⭐️</td>
+          </tr>
+          <tr>
+            <td>Custom Reporting</td>
+            <td>HTML, Mailchimp API</td>
+            <td>Automated report delivery</td>
+            <td>⭐️⭐️⭐️⭐️⭐️</td>
           </tr>
           <tr>
             <td>Pipelines</td>
             <td>PySpark, Databricks, S3</td>
-            <td>Streaming trade logs</td>
+            <td>Batch + streaming pipeline development</td>
             <td>⭐️⭐️⭐️⭐️</td>
           </tr>
           <tr>
             <td>API Automation</td>
             <td>JavaScript, Python</td>
-            <td>Class/Schema setup</td>
+            <td>Dynamic class and schema setup</td>
             <td>⭐️⭐️⭐️⭐️</td>
           </tr>
           <tr>
-            <td>Custom Reporting</td>
-            <td>HTML, Mailchimp API</td>
-            <td>Daily quote delivery</td>
-            <td>⭐️⭐️⭐️</td>
-          </tr>
+            <td>Streaming Pipelines</td>
+            <td>dbt, DuckDB, Google Pub/Sub</td>
+            <td>Simulated shipment tracking</td>
+            <td>⭐⭐⭐</td>
+          </tr>          
           <tr>
             <td>Core Data Design</td>
             <td>Swift, XCTest</td>
-            <td>iOS persistence & testing</td>
+            <td>iOS persistence & unit testing</td>
             <td>⭐️⭐️</td>
           </tr>
         </tbody>
       </table>
     </div>
-  </section> 
+  </section>
+  
    
   <section id="skills">
     <div class="skills-container">
