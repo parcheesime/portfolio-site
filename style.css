@@ -10,10 +10,6 @@
   --button-hover: #21867a;
 }
 
-section {
-  scroll-margin-top: 100px;
-}
-
 body {
   font-family: georgia;
   margin: 0;
@@ -178,6 +174,13 @@ footer {
   section {
     scroll-margin-top: 110px;
   }
+}
+
+section {
+  scroll-margin-top: 100px;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
 }
 #key-tech {
   margin-top: 2rem;
@@ -452,16 +455,6 @@ main, .container {
   margin: 0;
   padding: 0;
 }
-
-/* section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-  box-sizing: border-box;
-  scroll-snap-align: start;
-} */
 
 html {
   scroll-snap-type: y mandatory;
