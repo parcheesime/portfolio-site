@@ -79,21 +79,6 @@ h2 {
   background: #f9f9f9;
 }
 
-.project-block {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px 0;
-  background: #f9f9f9;
-  font-family: georgia;
-  box-sizing: border-box;
-
-  /* === TEMPORARY STYLES FOR LAYOUT TESTING === */
-  background-color: #eef;       /* helps see layout */
-  border: 2px dashed #4B0082;   /* helps see boundaries */
-  min-height: 100px;            /* gives visual space */
-}
-
 .project-block h3 {
   margin-top: 0;
   color: #4B0082;
@@ -134,12 +119,6 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
-}
-
-/* === TEMPORARY WIDTH SETTING TO FORCE SIDE-BY-SIDE === */
-.project-grid .project-block {
-  flex: 1 1 calc(50% - 20px);
-  width: 48%; /* TEMPORARY: helps layout with 3 cards */
 }
 
 .skills-grid {
@@ -466,6 +445,7 @@ html {
 #key-tech  { background: #fdfdfd; }
 #skills    { background: #f4f4f4; }
 #skill-path{ background: #ffffff; }
+
 .fade-in {
   opacity: 0;
   transform: translateY(40px);
@@ -474,4 +454,73 @@ html {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+/* === 1. Make project cards stack on mobile === */
+@media (max-width: 768px) {
+  .project-grid .project-block {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+.project-block {
+  border: 2px dashed #4B0082;  
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  background: #eef;          
+  font-family: georgia;
+  box-sizing: border-box;
+  min-height: 100px;
+
+  /* ✅ Fade-in animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+  
+.project-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two equal-width columns */
+  gap: 20px;
+  padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr; /* single column on mobile */
+  }
+}
+
+/* === 3. Back to Top Button === */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #4B0082;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 16px;
+  font-size: 1.2em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#backToTop:hover {
+  background-color: #6f4ca4;
 }

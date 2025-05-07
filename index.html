@@ -91,7 +91,7 @@
       </script>          
 
   <section id="projects">
-    <div class="container">
+    <div>
       <h2 class="section-title">🧑‍💻 Some Projects</h2>
       <div class="project-grid">
 
@@ -323,26 +323,79 @@
       </div>
     </div>
   </section>
-  
+
+  <button id="backToTop" title="Back to Top">⬆️</button>
+
   <footer>
     <p>© 2025 Aletia Trepte</p>
   </footer>
 
   <script>
+    // Wiggle animation for fun fact button
     const button = document.querySelector('.fun-fact-button');
     setInterval(() => {
       button.classList.add('wiggle');
       setTimeout(() => button.classList.remove('wiggle'), 1000);
-    }, 5000); // wiggle every 5 seconds
+    }, 5000);
+  </script>
+  
+  <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const fadeEls = document.querySelectorAll('.project-block');
+    
+        fadeEls.forEach(el => {
+          el.classList.add('fade-in');
+        });
+    
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target); // only trigger once
+            }
+          });
+        }, { threshold: 0.2 });
+    
+        fadeEls.forEach(el => observer.observe(el));
+      });    
+  </script>  
+  
+  
+  <script>
+    // Timeline animation on load
+    const steps = document.querySelectorAll('.timeline-step');
+    steps.forEach((step, index) => {
+      setTimeout(() => {
+        step.classList.add('visible');
+      }, index * 300);
+    });
+  </script>
+  
+  <script>
+    // Back to top button behavior
+    const backToTop = document.getElementById("backToTop");
+  
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
+    });
+  
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
   </script>  
 
   <script>
-    const faders = document.querySelectorAll('section');
-  
     const appearOptions = {
       threshold: 0.3,
     };
-  
+    
     const appearOnScroll = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -350,21 +403,13 @@
         observer.unobserve(entry.target);
       });
     }, appearOptions);
-  
-    faders.forEach(section => {
-      section.classList.add('fade-in');
-      appearOnScroll.observe(section);
-    });
+    
+    document.querySelectorAll('.project-block').forEach(card => {
+      card.classList.add('fade-in'); 
+      appearOnScroll.observe(card);
+    });    
+
   </script>
-   
-  <script>
-    const steps = document.querySelectorAll('.timeline-step');
-    steps.forEach((step, index) => {
-      setTimeout(() => {
-        step.classList.add('visible');
-      }, index * 300); 
-    });
-  </script>  
   
 </body>
 </html>
