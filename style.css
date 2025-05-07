@@ -452,7 +452,8 @@ main, .container {
   margin: 0;
   padding: 0;
 }
-section {
+
+/* section {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -460,7 +461,8 @@ section {
   padding: 60px 20px;
   box-sizing: border-box;
   scroll-snap-align: start;
-}
+} */
+
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
