@@ -252,13 +252,26 @@ footer {
 .tooltip:hover::after {
   opacity: 1;
 }
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
 
+.about-text {
+  max-width: 700px;
+}
 .fun-fact-container {
   background-color: white;
   border: 2px solid #fff;
   border-radius: 16px;
   padding: 20px 30px;
-  margin: 40px auto;
   max-width: 600px;
   text-align: center;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
@@ -295,6 +308,19 @@ footer {
   color: #222;
   opacity: 0;
   transition: opacity 0.5s ease;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(3deg); }
+  30% { transform: rotate(-3deg); }
+  45% { transform: rotate(2deg); }
+  60% { transform: rotate(-2deg); }
+  75% { transform: rotate(1deg); }
+}
+
+.wiggle {
+  animation: wiggle 1s ease-in-out;
 }
 
 img {
@@ -346,46 +372,53 @@ img {
 main, .container {
   overflow: visible !important;
 }
-.timeline-scroll-wrapper {
-  position: relative;
-  overflow-x: auto;
-  overflow-y: visible;
-  -webkit-overflow-scrolling: touch;
-  width: 100%;
-  box-sizing: border-box;
-  z-index: 2;
-}
-.timeline-container {
+.timeline-vertical {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 20px;
-  padding: 1em 0;
-  scroll-snap-type: x mandatory;
-  min-width: max-content;
-  box-sizing: border-box;
-  overflow: visible;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  position: relative;
+  border-left: 3px solid #b58c2c;
+  margin-left: 1rem;
 }
+
 .timeline-step {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  flex: 0 0 auto;
-  padding: 10px 16px;
   background-color: #4B0082;
   color: white;
-  border-radius: 999px;
+  padding: 12px 20px;
+  border-radius: 20px;
   font-weight: bold;
-  scroll-snap-align: start;
-  text-align: center;
-  white-space: nowrap;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  cursor: default;
 }
+
+.timeline-step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-step::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -12px;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #b58c2c;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
 .timeline-step::after {
   content: attr(data-tooltip);
   position: absolute;
   top: 50%;
-  left: calc(100% + 8px); 
+  left: calc(100% + 12px);
   transform: translateY(-50%);
   background: #333;
   color: #fff;
@@ -396,21 +429,54 @@ main, .container {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease;
-  z-index: 9999;
+  z-index: 999;
 }
+
 .timeline-step:hover::after {
   opacity: 1;
 }
-.timeline-scroll-wrapper {
-  overflow-x: auto;
-  overflow-y: visible; /* ← this is the fix */
-  position: relative;  /* needed to anchor tooltips */
-  -webkit-overflow-scrolling: touch;
-  width: 100%;
-  box-sizing: border-box;
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+}
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+#about     { background: #f4f4f4; }
+#fun-fact  { background: #ffffff; }
+#projects  { background: #eef; }
+#key-tech  { background: #fdfdfd; }
+#skills    { background: #f4f4f4; }
+#skill-path{ background: #ffffff; }
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

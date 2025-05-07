@@ -50,29 +50,31 @@
               </nav>
   </header>
 
-      <section id="about">
-        <div class="container">
-          <h2>About Me</h2>
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">👩‍💼About Me</h2>
+      <div class="about-wrapper">
+        <div class="about-text">
           <p><em>A problem solver who automates processes, develops SQL models, ensures data quality, builds backend pipelines, and communicates clearly — all while staying grounded in civic, educational, or financial mission-driven work.</em></p>
         </div>
-      </section>
-      
-      <section id="fun-fact">
+  
         <div class="fun-fact-container">
           <h3>💡 Fun Fact About Me</h3>
           <button class="fun-fact-button" onclick="showNextFact()">Click for fun fact</button>
           <p id="fact-box" class="fun-fact-text"></p>
         </div>
-      </section>
-      
+      </div>
+    </div>
+  </section>
+  
       <script>
         const facts = [
-          "I started college as a physics major — I genuinely loved the math in modern physics. It’s weird, but beautiful.",
-          "Debugging live-streaming data? I’ve got it covered.",
+          "Started college as a physics major — drawn to the strange beauty of math in modern physics.",
           "Python is my comfort language — clean, fast, and flexible.",
-          "My favorite math proof is Euler’s formula — I even have it as a tattoo. That’s how deep the math love goes.",
-          "I love building data tools that do the work for you — automation, analytics, and a little AI magic go a long way.",
-          "I founded a coding workshop business where I wore every hat — from instructor to tech troubleshooter to social media manager."
+          "Favorite math proof? Euler’s formula. It’s even inked as a tattoo — that's how deep the connection runs.",
+          "I build data tools that do the work for you — automation, analytics, and a little AI magic go a long way.",
+          "I founded a coding workshop business where I wore every hat — from instructor to tech troubleshooter to social media manager.",
+          "MATLAB was my first programming language."
         ];
       
         let currentFactIndex = 0;
@@ -83,14 +85,14 @@
           setTimeout(() => {
             factBox.innerText = facts[currentFactIndex];
             factBox.style.opacity = 1;
-            currentFactIndex = (currentFactIndex + 1) % facts.length; // loop back to start
+            currentFactIndex = (currentFactIndex + 1) % facts.length; 
           }, 150);
         }
       </script>          
 
   <section id="projects">
     <div class="container">
-      <h2>Some Projects</h2>
+      <h2 class="section-title">🧑‍💻 Some Projects</h2>
       <div class="project-grid">
 
         <div class="project-block">
@@ -216,7 +218,7 @@
 
   <section id="key-tech">
     <div class="container">
-      <h3 class="tech-title">🧰 Key Technologies & Engineering Skills</h3>
+      <h2 class="section-title">🧰 Key Technologies & Engineering Skills</h2>
       <p class="tech-description">
         A blend of backend engineering, automation, and data tools used across civic, financial, and educational projects.
       </p>
@@ -274,7 +276,9 @@
   
    
   <section id="skills">
-    <div class="skills-container">
+    <div class="container">
+      <h2 class="section-title">🚀 My Technology</h2>
+      <div class="skills-container">
       <div class="tooltip" data-tooltip="Python: scripting, data analysis, and automation.">
         <img src="assets/icons/python.jpg" alt="Python" />
       </div>
@@ -297,32 +301,70 @@
         <img src="assets/icons/github.png" alt="GitHub" />
       </div>
     </div>
+  </div>
   </section>
 
   <section id="skill-path">
-    <h2 class="section-title">🧭 My Engineering Journey</h2>
-    <div class="timeline-scroll-wrapper">
-      <div class="timeline-container">
-        <div class="timeline-step" data-tooltip="Built simulations in MATLAB for chaos theory and numerical analysis.">📐 Math / MATLAB</div>
-        <div class="timeline-step" data-tooltip="Used Python for automation, data analysis, and API tools.">🐍 Python</div>
-        <div class="timeline-step" data-tooltip="Worked in WSL and various Linux distros — strong with command line.">🖥️ Linux</div>
-        <div class="timeline-step" data-tooltip="Built responsive websites using HTML, CSS, and JavaScript.">🌐 HTML / CSS / JS</div>
-        <div class="timeline-step" data-tooltip="Designed and consumed REST/SOAP APIs for automation and data tools.">🔗 APIs</div>
-        <div class="timeline-step" data-tooltip="Automated data pulls, cleans, and workflows using Python and shell scripts.">⚙️ Automation</div>
-        <div class="timeline-step" data-tooltip="Used SQL for data modeling and database interaction across projects.">🧮 SQL</div>
+    <div class="container">
+      <h2 class="section-heading">🧭 My Engineering Journey</h2>
+      <div class="timeline-vertical">
+        <div class="timeline-step" data-tooltip="Build simulations in MATLAB for chaos theory and numerical analysis.">📐 Math / MATLAB</div>
+        <div class="timeline-step" data-tooltip="Use Python for automation, data analysis, and API tools.">🐍 Python</div>
+        <div class="timeline-step" data-tooltip="Work in WSL and various Linux distros — strong with command line.">🖥️ Linux</div>
+        <div class="timeline-step" data-tooltip="Build responsive websites using HTML, CSS, and JavaScript.">🌐 HTML / CSS / JS</div>
+        <div class="timeline-step" data-tooltip="Design and consum REST/SOAP APIs for automation and data tools.">🔗 APIs</div>
+        <div class="timeline-step" data-tooltip="Automate data pulls, cleans, and workflows using Python and shell scripts.">⚙️ Automation</div>
+        <div class="timeline-step" data-tooltip="Use SQL for data modeling and database interaction across projects.">🧮 SQL</div>
         <div class="timeline-step" data-tooltip="Most comfortable in Sigma and Power BI — built live dashboards for teams.">📊 Dashboards & Observability</div>
-        <div class="timeline-step" data-tooltip="Practiced test-driven development in Swift using Core Data and XCTest.">🧪 TDD</div>
-        <div class="timeline-step" data-tooltip="Built ETL/ELT pipelines using PySpark, Delta Tables, and SQL.">🔁 Pipelines</div>
-        <div class="timeline-step" data-tooltip="Engineered streaming pipelines for real-time trade data (Databricks + S3).">⚡ Streaming Data</div>
-        <div class="timeline-step" data-tooltip="Learning dbt for modular SQL-based data modeling.">📦 dbt (new)</div>        
+        <div class="timeline-step" data-tooltip="Practice test-driven development in Swift using Core Data and XCTest.">🧪 TDD</div>
+        <div class="timeline-step" data-tooltip="Build ETL/ELT pipelines using PySpark, Delta Tables, and SQL.">🔁 Pipelines</div>
+        <div class="timeline-step" data-tooltip="Engineer streaming pipelines for real-time trade data (Databricks + S3).">⚡ Streaming Data</div>
+        <div class="timeline-step" data-tooltip="Learning dbt for modular SQL-based data modeling.">📦 dbt (new)</div>
       </div>
     </div>
   </section>
-  
   
   <footer>
     <p>© 2025 Aletia Trepte</p>
   </footer>
 
+  <script>
+    const button = document.querySelector('.fun-fact-button');
+    setInterval(() => {
+      button.classList.add('wiggle');
+      setTimeout(() => button.classList.remove('wiggle'), 1000);
+    }, 5000); // wiggle every 5 seconds
+  </script>  
+
+  <script>
+    const faders = document.querySelectorAll('section');
+  
+    const appearOptions = {
+      threshold: 0.3,
+    };
+  
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+  
+    faders.forEach(section => {
+      section.classList.add('fade-in');
+      appearOnScroll.observe(section);
+    });
+  </script>
+   
+  <script>
+    const steps = document.querySelectorAll('.timeline-step');
+    steps.forEach((step, index) => {
+      setTimeout(() => {
+        step.classList.add('visible');
+      }, index * 300); 
+    });
+  </script>  
+  
 </body>
 </html>
