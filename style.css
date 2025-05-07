@@ -113,14 +113,6 @@ h2 {
   border-radius: 4px;
 }
 
-/* === GRID LAYOUT FOR MULTI-COLUMN PROJECTS === */
-.project-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
-
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
@@ -164,6 +156,7 @@ section {
 #key-tech {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  
 }
 
 .tech-title {
@@ -181,11 +174,15 @@ section {
 
 .tech-table {
   width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
   font-size: 14px;
 }
-
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
 .tech-table th {
   background: #f5f5f5;
   font-weight: bold;
@@ -200,9 +197,16 @@ section {
   padding: 10px;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* optional: prevent shrinking font */
+  font-size: 14px;
+}
+
 @media (max-width: 600px) {
   .tech-table {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
@@ -455,13 +459,7 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
-/* === 1. Make project cards stack on mobile === */
-@media (max-width: 768px) {
-  .project-grid .project-block {
-    flex: 1 1 100%;
-    width: 100%;
-  }
-}
+
 
 .project-block {
   border: 2px dashed #4B0082;  
@@ -472,7 +470,10 @@ html {
   font-family: georgia;
   box-sizing: border-box;
   min-height: 100px;
-
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-x: hidden; 
   /* ✅ Fade-in animation */
   opacity: 0;
   transform: translateY(20px);
@@ -486,14 +487,16 @@ html {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);  /* 2 columns only */
   gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px
 }
 
-
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .project-grid {
-    grid-template-columns: 1fr; /* single column on mobile */
+    grid-template-columns: 1fr;
   }
 }
 
