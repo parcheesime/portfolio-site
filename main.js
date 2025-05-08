@@ -3,10 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let score = 0;
     const scoreDisplay = document.getElementById("scoreCount");
 
-    function incrementScore() {
-        score++;
-        scoreDisplay.textContent = score;
-    }
     // Reward message
     let rewardShown = false;
     const rewardMessage = document.getElementById("rewardMessage");
