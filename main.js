@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 }
 
-
     // Wiggle animation for fun fact button
     const button = document.querySelector('.fun-fact-button');
 
@@ -61,22 +60,40 @@ document.addEventListener("DOMContentLoaded", () => {
       appearOnScroll.observe(el);
     });
   
-    // Timeline animation + pulse + toggle
+    // Timeline: Pulse each step when skill-path is in view
     const steps = document.querySelectorAll('.timeline-step');
-    steps.forEach((step, index) => {
-      setTimeout(() => {
-        step.classList.add('visible');
-      }, index * 300);
-    });
-  
-    // Sequential pulsing one at a time
+    let pulseInterval;
     let currentPulse = 0;
-    function pulseStep() {
-      steps.forEach((s, i) => s.classList.remove('pulse'));
-      steps[currentPulse].classList.add('pulse');
-      currentPulse = (currentPulse + 1) % steps.length;
+
+    function startPulseAnimation() {
+      currentPulse = 0; // restart from top
+      pulseInterval = setInterval(() => {
+        steps.forEach((s, i) => s.classList.remove('pulse'));
+        steps[currentPulse].classList.add('pulse');
+        currentPulse = (currentPulse + 1) % steps.length;
+      }, 1000);
     }
-    setInterval(pulseStep, 1000);
+
+    // Observer to trigger animation when visible
+    const journeySection = document.querySelector("#skill-path");
+    const journeyObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Only start once
+          if (!pulseInterval) {
+            steps.forEach((step, index) => {
+              setTimeout(() => step.classList.add('visible'), index * 300);
+            });
+            startPulseAnimation();
+          }
+        }
+      });
+    }, { threshold: 0.3 });
+
+    if (journeySection) {
+      journeyObserver.observe(journeySection);
+    }
+
   
     // Multi-tooltip + reset + wiggle support
     steps.forEach(step => {
