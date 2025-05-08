@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       }, { threshold: 0.5 });
-
+      incrementScore();
       buttonObserver.observe(button);
     }
 
