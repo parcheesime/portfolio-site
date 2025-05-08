@@ -1,12 +1,49 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Score count
+    let score = 0;
+    const scoreDisplay = document.getElementById("scoreCount");
+
+    function incrementScore() {
+        score++;
+        scoreDisplay.textContent = score;
+    }
+    // Reward message
+    let rewardShown = false;
+    const rewardMessage = document.getElementById("rewardMessage");
+
+    function incrementScore() {
+        score++;
+        scoreDisplay.textContent = score;
+
+        if (score >= 20 && !rewardShown) {
+            rewardShown = true;
+            rewardMessage.classList.add("show");
+
+        // Hide it after 4 seconds
+        setTimeout(() => {
+      rewardMessage.classList.remove("show");
+    }, 4000);
+  }
+}
+
+
     // Wiggle animation for fun fact button
     const button = document.querySelector('.fun-fact-button');
+
     if (button) {
+      // Add click listener ONCE
+      button.addEventListener('click', () => {
+        showNextFact();
+        incrementScore();
+      });
+    
+      // Wiggle every 5 seconds independently
       setInterval(() => {
         button.classList.add('wiggle');
         setTimeout(() => button.classList.remove('wiggle'), 1000);
       }, 5000);
     }
+    
   
     // Fade-in effect on scroll
     const fadeEls = document.querySelectorAll('.project-block');
@@ -41,15 +78,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     setInterval(pulseStep, 1000);
   
-    // Toggle between icon and tooltip
+    // Multi-tooltip + reset + wiggle support
     steps.forEach(step => {
-      const originalText = step.textContent;
-      const tooltip = step.getAttribute('data-tooltip');
+    const tooltips = JSON.parse(step.getAttribute('data-tooltips') || '[]');
+    const originalText = step.textContent;
+    let clickIndex = 0;
   
+    if (tooltips.length > 0) {
+      step.addEventListener('click', () => {
+        if (clickIndex === 0) {
+          step.textContent = tooltips[0];
+        } else if (clickIndex < tooltips.length) {
+          step.textContent = tooltips[clickIndex];
+        } else {
+          step.textContent = originalText; // reset back to icon
+        }
+  
+        // Trigger wiggle
+        step.classList.add("wiggle");
+        setTimeout(() => step.classList.remove("wiggle"), 600);
+        incrementScore(); // 
+        clickIndex = (clickIndex + 1) % (tooltips.length + 1); // loop including original icon
+      });
+    } else {
+      const tooltip = step.getAttribute('data-tooltip');
       step.addEventListener('click', () => {
         step.textContent = (step.textContent === originalText) ? tooltip : originalText;
+        incrementScore();
       });
-    });
+    }
+  });
+  
+  
   
     // Back to top button behavior
     const backToTop = document.getElementById("backToTop");

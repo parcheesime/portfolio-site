@@ -384,24 +384,6 @@ main, .container {
   border-radius: 50%;
 }
 
-/* .timeline-step::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: 50%;
-  left: calc(100% + 12px);
-  transform: translateY(-50%);
-  background: #333;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 0.85em;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  z-index: 999;
-} */
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -438,7 +420,6 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 .project-block {
   border: 2px dashed #4B0082;  
@@ -505,4 +486,38 @@ html {
 
 #backToTop:hover {
   background-color: #6f4ca4;
+}
+
+#clickScore {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  background-color: #4B0082;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
+#rewardMessage {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: #2a9d8f;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1002;
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+#rewardMessage.show {
+  transform: translate(-50%, -50%) scale(1);
 }
