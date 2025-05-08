@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         score++;
         scoreDisplay.textContent = score;
 
-        if (score >= 20 && !rewardShown) {
+        if (score >= 10 && !rewardShown) {
             rewardShown = true;
             rewardMessage.classList.add("show");
 
