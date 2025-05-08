@@ -41,7 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       }, { threshold: 0.5 });
-      incrementScore();
+        button.addEventListener ('click', () => 
+            {
+                showNextFact();
+                incrementScore();
+            });
       buttonObserver.observe(button);
     }
 
