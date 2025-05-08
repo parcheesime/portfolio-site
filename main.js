@@ -26,24 +26,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 }
 
-    // Wiggle animation for fun fact button
+    // Wiggle animation for fun fact button (starts on scroll into view)
     const button = document.querySelector('.fun-fact-button');
+    let wiggleInterval;
 
     if (button) {
-      // Add click listener ONCE
-      button.addEventListener('click', () => {
-        showNextFact();
-        incrementScore();
-      });
-    
-      // Wiggle every 5 seconds independently
-      setInterval(() => {
-        button.classList.add('wiggle');
-        setTimeout(() => button.classList.remove('wiggle'), 1000);
-      }, 5000);
+      const buttonObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !wiggleInterval) {
+            wiggleInterval = setInterval(() => {
+              button.classList.add('wiggle');
+              setTimeout(() => button.classList.remove('wiggle'), 1000);
+            }, 3500);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      buttonObserver.observe(button);
     }
+
     
-  
     // Fade-in effect on scroll
     const fadeEls = document.querySelectorAll('.project-block');
     const appearOptions = { threshold: 0.3 };
@@ -82,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
           // Only start once
           if (!pulseInterval) {
             steps.forEach((step, index) => {
-              setTimeout(() => step.classList.add('visible'), index * 300);
+              setTimeout(() => step.classList.add('visible'), index * 225);
             });
             startPulseAnimation();
           }
