@@ -14,6 +14,7 @@ This is a responsive single-page site built with HTML and CSS to showcase my exp
 ```
 📁 aletia_portfolio/
 ├── index.html          # Main HTML structure
+├── main.js             # site js scripts        
 ├── style.css           # Site styling and responsive layout
 ├── assets/
 │   ├── profile.jpg     # Profile image
@@ -26,6 +27,7 @@ This is a responsive single-page site built with HTML and CSS to showcase my exp
 
 - HTML5
 - CSS3 (Flexbox for layout)
+- JS
 - Responsive Design
 - GitHub Pages (for hosting)
 - Icons: Python, Spark, dbt, AWS, SQL, and more
