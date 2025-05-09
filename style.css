@@ -265,6 +265,10 @@ table {
   transition: opacity 0.5s ease;
 }
 
+.fun-fact-text.visible {
+  opacity: 1;
+}
+
 @keyframes wiggle {
   0%, 100% { transform: rotate(0deg); }
   15% { transform: rotate(3deg); }

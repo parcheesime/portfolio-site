@@ -61,7 +61,7 @@ Thanks for stopping by. I’m a data and backend engineer who builds clean syste
   
         <div class="fun-fact-container">
           <h3>💡 Fun Fact About Me</h3>
-          <button class="fun-fact-button" onclick="showNextFact()">Click for fun fact</button>
+          <button class="fun-fact-button">Click for fun fact</button>
           <p id="fact-box" class="fun-fact-text"></p>
         </div>
       </div>
@@ -71,10 +71,9 @@ Thanks for stopping by. I’m a data and backend engineer who builds clean syste
       <script>
         const facts = [
           "Started college as a physics major — drawn to the strange beauty of math in modern physics.",
-          "Python is my comfort language — clean, fast, and flexible.",
-          "Favorite math proof? Euler’s formula. It’s even inked as a tattoo — that's how deep the connection runs.",
-          "I build data tools that do the work for you — automation, analytics, and a little AI magic go a long way.",
+          "I love building data tools that do the work for you — automation, analytics, and a little AI magic go a long way.",
           "I founded a coding workshop business where I wore every hat — from instructor to tech troubleshooter to social media manager.",
+          "Favorite math proof? Euler’s formula. It’s even inked as a tattoo — that's how deep the connection runs.",
           "MATLAB was my first programming language."
         ];
       
@@ -83,12 +82,17 @@ Thanks for stopping by. I’m a data and backend engineer who builds clean syste
         function showNextFact() {
           const factBox = document.getElementById("fact-box");
           factBox.style.opacity = 0;
+
+          const factToShow = facts[currentFactIndex];
+          currentFactIndex = (currentFactIndex + 1) % facts.length;
+
           setTimeout(() => {
-            factBox.innerText = facts[currentFactIndex];
+            factBox.innerText = factToShow;
             factBox.style.opacity = 1;
-            currentFactIndex = (currentFactIndex + 1) % facts.length; 
-          }, 250);
+          }, 200);
         }
+
+
       </script>          
 
   <section id="projects">
@@ -183,36 +187,47 @@ Thanks for stopping by. I’m a data and backend engineer who builds clean syste
       </div>
 
       <div class="project-block">
-        <h3>💹 Institutional Bond Market Trends & Data Adoption</h3>
+        <h3>🛠️ Enhancing Efficiency in Corporate Bond Data Management</h3>
         <p>
-          Revamped a bond quote visualization system for institutional finance using a combination of <strong>data engineering, business intelligence, and advanced SQL</strong>. The updated dashboards now power live insights on the BondCliQ platform.
+          Rebuilt a streaming data pipeline for corporate bond quotes to improve accuracy and processing speed. Focused on <strong>data normalization, duplication resolution, and job orchestration</strong> in a high-volume financial environment.
         </p>
-      
+
         <ul>
-          <li><strong>🧪 Data Engineering:</strong> Created Delta Tables from raw sources using Python; cleaned, structured, and optimized pipelines for accuracy and speed.</li>
-          <li><strong>🔍 SQL Computation:</strong> Developed <code>complex queries</code>, rolling averages, and window functions to support historical + real-time data accuracy.</li>
-          <li><strong>📊 Visualization:</strong> Designed Sigma dashboards to support financial trend analysis and reporting using integrated table views.</li>
-          <li><strong>📈 Impact:</strong> Reduced query time and improved access for users analyzing institutional bond activity.</li>
+          <li><strong>⚙️ Pipeline Overhaul:</strong> Revamped ingestion and matching using Scala + SQL; added dynamic joins and denormalization to speed up matching.</li>
+          <li><strong>🔐 Secure Testing Environment:</strong> Created realistic test datasets and mirrored infrastructure; managed credentials with Databricks Secrets.</li>
+          <li><strong>📈 SQL + Scala Tuning:</strong> Used <code>CTEs</code>, <code>window functions</code>, and <code>watermarking</code> for time-aware deduplication and batching.</li>
+          <li><strong>🚀 Results:</strong> Reduced mismatches and duplicate entries; improved accuracy and automated job execution.</li>
         </ul>
-      
+
         <pre>
-      -- Example: Rolling 7-day average of daily volume
-      SELECT trade_date,
-             AVG(volume) OVER (
-               PARTITION BY security_id
-               ORDER BY trade_date
-               ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
-             ) AS rolling_avg_volume
-      FROM delta_bond_quotes
+      // SQL logic for deduplication (Scala version)
+      val windowSpec = Window.partitionBy("security_description", 
+                      "source_id", "record_id")
+        .orderBy(
+          when(col("is_C"), 3)
+          .when(col("is_B"), 2)
+          .when(col("is_A"), 1)
+          .otherwise(0).desc
+        )
+
+      val rankedDF = first.withColumn("row_num", 
+                    row_number().over(windowSpec))
+
+      val filteredDF = rankedDF.filter(
+        (col("is_C") === true && col("row_num") === 1) ||
+        (col("is_B") === true && col("row_num") === 1) ||
+        (col("is_A") === true && col("row_num") === 1)
+      ).drop("row_num")
         </pre>
-      
+
         <p>
-          This work improved both backend query efficiency and the visibility of financial activity trends for institutional clients.
+          This work addressed a duplication challenge in corporate bond data workflows, reducing duplicates and improving reliability for downstream systems.
         </p>
         <p>
-          <strong>Technologies:</strong> SQL, Delta Tables, Python, Databricks, Sigma, API Data, Table Views
+          <strong>Technologies:</strong> SQL, Scala, Delta Tables, AWS S3, Databricks, Streaming APIs, JSON
         </p>
       </div>
+
     </div>
     </div>
   </section>
@@ -261,7 +276,7 @@ Thanks for stopping by. I’m a data and backend engineer who builds clean syste
           <tr>
             <td>Streaming Pipelines</td>
             <td>dbt, DuckDB, Google Pub/Sub</td>
-            <td>Simulated shipment tracking</td>
+            <td>Real-time processing of simulated event data</td>
             <td>⭐⭐⭐</td>
           </tr>          
           <tr>
@@ -283,9 +298,9 @@ Thanks for stopping by. I’m a data and backend engineer who builds clean syste
         <div class="timeline-step" data-tooltip="Build simulations in MATLAB for chaos theory and numerical analysis.">📐 Math / MATLAB</div>
         <div class="timeline-step"
         data-tooltips='[
-          "Use Python for automation, data pipelines, and API integration. (click again)",
-          "Built backend workflows that query and transform data using Python and SQL.",
-          "Automated daily reporting via APIs with HTML formatting and scheduled delivery."
+          "My Pythoning began building games using Tkinter and Pygame. (click again)",
+          "Transformed data using Pandas and PySpark, then loaded it into warehouses and databases.",
+          "Built backend workflows that query and transform data using Python and SQL."
         ]'>
       🐍 Python
     </div>
@@ -294,9 +309,9 @@ Thanks for stopping by. I’m a data and backend engineer who builds clean syste
         <div class="timeline-step" data-tooltip="Build responsive websites using HTML, CSS, and JavaScript.">🌐 HTML / CSS / JS</div>
         <div class="timeline-step"
           data-tooltips='[
-          "My Pythoning began building games using Tkinter and Pygame. (click again)",
-          "Transformed data using Pandas and PySpark, then loaded it into warehouses and databases.",
-          "Designed and consumed REST/SOAP APIs for automation, ingestion, and data tools."
+          "Connected to third-party APIs to collect and process data for reports, dashboards, and automation. (click again)",
+          "Built my own APIs using FastAPI and Flask to serve datasets, expose endpoints, and support frontend or team use.",
+          "Wrapped APIs with scheduling or logic turning raw endpoints into usable services for apps or data pipelines."
         ]'>
      🔗 APIs
     </div>
