@@ -520,6 +520,9 @@ html {
   }
 }
 
+.flip-card:hover.wiggle {
+  animation-play-state: paused;
+}
 /* Flip on click for mobile */
 .flip-card.flipped .flip-card-inner {
   transform: rotateY(180deg);
