@@ -401,7 +401,10 @@ html {
   scroll-behavior: smooth;
 }
 #about     { background: #f4f4f4; }
-#projects  { background: #eef; }
+#projects  { 
+  background: #eef; 
+  padding-top: 4rem;
+}
 #key-tech  { background: #fdfdfd; }
 #skills    { background: #f4f4f4; }
 #skill-path{ background: #ffffff; }
@@ -429,7 +432,6 @@ html {
   max-width: 100%;
   word-wrap: break-word;
   overflow-x: hidden; 
-  /* ✅ Fade-in animation */
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -441,10 +443,23 @@ html {
 }
 
 .project-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
   padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .flip-card-back ul {
+    margin-top: 2em;     /* Push down */
+    padding-left: 1.5em; /* Shift to the right */
+  }
 }
 
 @media (max-width: 600px) {
@@ -479,55 +494,63 @@ html {
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+.flip-card {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 600px;
+  margin: 1.5em auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
 /* Flip on hover for desktop */
 @media (hover: hover) and (pointer: fine) {
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
 }
-.flip-card {
-  max-width: 600px;
-  margin: 1.5em auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
-  background: white;
-  transition: all 0.4s ease;
-  width: 100%;
-  overflow: visible;      /* ✅ prevent clipping */
-  display: block;  
+
+/* Flip on click for mobile */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
 }
 
-/* Flip container */
-.flip-card-inner {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-/* Each side stacked vertically, only one shown at a time */
 .flip-card-front,
 .flip-card-back {
-  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
   padding: 1em;
   box-sizing: border-box;
 }
 
-/* Front side is default */
 .flip-card-front {
-  display: block;
-  background: #ffffff;
+  background: #fff;
+  z-index: 2;
+  transform: rotateY(0deg);
 }
 
-/* When flipped, show back instead */
-.flip-card.flipped .flip-card-front {
-  display: none;
-}
-
-.flip-card.flipped .flip-card-back {
-  display: block;
+.flip-card-back {
   background: #e6f2ff;
+  transform: rotateY(180deg);
 }
+.flip-card {
+  min-height: 350px;
+}
+
 
 /* Scrollable code */
 .code-scroll-wrapper {
@@ -548,6 +571,18 @@ html {
   font-size: 0.9em;
 }
 
+@keyframes spacedWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  10% { transform: rotate(1.5deg); }
+  20% { transform: rotate(-1.5deg); }
+  30% { transform: rotate(1.5deg); }  
+  40% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); } /* rest of time is pause */
+}
+
+.flip-card.wiggle {
+  animation: spacedWiggle 3s ease-in-out infinite;
+}
 
 /* === 3. Back to Top Button === */
 #backToTop {
