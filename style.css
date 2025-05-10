@@ -647,3 +647,29 @@ html {
 #rewardMessage.show {
   transform: translate(-50%, -50%) scale(1);
 }
+#finalMessage {
+  position: fixed;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  background-color: #b58c2c;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0.95;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1003;
+  transition: transform 0.5s ease;
+  white-space: normal;
+  word-break: break-word;
+}
+
+#finalMessage.show {
+  transform: translateX(-50%) scale(1);
+}
+#finalMessage a {
+  color: white;
+  text-decoration: underline;
+}

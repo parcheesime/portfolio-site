@@ -8,20 +8,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const rewardMessage = document.getElementById("rewardMessage");
 
     function incrementScore() {
-        score++;
-        scoreDisplay.textContent = score;
-
-        if (score >= 10 && !rewardShown) {
-            rewardShown = true;
-            rewardMessage.classList.add("show");
-
-        // Hide it after 4 seconds
+      score++;
+      scoreDisplay.textContent = score;
+    
+      // 10-point reward (only once)
+      if (score >= 10 && !rewardShown) {
+        rewardShown = true;
+        rewardMessage.classList.add("show");
+    
+        // Hide 10-point message after 4 seconds
         setTimeout(() => {
-      rewardMessage.classList.remove("show");
-    }, 4000);
-  }
-}
-
+          rewardMessage.classList.remove("show");
+        }, 4000);
+      }
+    
+      // 20-point message (trigger exactly at 20)
+      if (score === 20) {
+        const finalMessage = document.getElementById("finalMessage");
+        finalMessage.classList.add("show");
+    
+        // Hide 20-point message after 6 seconds
+        setTimeout(() => {
+          finalMessage.classList.remove("show");
+        }, 7000);
+      }
+    }
+    
     // Wiggle animation for fun fact button (starts on scroll into view)
     const button = document.querySelector('.fun-fact-button');
     let wiggleInterval;
@@ -37,15 +49,19 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       }, { threshold: 0.5 });
-        button.addEventListener ('click', () => 
-            {
-                showNextFact();
-                incrementScore();
-            });
+      let factClicks = 0;
+
+      button.addEventListener('click', () => {
+        showNextFact();
+        if (factClicks < facts.length) {
+          incrementScore();
+          factClicks++;
+        }
+      });
+      
       buttonObserver.observe(button);
     }
 
-    
     // Fade-in effect on scroll
     const fadeEls = document.querySelectorAll('.project-block');
     const appearOptions = { threshold: 0.3 };
@@ -61,6 +77,20 @@ document.addEventListener("DOMContentLoaded", () => {
       el.classList.add('fade-in');
       appearOnScroll.observe(el);
     });
+
+    // Track which cards have been hovered
+    const hoveredCards = new Set();
+
+    // Add hover logic for flip-cards (once only)
+    document.querySelectorAll('.flip-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        if (!hoveredCards.has(card)) {
+          hoveredCards.add(card);
+          incrementScore();
+        }
+      });
+    });
+
   
     // Timeline: Pulse each step when skill-path is in view
     const steps = document.querySelectorAll('.timeline-step');
