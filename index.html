@@ -100,132 +100,114 @@ Thanks for stopping by. I’m a data and backend engineer who builds clean syste
       <h2 class="section-title">🧑‍💻 Some Projects</h2>
       <div class="project-grid">
 
-        <div class="project-block">
-          <h3>🚚 FreightFlow DBT + Pub/Sub Pipeline</h3>
-          <p>
-            Built a modern freight tracking simulation using <strong>dbt</strong> for data transformation and enrichment, <strong>Google Pub/Sub</strong> for real-time event streams, and <strong>Python</strong> scripts to simulate and publish shipping activity.
-          </p>
-          <ul>
-            <li><strong>📦 Data Modeling:</strong> Created staging, intermediate, and mart models in dbt; enriched shipments with coordinate data and calculated distances using geopy.</li>
-            <li><strong>🔄 Real-Time Messaging:</strong> Used <code>publisher.py</code> and <code>subscriber.py</code> to stream and receive updates over Google Pub/Sub.</li>
-            <li><strong>🧪 Synthetic Data:</strong> Simulated freight events using <code>faker</code> and location enrichment via <code>geopy</code> for realistic test data.</li>
-          </ul>
-          <pre>
-        # Example: Simulate event stream
-        python3 pubsub_sim/publisher.py
-        python3 pubsub_sim/subscriber.py
-          </pre>
-          <p>
-            This project showcases how to architect streaming pipelines, integrate dbt transformations, and simulate freight tracking in a cloud environment.
-          </p>
-          <p>
-            <strong>Technologies:</strong> dbt, DuckDB, Python, Google Pub/Sub, geopy, faker
-          </p>
+       <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>🚚 FreightFlow DBT + Pub/Sub Pipeline</h3>
+  <pre># Simulate freight event stream
+  Listening on 
+  projects/dbt-learn-bigquery-444608/subscriptions/freight-sub...
+
+  Received message: {
+    "shipment_id": "feb156c6-788a-4a95", 
+    "status_update": "in transit", 
+    "last_known_location": "Phoenix, AZ"
+  }</pre>
+            </div>
+            <div class="flip-card-back">
+              <ul>
+                <li><strong>📦 Data Modeling:</strong> dbt staging, intermediate, and mart models; distance calculation with geopy.</li>
+                <li><strong>🔄 Real-Time Messaging:</strong> Google Pub/Sub with Python scripts for publishing and subscribing.</li>
+                <li><strong>🧪 Synthetic Data:</strong> Generated realistic tracking data with faker + geopy.</li>
+                <li><strong>🛠 Tech:</strong> dbt, DuckDB, Python, Pub/Sub, geopy, faker</li>
+              </ul>
+            </div>
+          </div>
         </div>
         
 
-      <div class="project-block">
-        <h3>🔁 Databricks Job Backup & Rebuild System</h3>
-        <p>
-          I designed and led the development of a Python-based automation system to back up and recreate Databricks jobs for production stability, disaster recovery, and workflow portability.
-        </p>
-        <ul>
-          <li><strong>🧩 Tools Used:</strong> Databricks REST API, AWS S3, Python, Boto3, JSON</li>
-          <li><strong>🔍 Highlights:</strong> Pulled job metadata and run settings, handled edge cases for missing runs, stored backups in S3 by job and date</li>
-          <li><strong>⚙️ Recovery Feature:</strong> Automatically reconstructs job configs and submits new jobs via API based on latest valid settings</li>
-        </ul>
-        <pre>
-      # Example: Save job settings to S3
-      key = f"backup_jobs/job_{job_id}_{today}.json"
-      
-      s3.put_object(
-        Bucket=bucket_name,
-        Key=key,
-        Body=json_data,
-        ContentType="application/json"
-      )
-        </pre>
-        <p>
-          This system reduced recovery time from hours to minutes and ensured traceable versioning of all production-critical ETL pipelines.
-        </p>        
-        <p>
-          <strong>Technologies:</strong> SQL, Sigma, Delta Tables, Python, Databricks, APIs, JSON Data, Sheets, AWS S3
-        </p>
-      </div>      
+              <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>🔁 Jobs Recovery & Rebuild System</h3>
+  <pre>
+  # Save job settings to S3
+  key = f"backup_jobs/job_{job_id}_{today}.json"
 
-      <div class="project-block">
-        <h3>🧹 Back4App Class & Data Automation (Setup + Teardown)</h3>
-        <p>
-          Built a modular JavaScript automation system to manage test environments for a Back4App-powered iOS app. Streamlined the creation, population, and cleanup of database classes to support consistent testing and rapid development.
-        </p>
-        <ul>
-          <li>✅ <strong>Setup Scripts:</strong> <code>classCreate.mjs</code> and <code>dataUpload.mjs</code> dynamically generated class schemas and populated them with test data.</li>
-          <li>✅ <strong>Teardown Script:</strong> <code>teardown.mjs</code> removed data and deleted classes to reset environments between test runs.</li>
-          <li>✅ <strong>Environment Handling:</strong> Used <code>.env</code> variables and <code>Node.js</code> for flexible, secure config management.</li>
-        </ul>
-        <pre>
-      // teardown.mjs: Delete all data in a class
-      import fetch from 'node-fetch';
-      import dotenv from 'dotenv';
-      dotenv.config();
-      
-      const className = "TestClass";
-      await fetch(`https://parseapi.back4app.com/classes/${className}`, {
-        method: 'DELETE',
-        headers: {
-          'X-Parse-Application-Id': process.env.APP_ID,
-          'X-Parse-REST-API-Key': process.env.REST_KEY
-        }
-      });
-        </pre>
-        <p>
-          This automation supported Test-Driven Development (TDD) by enabling clean database states and faster iteration cycles during iOS development with Core Data.
-        </p>
-        <p>
-          <strong>Technologies:</strong> JavaScript (ES Modules), Node.js, RESTful APIs, Back4App (Parse), Environment Variables, Data Lifecycle Automation
-        </p>
+  s3.put_object(
+    Bucket=bucket_name,
+    Key=key,
+    Body=json_data,
+    ContentType="application/json"
+  )
+  </pre>
+            </div>
+            <div class="flip-card-back">
+              <ul>
+                <li><strong>🧩 Tools:</strong> Databricks REST API, Python, AWS S3, Boto3, JSON</li>
+                <li><strong>🔍 Highlights:</strong> Pulled job configs + metadata, handled edge cases, backed up by job/date</li>
+                <li><strong>⚙️ Recovery:</strong> Rebuilds jobs and submits via API with latest valid settings</li>
+                <li><strong>Impact:</strong> Reduced recovery time from hours to minutes</li>
+                <li><strong>Tech Stack:</strong> Python, Databricks, REST API, AWS S3, JSON, SQL, Delta, Sigma</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>🧹 Back4App Class & Data Automation</h3>
+  <pre>
+  import 'dotenv/config';
+  await fetch(`https://parseapi.back4app.com/classes/TestClass`, {
+    method: 'DELETE',
+    headers: {
+      'X-Parse-Application-Id': process.env.APP_ID,
+      'X-Parse-REST-API-Key': process.env.REST_KEY
+    }
+  });
+  </pre>
+          </div>
+          <div class="flip-card-back">
+            <ul>
+              <li><strong>🛠 Setup Scripts:</strong> <code>classCreate.mjs</code> and <code>dataUpload.mjs</code> dynamically generated class schemas and populated them with test data.</li>
+              <li><strong>🧹 Teardown Script:</strong> <code>teardown.mjs</code> removed data and deleted classes to reset environments between test runs.</li>
+              <li><strong>🔐 Config:</strong> <code>.env</code> variables with Node.js for secure and flexible setup.</li>
+              <li><strong>🧪 TDD:</strong> Automated clean test environments for reliable iteration.</li>
+              <li><strong>🔧 Tech Stack:</strong> JavaScript (ES Modules), Node.js, REST APIs, Back4App (Parse), Environment Variables</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="project-block">
-        <h3>🛠️ Enhancing Efficiency in Corporate Bond Data Management</h3>
-        <p>
-          Rebuilt a streaming data pipeline for corporate bond quotes to improve accuracy and processing speed. Focused on <strong>data normalization, duplication resolution, and job orchestration</strong> in a high-volume financial environment.
-        </p>
 
-        <ul>
-          <li><strong>⚙️ Pipeline Overhaul:</strong> Revamped ingestion and matching using Scala + SQL; added dynamic joins and denormalization to speed up matching.</li>
-          <li><strong>🔐 Secure Testing Environment:</strong> Created realistic test datasets and mirrored infrastructure; managed credentials with Databricks Secrets.</li>
-          <li><strong>📈 SQL + Scala Tuning:</strong> Used <code>CTEs</code>, <code>window functions</code>, and <code>watermarking</code> for time-aware deduplication and batching.</li>
-          <li><strong>🚀 Results:</strong> Reduced mismatches and duplicate entries; improved accuracy and automated job execution.</li>
-        </ul>
-
-        <pre>
-      // SQL logic for deduplication (Scala version)
-      val windowSpec = Window.partitionBy("security_description", 
-                      "source_id", "record_id")
-        .orderBy(
-          when(col("is_C"), 3)
-          .when(col("is_B"), 2)
-          .when(col("is_A"), 1)
-          .otherwise(0).desc
-        )
-
-      val rankedDF = first.withColumn("row_num", 
-                    row_number().over(windowSpec))
-
-      val filteredDF = rankedDF.filter(
-        (col("is_C") === true && col("row_num") === 1) ||
-        (col("is_B") === true && col("row_num") === 1) ||
-        (col("is_A") === true && col("row_num") === 1)
-      ).drop("row_num")
-        </pre>
-
-        <p>
-          This work addressed a duplication challenge in corporate bond data workflows, reducing duplicates and improving reliability for downstream systems.
-        </p>
-        <p>
-          <strong>Technologies:</strong> SQL, Scala, Delta Tables, AWS S3, Databricks, Streaming APIs, JSON
-        </p>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>🛠️ Corporate Bond Pipeline Deduplication</h3>
+<pre>
+  // Scala: Watermarking, event-time processing
+  val ranked = df.withColumn("row_num", row_number().over(
+    Window.partitionBy("security_description", "source_id", "record_id")
+            .orderBy(when(col("is_C"), 3)
+                    .when(col("is_B"), 2)
+                    .when(col("is_A"), 1)
+                    .otherwise(0).desc)
+    )
+  ).filter(col("row_num") === 1)
+</pre>
+          </div>
+          <div class="flip-card-back">
+            <ul>
+              <li><strong>⚙️ Pipeline Overhaul:</strong> Improved ingestion, joins, and data matching with Scala + SQL.</li>
+              <li><strong>📊 Optimization:</strong> Applied CTEs, window functions, and watermarking for batch control.</li>
+              <li><strong>🚀 Outcome:</strong> Reduced duplicate entries and mismatches in high-volume streaming data.</li>
+              <li><strong>🧰 Tech:</strong> Scala, SQL, Delta Tables, Databricks, AWS S3, JSON, Streaming APIs</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
     </div>
