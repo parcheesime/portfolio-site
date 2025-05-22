@@ -4,21 +4,20 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TV2XFWPRZQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-TV2XFWPRZQ');
 </script>
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aletia Trepte | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
-/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" />
 </head>
+
 <body>
 
   <header>
@@ -27,28 +26,48 @@
         <h1>Aletia Trepte</h1>
         <p>📞 (619) 707-8130</p>
         <p>📧 aletia.trepte@gmail.com</p>
-        <p>🌐 <a href="https://www.linkedin.com/in/aletia-trepte" target="_blank" rel="noopener noreferrer">linkedin.com/in/aletia-trepte</a></p>
+        <p>🌐 <a href="https://www.linkedin.com/in/aletia-trepte" target="_blank"
+            rel="noopener noreferrer">linkedin.com/in/aletia-trepte</a></p>
         <p>
           <i class="fab fa-github" style="margin-right: 8px;"></i>
           <a href="https://github.com/parcheesime" target="_blank" rel="noopener noreferrer">
             github.com/parcheesime
           </a>
-        </p>        
+        </p>
       </div>
       <div class="profile-pic-wrapper">
         <img src="assets/profile.png" alt="Aletia Trepte" class="profile-pic" />
       </div>
     </div>
-              <!-- NEW: Nav bar added inside header -->
-              <nav class="top-nav">
-                <ul>
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#projects">Projects</a></li>
-                  <li><a href="#key-tech">Skills</a></li>
-                  <li><a href="#skill-path">Journey</a></li>
-                </ul>
-              </nav>
+    <div class="nav-and-toggle-container">
+      <nav class="top-nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#key-tech">Skills</a></li>
+          <li><a href="#skill-path">Journey</a></li>
+        </ul>
+      </nav>
+      <div id="clickScore">⭐ Score: <span id="scoreCount">0</span></div>
+      <div class="mode-toggle-wrapper">
+        <span class="mode-label">Recruiter</span>
+        <label class="switch">
+          <input type="checkbox" id="modeSwitch">
+          <span class="slider round"></span>
+        </label>
+        <span class="mode-label">Explore</span>
+      </div>
+    </div>
   </header>
+
+  <section id="explore-preview" class="hidden-in-recruiter">
+    <div class="container"
+      style="background: #eef; border-radius: 12px; padding: 2rem; margin-top: 2rem; border: 2px dashed #2a9d8f;">
+      <h2 class="section-title" style="margin-top: 0;">✨ Explore Sandbox Preview</h2>
+      <p style="text-align: center; font-size: 1.1em;">Welcome to the gamified side of my portfolio! Experimental
+        features and AI agents will appear here soon.</p>
+    </div>
+  </section>
 
   <section id="about">
     <div class="container">
@@ -56,9 +75,10 @@
       <div class="about-wrapper">
         <div class="about-text">
           <p><em>Welcome!
-Thanks for stopping by. I’m a data and backend engineer who builds clean systems, thoughtful automation, and tools that support collaboration and mission-driven work.</em></p>
+              Thanks for stopping by. I’m a data and backend engineer who builds clean systems, thoughtful automation,
+              and tools that support collaboration and mission-driven work.</em></p>
         </div>
-  
+
         <div class="fun-fact-container">
           <h3>💡 Fun Fact About Me</h3>
           <button class="fun-fact-button">Click for fun fact</button>
@@ -67,46 +87,46 @@ Thanks for stopping by. I’m a data and backend engineer who builds clean syste
       </div>
     </div>
   </section>
-  
-      <script>
-        const facts = [
-          "Started college as a physics major. I'm drawn to the strange beauty of math in modern physics.",
-          "I love building data tools that do the work for you — automation, analytics, and a little AI magic go a long way.",
-          "MATLAB was my first programming language.",
-          "My second language was Java!",
-          "I founded a coding workshop business where I wore every hat, from instructor, to tech troubleshooter, to social media manager.",
-          "Favorite math proof: Euler’s formula. It’s even inked as a tattoo — that's how deep the connection runs."
-        ];
-      
-        let currentFactIndex = 0;
-      
-        function showNextFact() {
-          const factBox = document.getElementById("fact-box");
-          factBox.style.opacity = 0;
 
-          const factToShow = facts[currentFactIndex];
-          currentFactIndex = (currentFactIndex + 1) % facts.length;
+  <script>
+    const facts = [
+      "Started college as a physics major. I'm drawn to the strange beauty of math in modern physics.",
+      "I love building data tools that do the work for you — automation, analytics, and a little AI magic go a long way.",
+      "MATLAB was my first programming language.",
+      "My second language was Java!",
+      "I founded a coding workshop business where I wore every hat, from instructor, to tech troubleshooter, to social media manager.",
+      "Favorite math proof: Euler’s formula. It’s even inked as a tattoo — that's how deep the connection runs."
+    ];
 
-          setTimeout(() => {
-            factBox.innerText = factToShow;
-            factBox.style.opacity = 1;
-          }, 200);
-        }
+    let currentFactIndex = 0;
+
+    function showNextFact() {
+      const factBox = document.getElementById("fact-box");
+      factBox.style.opacity = 0;
+
+      const factToShow = facts[currentFactIndex];
+      currentFactIndex = (currentFactIndex + 1) % facts.length;
+
+      setTimeout(() => {
+        factBox.innerText = factToShow;
+        factBox.style.opacity = 1;
+      }, 200);
+    }
 
 
-      </script>          
+  </script>
 
-      <section id="projects">
-          <h2 class="section-title">🧑‍💻 Some Projects</h2>
-          <div class="project-grid">
-          
-            <!-- Job Recovery -->
-            <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <h3 class="wiggle-text">🔁 Jobs Recovery & Rebuild System</h3>
-                  <div class="code-scroll-wrapper">
-                    <pre># Save job settings to S3
+  <section id="projects">
+    <h2 class="section-title">🧑‍💻 Some Projects</h2>
+    <div class="project-grid">
+
+      <!-- Job Recovery -->
+      <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 class="wiggle-text">🔁 Jobs Recovery & Rebuild System</h3>
+            <div class="code-scroll-wrapper">
+              <pre># Save job settings to S3
           key = f"backup_jobs/job_{job_id}_{today}.json"
           
           s3.put_object(
@@ -115,28 +135,29 @@ Thanks for stopping by. I’m a data and backend engineer who builds clean syste
             Body=json_data,
             ContentType="application/json"
           )</pre>
-                  </div>
-                </div>
-                <div class="flip-card-back">
-                  <h3>🔁 Jobs Recovery & Rebuild System</h3>
-                  <ul>
-                    <li><strong>🧩 Tools:</strong> Databricks REST API, Python, AWS S3, Boto3, JSON</li>
-                    <li><strong>🔍 Highlights:</strong> Pulled job configs + metadata, handled edge cases, backed up by job/date</li>
-                    <li><strong>⚙️ Recovery:</strong> Rebuilds jobs and submits via API with latest valid settings</li>
-                    <li><strong>Impact:</strong> Reduced recovery time from hours to minutes</li>
-                    <li><strong>Tech Stack:</strong> Python, Databricks, REST API, AWS S3, JSON, SQL, Delta, Sigma</li>
-                  </ul>
-                </div>
-              </div>
             </div>
-          
-            <!-- Back4App -->
-            <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <h3 class="wiggle-text">🧹 Back4App Class & Data Automation</h3>
-                  <div class="code-scroll-wrapper">
-                    <pre>import 'dotenv/config';
+          </div>
+          <div class="flip-card-back">
+            <h3>🔁 Jobs Recovery & Rebuild System</h3>
+            <ul>
+              <li><strong>🧩 Tools:</strong> Databricks REST API, Python, AWS S3, Boto3, JSON</li>
+              <li><strong>🔍 Highlights:</strong> Pulled job configs + metadata, handled edge cases, backed up by
+                job/date</li>
+              <li><strong>⚙️ Recovery:</strong> Rebuilds jobs and submits via API with latest valid settings</li>
+              <li><strong>Impact:</strong> Reduced recovery time from hours to minutes</li>
+              <li><strong>Tech Stack:</strong> Python, Databricks, REST API, AWS S3, JSON, SQL, Delta, Sigma</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back4App -->
+      <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 class="wiggle-text">🧹 Back4App Class & Data Automation</h3>
+            <div class="code-scroll-wrapper">
+              <pre>import 'dotenv/config';
           await fetch(`https://parseapi.back4app.com/classes/TestClass`, {
             method: 'DELETE',
             headers: {
@@ -144,28 +165,32 @@ Thanks for stopping by. I’m a data and backend engineer who builds clean syste
               'X-Parse-REST-API-Key': process.env.REST_KEY
             }
           });</pre>
-                  </div>
-                </div>
-                <div class="flip-card-back">
-                  <h3>🧹 Back4App Class & Data Automation</h3>
-                  <ul>
-                    <li><strong>🛠 Setup Scripts:</strong> <code>classCreate.mjs</code> and <code>dataUpload.mjs</code> dynamically generated class schemas and populated them with test data.</li>
-                    <li><strong>🧹 Teardown Script:</strong> <code>teardown.mjs</code> removed data and deleted classes to reset environments between test runs.</li>
-                    <li><strong>🔐 Config:</strong> <code>.env</code> variables with Node.js for secure and flexible setup.</li>
-                    <li><strong>🧪 TDD:</strong> Automated clean test environments for reliable iteration.</li>
-                    <li><strong>🔧 Tech Stack:</strong> JavaScript (ES Modules), Node.js, REST APIs, Back4App (Parse), Environment Variables</li>
-                  </ul>
-                </div>
-              </div>
             </div>
-            
-            <!-- FreightFlow -->
-            <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <h3 class="wiggle-text">🚚 FreightFlow DBT + Pub/Sub Pipeline</h3>
-                  <div class="code-scroll-wrapper">
-                    <pre># Simulate freight event stream
+          </div>
+          <div class="flip-card-back">
+            <h3>🧹 Back4App Class & Data Automation</h3>
+            <ul>
+              <li><strong>🛠 Setup Scripts:</strong> <code>classCreate.mjs</code> and <code>dataUpload.mjs</code>
+                dynamically generated class schemas and populated them with test data.</li>
+              <li><strong>🧹 Teardown Script:</strong> <code>teardown.mjs</code> removed data and deleted classes to
+                reset environments between test runs.</li>
+              <li><strong>🔐 Config:</strong> <code>.env</code> variables with Node.js for secure and flexible setup.
+              </li>
+              <li><strong>🧪 TDD:</strong> Automated clean test environments for reliable iteration.</li>
+              <li><strong>🔧 Tech Stack:</strong> JavaScript (ES Modules), Node.js, REST APIs, Back4App (Parse),
+                Environment Variables</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- FreightFlow -->
+      <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 class="wiggle-text">🚚 FreightFlow DBT + Pub/Sub Pipeline</h3>
+            <div class="code-scroll-wrapper">
+              <pre># Simulate freight event stream
           Listening on 
           projects/dbt-learn-bigquery-444608/subscriptions/freight-sub...
           
@@ -174,27 +199,29 @@ Thanks for stopping by. I’m a data and backend engineer who builds clean syste
             "status_update": "in transit", 
             "last_known_location": "Phoenix, AZ"
           }</pre>
-                  </div>
-                </div>
-                <div class="flip-card-back">
-                  <h3>🚚 FreightFlow DBT + Pub/Sub Pipeline</h3>
-                  <ul>
-                    <li><strong>📦 Data Modeling:</strong> dbt staging, intermediate, and mart models; distance calculation with geopy.</li>
-                    <li><strong>🔄 Real-Time Messaging:</strong> Google Pub/Sub with Python scripts for publishing and subscribing.</li>
-                    <li><strong>🧪 Synthetic Data:</strong> Generated realistic tracking data with faker + geopy.</li>
-                    <li><strong>🛠 Tech:</strong> dbt, DuckDB, Python, Pub/Sub, geopy, faker</li>
-                  </ul>
-                </div>
-              </div>
             </div>
-          
-            <!-- Corporate Bond Deduplication -->
-            <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <h3 class="wiggle-text">🛠️ Corporate Bond Pipeline Deduplication</h3>
-                  <div class="code-scroll-wrapper">
-                    <pre>// Scala: Watermarking, event-time processing
+          </div>
+          <div class="flip-card-back">
+            <h3>🚚 FreightFlow DBT + Pub/Sub Pipeline</h3>
+            <ul>
+              <li><strong>📦 Data Modeling:</strong> dbt staging, intermediate, and mart models; distance calculation
+                with geopy.</li>
+              <li><strong>🔄 Real-Time Messaging:</strong> Google Pub/Sub with Python scripts for publishing and
+                subscribing.</li>
+              <li><strong>🧪 Synthetic Data:</strong> Generated realistic tracking data with faker + geopy.</li>
+              <li><strong>🛠 Tech:</strong> dbt, DuckDB, Python, Pub/Sub, geopy, faker</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Corporate Bond Deduplication -->
+      <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 class="wiggle-text">🛠️ Corporate Bond Pipeline Deduplication</h3>
+            <div class="code-scroll-wrapper">
+              <pre>// Scala: Watermarking, event-time processing
           val ranked = df.withColumn("row_num", row_number().over(
             Window.partitionBy("security_description", "source_id", "record_id")
               .orderBy(when(col("is_C"), 3)
@@ -202,97 +229,99 @@ Thanks for stopping by. I’m a data and backend engineer who builds clean syste
                       .when(col("is_A"), 1)
                       .otherwise(0).desc)
           )).filter(col("row_num") === 1)</pre>
-                  </div>
-                </div>
-                <div class="flip-card-back">
-                  <h3>🛠️ Corporate Bond Pipeline Deduplication</h3>
-                  <ul>
-                    <li><strong>⚙️ Pipeline Overhaul:</strong> Improved ingestion, joins, and data matching with Scala + SQL.</li>
-                    <li><strong>📊 Optimization:</strong> Applied CTEs, window functions, and watermarking for batch control.</li>
-                    <li><strong>🚀 Outcome:</strong> Reduced duplicate entries and mismatches in high-volume streaming data.</li>
-                    <li><strong>🧰 Tech:</strong> Scala, SQL, Delta Tables, Databricks, AWS S3, JSON, Streaming APIs</li>
-                  </ul>
-                </div>
-              </div>
             </div>
-          
-          </div>          
+          </div>
+          <div class="flip-card-back">
+            <h3>🛠️ Corporate Bond Pipeline Deduplication</h3>
+            <ul>
+              <li><strong>⚙️ Pipeline Overhaul:</strong> Improved ingestion, joins, and data matching with Scala + SQL.
+              </li>
+              <li><strong>📊 Optimization:</strong> Applied CTEs, window functions, and watermarking for batch control.
+              </li>
+              <li><strong>🚀 Outcome:</strong> Reduced duplicate entries and mismatches in high-volume streaming data.
+              </li>
+              <li><strong>🧰 Tech:</strong> Scala, SQL, Delta Tables, Databricks, AWS S3, JSON, Streaming APIs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <section id="skill-path">
     <div class="container">
       <h2 class="section-heading">🧭 My Engineering Journey</h2>
       <div class="timeline-vertical">
-        <div class="timeline-step" data-tooltip="Build simulations in MATLAB for chaos theory and numerical analysis.">📐 Math / MATLAB</div>
-        <div class="timeline-step"
-        data-tooltips='[
+        <div class="timeline-step" data-tooltip="Build simulations in MATLAB for chaos theory and numerical analysis.">
+          📐 Math / MATLAB</div>
+        <div class="timeline-step" data-tooltips='[
           "My Pythoning began building games using Tkinter and Pygame. (click again)",
           "Transformed data using Pandas and PySpark, then loaded it into warehouses and databases.",
           "Built backend workflows that query and transform data using Python and SQL."
         ]'>
-      🐍 Python
-    </div>
+          🐍 Python
+        </div>
 
-        <div class="timeline-step" data-tooltip="Work in WSL and various Linux distros — strong with command line.">🖥️ Linux</div>
-        <div class="timeline-step" data-tooltip="Build responsive websites using HTML, CSS, and JavaScript.">🌐 HTML / CSS / JS</div>
-        <div class="timeline-step"
-          data-tooltips='[
+        <div class="timeline-step" data-tooltip="Work in WSL and various Linux distros — strong with command line.">🖥️
+          Linux</div>
+        <div class="timeline-step" data-tooltip="Build responsive websites using HTML, CSS, and JavaScript.">🌐 HTML /
+          CSS / JS</div>
+        <div class="timeline-step" data-tooltips='[
           "Connected to third-party APIs to collect and process data for reports, dashboards, and automation. (click again)",
           "Built my own APIs using FastAPI and Flask to serve datasets, expose endpoints, and support frontend or team use.",
           "Wrapped APIs with scheduling or logic turning raw endpoints into usable services for apps or data pipelines."
         ]'>
-     🔗 APIs
-    </div>
-        <div class="timeline-step" data-tooltip="Automate data pulls, cleans, and workflows using Python and shell scripts.">⚙️ Automation</div>
+          🔗 APIs
+        </div>
+        <div class="timeline-step"
+          data-tooltip="Automate data pulls, cleans, and workflows using Python and shell scripts.">⚙️ Automation</div>
         <div class="timeline-step" data-tooltips='[
         "I enforce data integrity, deduplication, and pipeline logic with window functions. (click again)",
         "Use SQL for data modeling and database interaction across projects."
         ]'>
-        🧮 SQL
-      </div>
-        <div class="timeline-step" data-tooltip="Most comfortable in Sigma and Power BI — built live dashboards for teams.">📊 Dashboards & Observability</div>
-        <div class="timeline-step" data-tooltip="Practice test-driven development in Swift using Core Data and XCTest.">🧪 TDD</div>
-        <div class="timeline-step" data-tooltip="Build ETL/ELT pipelines using PySpark, Delta Tables, and SQL.">🔁 Pipelines</div>
-        <div class="timeline-step" data-tooltip="Engineer streaming pipelines for real-time trade data (Databricks + S3).">⚡ Streaming Data</div>
+          🧮 SQL
+        </div>
         <div class="timeline-step"
-          data-tooltips='[
-          "Learning dbt for modular SQL-based data modeling. (click again)",
-          "Stage → Intermediate → Final: separating raw from refined logic.",
-          "Debugging with dbt docs — catching mismatches before they break pipelines."
-        ]'>
-      📦 dbt (new)
-    </div>
+          data-tooltip="Most comfortable in Sigma and Power BI — built live dashboards for teams.">📊 Dashboards &
+          Observability</div>
+        <div class="timeline-step" data-tooltip="Practice test-driven development in Swift using Core Data and XCTest.">
+          🧪 TDD</div>
+        <div class="timeline-step" data-tooltip="Build ETL/ELT pipelines using PySpark, Delta Tables, and SQL.">🔁
+          Pipelines</div>
+        <div class="timeline-step"
+          data-tooltip="Engineer streaming pipelines for real-time trade data (Databricks + S3).">⚡ Streaming Data</div>
       </div>
     </div>
   </section>
-     
+
   <section id="skills">
     <div class="container">
       <h2 class="section-title">🚀 My Technology</h2>
       <div class="skills-container">
-      <div class="tooltip" data-tooltip="Python: scripting, data analysis, and automation.">
-        <img src="assets/icons/python.jpg" alt="Python" />
-      </div>
-      <div class="tooltip" data-tooltip="SQL: querying and modeling data for insights.">
-        <img src="assets/icons/sql.png" alt="SQL" />
-      </div>
-      <div class="tooltip" data-tooltip="AWS: cloud-based storage and data workflows.">
-        <img src="assets/icons/aws.png" alt="AWS" />
-      </div>
-      <div class="tooltip" data-tooltip="dbt: transforming and modeling data with clarity.">
-        <img src="assets/icons/dbt.png" alt="dbt" />
-      </div>
-      <div class="tooltip" data-tooltip="Google Educator: certified classroom tech integration.">
-        <img src="assets/icons/ged.png" alt="google educator" />
-      </div>
-      <div class="tooltip" data-tooltip="Google Data Analytics: certification in EDA and visualization.">
-        <img src="assets/icons/gdac.jpg" alt="google data analytics" />
-      </div>
-      <div class="tooltip" data-tooltip="GitHub: version control and collaboration.">
-        <img src="assets/icons/github.png" alt="GitHub" />
+        <div class="tooltip" data-tooltip="Python: scripting, data analysis, and automation.">
+          <img src="assets/icons/python.jpg" alt="Python" />
+        </div>
+        <div class="tooltip" data-tooltip="SQL: querying and modeling data for insights.">
+          <img src="assets/icons/sql.png" alt="SQL" />
+        </div>
+        <div class="tooltip" data-tooltip="AWS: cloud-based storage and data workflows.">
+          <img src="assets/icons/aws.png" alt="AWS" />
+        </div>
+        <div class="tooltip" data-tooltip="dbt: transforming and modeling data with clarity.">
+          <img src="assets/icons/dbt.png" alt="dbt" />
+        </div>
+        <div class="tooltip" data-tooltip="Google Educator: certified classroom tech integration.">
+          <img src="assets/icons/ged.png" alt="google educator" />
+        </div>
+        <div class="tooltip" data-tooltip="Google Data Analytics: certification in EDA and visualization.">
+          <img src="assets/icons/gdac.jpg" alt="google data analytics" />
+        </div>
+        <div class="tooltip" data-tooltip="GitHub: version control and collaboration.">
+          <img src="assets/icons/github.png" alt="GitHub" />
+        </div>
       </div>
     </div>
-  </div>
   </section>
 
   <button id="backToTop" title="Back to Top">⬆️</button>
@@ -302,10 +331,11 @@ Thanks for stopping by. I’m a data and backend engineer who builds clean syste
   </footer>
 
   <script src="main.js"></script>
-  
-  <div id="clickScore">⭐ Score: <span id="scoreCount">0</span></div>
+
   <div id="rewardMessage">🏅 You hit 10 clicks! Thanks for exploring ✨</div>
-  <div id="finalMessage">🎯 I'm glad you stayed! Let's connect — <a href="https://www.linkedin.com/in/aletia-trepte" target="_blank">LinkedIn</a></div>
+  <div id="finalMessage">🎯 I'm glad you stayed! Let's connect — <a href="https://www.linkedin.com/in/aletia-trepte"
+      target="_blank">LinkedIn</a></div>
 
 </body>
+
 </html>

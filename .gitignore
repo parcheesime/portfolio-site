@@ -1,0 +1,6 @@
+game_plan.md
+assets/
+node_modules/
+.env
+.DS_Store
+portfolio_plan.md

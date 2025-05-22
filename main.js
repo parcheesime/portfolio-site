@@ -1,4 +1,38 @@
+// --- App State & Feature Flags ---
+const appState = {
+  mode: localStorage.getItem('portfolioMode') || "recruiter",
+  features: {
+    explorePreview: true,
+    aiGuide: false,
+    sandboxMap: false,
+    achievements: false
+  }
+};
+
+function applyMode() {
+  const toggle = document.getElementById("modeSwitch");
+  if (appState.mode === "explore") {
+    document.body.classList.add("explore-mode");
+    if (toggle) toggle.checked = true;
+  } else {
+    document.body.classList.remove("explore-mode");
+    if (toggle) toggle.checked = false;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+    // Mode System Initialization
+    applyMode();
+    const modeSwitch = document.getElementById("modeSwitch");
+    if (modeSwitch) {
+        modeSwitch.addEventListener("change", (e) => {
+            appState.mode = e.target.checked ? "explore" : "recruiter";
+            localStorage.setItem('portfolioMode', appState.mode);
+            applyMode();
+        });
+    }
+
+
     // Score count
     let score = 0;
     const scoreDisplay = document.getElementById("scoreCount");
@@ -103,24 +137,41 @@ document.addEventListener("DOMContentLoaded", () => {
         steps.forEach((s, i) => s.classList.remove('pulse'));
         steps[currentPulse].classList.add('pulse');
         currentPulse = (currentPulse + 1) % steps.length;
-      }, 1000);
+      }, 300);
     }
 
     // Observer to trigger animation when visible
     const journeySection = document.querySelector("#skill-path");
+    let unrollTimeouts = [];
+
     const journeyObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Only start once
           if (!pulseInterval) {
             steps.forEach((step, index) => {
-              setTimeout(() => step.classList.add('visible'), index * 225);
+              const t = setTimeout(() => step.classList.add('visible'), index * 350);
+              unrollTimeouts.push(t);
             });
-            startPulseAnimation();
+            const t2 = setTimeout(() => {
+                startPulseAnimation();
+            }, steps.length * 350 + 500);
+            unrollTimeouts.push(t2);
           }
+        } else {
+          // Reset animation when scrolled away
+          if (pulseInterval) {
+             clearInterval(pulseInterval);
+             pulseInterval = null;
+          }
+          unrollTimeouts.forEach(clearTimeout);
+          unrollTimeouts = [];
+          steps.forEach(step => {
+             step.classList.remove('visible');
+             step.classList.remove('pulse');
+          });
         }
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.15 });
 
     if (journeySection) {
       journeyObserver.observe(journeySection);
