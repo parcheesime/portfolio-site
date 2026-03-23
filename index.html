@@ -40,6 +40,9 @@
           <a href="https://github.com/parcheesime" target="_blank" rel="noopener noreferrer">
             github.com/parcheesime
           </a>
+          <span class="show-in-recruiter" style="margin-left: 12px; font-weight: bold;">
+            | <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" style="margin-left: 8px; color: var(--accent); text-decoration: underline;">📄 Download Resume</a>
+          </span>
         </p>
       </div>
       <div class="profile-pic-wrapper">
@@ -126,6 +129,34 @@
     <h2 class="section-title">🧑‍💻 Some Projects</h2>
     <div class="project-grid">
 
+      <!-- Front-End Engineering -->
+      <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 class="wiggle-text">⚡ Component Engineering @ Scale</h3>
+            <div class="code-scroll-wrapper">
+              <pre><code>// Respect reduced motion preference
+const prefersReducedMotion = window.matchMedia(
+  '(prefers-reduced-motion: reduce)'
+).matches;
+
+if (!prefersReducedMotion) {
+  animateBorder();
+}</code></pre>
+            </div>
+            <p>👉 "I build systems people actually interact with"</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>💻 Software Engineering (Front-End)</h3>
+            <ul>
+              <li><strong>🧩 Architecture:</strong> Built and modified Lit-based web components integrated with CMS-driven content.</li>
+              <li><strong>✨ UI / Styling:</strong> Implemented responsive UI features using Tailwind CSS and Eleventy (11ty).</li>
+              <li><strong>🌐 Accessibility:</strong> Debugged cross-browser rendering issues and accessibility behaviors (ARIA, keyboard navigation).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <!-- Job Recovery -->
       <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
         <div class="flip-card-inner">
@@ -146,12 +177,9 @@
           <div class="flip-card-back">
             <h3>🔁 Jobs Recovery & Rebuild System</h3>
             <ul>
-              <li><strong>🧩 Tools:</strong> Databricks REST API, Python, AWS S3, Boto3, JSON</li>
-              <li><strong>🔍 Highlights:</strong> Pulled job configs + metadata, handled edge cases, backed up by
-                job/date</li>
-              <li><strong>⚙️ Recovery:</strong> Rebuilds jobs and submits via API with latest valid settings</li>
-              <li><strong>Impact:</strong> Reduced recovery time from hours to minutes</li>
-              <li><strong>Tech Stack:</strong> Python, Databricks, REST API, AWS S3, JSON, SQL, Delta, Sigma</li>
+              <li><strong>⚙️ Automated Recovery:</strong> Rebuilds Databricks jobs via REST API with latest valid configurations.</li>
+              <li><strong>🔍 Architecture:</strong> Backed up comprehensive job metadata to AWS S3, securely managing edge cases.</li>
+              <li><strong>🚀 Impact:</strong> Drastically reduced devastating pipeline disaster recovery times from hours to mere minutes.</li>
             </ul>
           </div>
         </div>
@@ -176,15 +204,9 @@
           <div class="flip-card-back">
             <h3>🧹 Back4App Class & Data Automation</h3>
             <ul>
-              <li><strong>🛠 Setup Scripts:</strong> <code>classCreate.mjs</code> and <code>dataUpload.mjs</code>
-                dynamically generated class schemas and populated them with test data.</li>
-              <li><strong>🧹 Teardown Script:</strong> <code>teardown.mjs</code> removed data and deleted classes to
-                reset environments between test runs.</li>
-              <li><strong>🔐 Config:</strong> <code>.env</code> variables with Node.js for secure and flexible setup.
-              </li>
-              <li><strong>🧪 TDD:</strong> Automated clean test environments for reliable iteration.</li>
-              <li><strong>🔧 Tech Stack:</strong> JavaScript (ES Modules), Node.js, REST APIs, Back4App (Parse),
-                Environment Variables</li>
+              <li><strong>🛠 Automation:</strong> Dynamically generated Parse schemas and organically populated environments securely via Node.js scripts.</li>
+              <li><strong>🧪 Agile TDD:</strong> Engineered targeted teardown scripts to instantly reset and sanitize datasets between robust test runs.</li>
+              <li><strong>🔧 Tech Sandbox:</strong> JavaScript (ES Modules), Node.js, REST APIs, and Back4App configuration via Environment Variables.</li>
             </ul>
           </div>
         </div>
@@ -210,12 +232,9 @@
           <div class="flip-card-back">
             <h3>🚚 FreightFlow DBT + Pub/Sub Pipeline</h3>
             <ul>
-              <li><strong>📦 Data Modeling:</strong> dbt staging, intermediate, and mart models; distance calculation
-                with geopy.</li>
-              <li><strong>🔄 Real-Time Messaging:</strong> Google Pub/Sub with Python scripts for publishing and
-                subscribing.</li>
-              <li><strong>🧪 Synthetic Data:</strong> Generated realistic tracking data with faker + geopy.</li>
-              <li><strong>🛠 Tech:</strong> dbt, DuckDB, Python, Pub/Sub, geopy, faker</li>
+              <li><strong>🔄 Event Streaming:</strong> Engineered real-time publisher/subscriber data pipelines utilizing Google Pub/Sub and Python.</li>
+              <li><strong>📦 Data Modeling:</strong> Orchestrated complete dbt staging, intermediate, and robust dimensional mart models mechanically.</li>
+              <li><strong>🧪 Mock Generation:</strong> Synthesized highly realistic geographic freight-tracking datasets at scale using Faker and Geopy.</li>
             </ul>
           </div>
         </div>
@@ -240,13 +259,38 @@
           <div class="flip-card-back">
             <h3>🛠️ Corporate Bond Pipeline Deduplication</h3>
             <ul>
-              <li><strong>⚙️ Pipeline Overhaul:</strong> Improved ingestion, joins, and data matching with Scala + SQL.
-              </li>
-              <li><strong>📊 Optimization:</strong> Applied CTEs, window functions, and watermarking for batch control.
-              </li>
-              <li><strong>🚀 Outcome:</strong> Reduced duplicate entries and mismatches in high-volume streaming data.
-              </li>
-              <li><strong>🧰 Tech:</strong> Scala, SQL, Delta Tables, Databricks, AWS S3, JSON, Streaming APIs</li>
+              <li><strong>⚙️ Pipeline Overhaul:</strong> Re-architected continuous ingestion and data-matching frameworks actively utilizing Scala + SQL.</li>
+              <li><strong>📊 Optimization:</strong> Drastically reduced duplicate entries applying aggressive window functions and data watermarks.</li>
+              <li><strong>🧰 Technical Sandbox:</strong> Scala, SQL, Delta Tables, Databricks clusters, AWS S3, and JSON Streaming APIs.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teaching + Communication -->
+      <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 class="wiggle-text">🎓 Technical Teaching & Communication</h3>
+            <div class="code-scroll-wrapper">
+              <pre><code>class Educator {
+  constructor() {
+    this.focus = [
+      "Explain Systems",
+      "Teach",
+      "Structure Learning"
+    ];
+  }
+}</code></pre>
+            </div>
+            <p>👉 "Empowering teams through clear communication"</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>🎓 Teaching + Communication</h3>
+            <ul>
+              <li><strong>📚 Core Experience:</strong> 12+ years professionally teaching Computer Science and higher-level mathematics.</li>
+              <li><strong>🗣️ Systems Translation:</strong> Dedicatedly translating highly complex engineering architecture into widely understandable concepts.</li>
+              <li><strong>🛤️ Developer Curriculum:</strong> Building structured technical learning paths and managing core stakeholder communications.</li>
             </ul>
           </div>
         </div>

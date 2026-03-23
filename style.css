@@ -661,6 +661,13 @@ html {
   }
 }
 
+@media (min-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .flip-card-back ul {
     margin-top: 2em;
@@ -705,7 +712,7 @@ html {
 .flip-card {
   perspective: 1000px;
   width: 100%;
-  max-width: 600px;
+  max-width: 380px;
   margin: 1.5em auto;
   border-radius: 12px;
   overflow: hidden;
@@ -761,7 +768,7 @@ html {
 }
 
 .flip-card {
-  min-height: 350px;
+  min-height: 420px;
 }
 
 /* Scrollable code */
@@ -1012,6 +1019,14 @@ body.explore-mode .nav-and-toggle-container {
 
 body.explore-mode .hidden-in-recruiter {
   display: block !important;
+}
+
+.show-in-recruiter {
+  display: inline-block;
+}
+
+body.explore-mode .show-in-recruiter {
+  display: none !important;
 }
 
 /* Apply Backgrounds and Text Colors */
@@ -1283,4 +1298,27 @@ body:not(.explore-mode) .slider {
 }
 body:not(.explore-mode) input:checked+.slider {
   background-color: var(--accent) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.6);
+}
+
+body.explore-mode ::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.3);
+}
+body.explore-mode ::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.6);
 }
