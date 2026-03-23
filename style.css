@@ -1,5 +1,5 @@
 :root {
-  --accent: #b58c2c;
+  --accent: #dfb239;
   /* Gold from LinkedIn */
   --primary: #4B0082;
   /* Deep purple */
@@ -65,7 +65,8 @@ header {
 
 .profile-pic {
   width: 120px;
-  height: auto;
+  height: 120px;
+  object-fit: cover;
   border-radius: 50%;
 }
 
@@ -223,13 +224,13 @@ table {
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
 
 .about-text {
-  max-width: 700px;
+  max-width: 1050px;
 }
 
 .fun-fact-container {
@@ -249,7 +250,7 @@ table {
 }
 
 .fun-fact-button {
-  background-color: #2a9d8f;
+  background-color: #1f786d;
   color: white;
   font-size: 1.1em;
   padding: 0.7em 1.2em;
@@ -262,7 +263,7 @@ table {
 }
 
 .fun-fact-button:hover {
-  background-color: #21867a;
+  background-color: #165c53;
   transform: scale(1.05);
 }
 
@@ -341,7 +342,7 @@ img {
 .top-nav li a {
   text-decoration: none;
   font-weight: bold;
-  color: #b58c2c;
+  color: #dfb239;
   font-size: 0.9em;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -378,7 +379,7 @@ img {
   50% {
     transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) scale(1.15);
     opacity: 0.8;
-    box-shadow: 0 0 20px #b58c2c;
+    box-shadow: 0 0 20px #dfb239;
   }
 
   100% {
@@ -392,7 +393,7 @@ img {
 }
 
 .timeline-step.pulse {
-  animation: pulse 1s ease-in-out;
+  animation: pulse 1.5s ease-in-out !important;
 }
 
 .section-title {
@@ -428,8 +429,8 @@ main,
   left: 50% !important;
   margin: 0 !important;
   width: auto !important;
-  max-width: none !important;
-  white-space: nowrap;
+  max-width: 280px !important;
+  white-space: normal;
 
   background-color: #4B0082;
   color: white;
@@ -439,12 +440,33 @@ main,
 
   opacity: 0;
   z-index: 1;
-  cursor: default;
+  cursor: pointer;
+  transition: filter 0.2s ease, opacity 0.4s ease, transform 0.4s ease;
 
   /* Cartesian Math for Ellipse */
   --tx: calc(var(--cx) * var(--m) * cos(var(--angle)));
   --ty: calc(var(--cy) * var(--m) * sin(var(--angle)));
   transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) scale(0.1);
+}
+
+.timeline-step.is-icon-state {
+  padding-left: calc(20px + 1.6em) !important;
+  text-indent: -1.6em !important;
+}
+
+.timeline-step:hover {
+  filter: brightness(1.2);
+  z-index: 100 !important;
+}
+
+@keyframes glideToCenter {
+  0% { transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) scale(1); }
+  100% { transform: translate(-50%, -50%) translate(0px, 0px) scale(1); }
+}
+
+.timeline-step.active {
+  animation: glideToCenter 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
+  z-index: 150 !important;
 }
 
 .timeline-step.visible {
@@ -467,71 +489,72 @@ main,
 
 /* Spiral calculation points */
 .timeline-step:nth-child(1) {
-  --angle: 0deg;
-  --m: 0;
+  --angle: 137.5deg;
+  --m: 1;
   z-index: 12;
-  background-color: #b58c2c;
+  background-color: #dfb239;
+  color: #111;
   border: 2px solid white;
 }
 
-/* Center point */
+/* Center point reserved for active clicked nodes! */
 .timeline-step:nth-child(2) {
-  --angle: 137.5deg;
-  --m: 1;
+  --angle: 275deg;
+  --m: 1.41;
   z-index: 11;
 }
 
 .timeline-step:nth-child(3) {
-  --angle: 275deg;
-  --m: 1.41;
+  --angle: 52.5deg;
+  --m: 1.73;
   z-index: 10;
 }
 
 .timeline-step:nth-child(4) {
-  --angle: 52.5deg;
-  --m: 1.73;
+  --angle: 190deg;
+  --m: 2.0;
   z-index: 9;
 }
 
 .timeline-step:nth-child(5) {
-  --angle: 190deg;
-  --m: 2.0;
+  --angle: 327.5deg;
+  --m: 2.23;
   z-index: 8;
 }
 
 .timeline-step:nth-child(6) {
-  --angle: 327.5deg;
-  --m: 2.23;
+  --angle: 105deg;
+  --m: 2.44;
   z-index: 7;
 }
 
 .timeline-step:nth-child(7) {
-  --angle: 105deg;
-  --m: 2.44;
+  --angle: 242.5deg;
+  --m: 2.64;
   z-index: 6;
 }
 
 .timeline-step:nth-child(8) {
-  --angle: 242.5deg;
-  --m: 2.64;
+  --angle: 20deg;
+  --m: 2.82;
   z-index: 5;
 }
 
 .timeline-step:nth-child(9) {
-  --angle: 20deg;
-  --m: 2.82;
+  --angle: 157.5deg;
+  --m: 3.0;
   z-index: 4;
 }
 
 .timeline-step:nth-child(10) {
-  --angle: 157.5deg;
-  --m: 3.0;
+  --angle: 295deg;
+  --m: 3.16;
   z-index: 3;
 }
 
 .timeline-step:nth-child(11) {
-  --angle: 295deg;
-  --m: 3.16;
+  --angle: 72.5deg;
+  --m: 3.32;
   z-index: 2;
 }
 
@@ -560,7 +583,7 @@ html {
 
 #projects {
   background: #eef;
-  padding-top: 4rem;
+  padding-top: 20px;
 }
 
 #key-tech {
@@ -569,6 +592,7 @@ html {
 
 #skills {
   background: #f4f4f4;
+  padding-top: 20px;
 }
 
 #skills .container {
@@ -740,7 +764,6 @@ html {
   min-height: 350px;
 }
 
-
 /* Scrollable code */
 .code-scroll-wrapper {
   overflow-x: auto;
@@ -839,7 +862,7 @@ html {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  background-color: #2a9d8f;
+  background-color: #1f786d;
   color: white;
   padding: 1rem 2rem;
   border-radius: 16px;
@@ -861,8 +884,8 @@ html {
   bottom: 30%;
   left: 50%;
   transform: translateX(-50%) scale(0);
-  background-color: #b58c2c;
-  color: white;
+  background-color: #dfb239;
+  color: #111;
   padding: 1rem 2rem;
   border-radius: 16px;
   font-size: 1.2rem;
@@ -880,7 +903,7 @@ html {
 }
 
 #finalMessage a {
-  color: white;
+  color: #111;
   text-decoration: underline;
 }
 
@@ -935,7 +958,7 @@ html {
 }
 
 input:checked+.slider {
-  background-color: #2a9d8f;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 input:focus+.slider {
@@ -954,13 +977,33 @@ input:checked+.slider:before {
   border-radius: 50%;
 }
 
+.explore-preview-box {
+  background: #eef;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+  border: 2px dashed #2a9d8f;
+}
+
 /* === Explore Mode Styles === */
+body.explore-mode {
+  --bg-light: #0f172a;
+  --surface: #111827;
+  --button: #22d3ee;
+  --primary: #8b5cf6;
+  --accent: #facc15;
+  --success: #10b981;
+  --text-dark: #f8fafc;
+  cursor: crosshair;
+}
+
 body.explore-mode header {
-  background: #2a9d8f;
+  background: var(--surface);
+  border-bottom: 2px solid var(--primary);
 }
 
 body.explore-mode .nav-and-toggle-container {
-  border-top-color: rgba(255, 255, 255, 0.3);
+  border-top-color: rgba(255, 255, 255, 0.1);
 }
 
 .hidden-in-recruiter {
@@ -969,4 +1012,275 @@ body.explore-mode .nav-and-toggle-container {
 
 body.explore-mode .hidden-in-recruiter {
   display: block !important;
+}
+
+/* Apply Backgrounds and Text Colors */
+body.explore-mode #about,
+body.explore-mode #projects,
+body.explore-mode #key-tech,
+body.explore-mode #skills,
+body.explore-mode #skill-path {
+  background: var(--bg-light);
+}
+
+/* Use Surface Color */
+body.explore-mode .explore-preview-box,
+body.explore-mode .project,
+body.explore-mode .project-block,
+body.explore-mode .project-card-container,
+body.explore-mode .flip-card,
+body.explore-mode .flip-card-front,
+body.explore-mode .flip-card-back,
+body.explore-mode .fun-fact-container,
+body.explore-mode .tech-table th,
+body.explore-mode .tech-table td,
+body.explore-mode img,
+body.explore-mode .timeline-step,
+body.explore-mode footer {
+  background: var(--surface);
+  background-color: var(--surface);
+  color: var(--text-dark);
+  border-color: var(--primary);
+}
+
+/* Card Glows */
+body.explore-mode .explore-preview-box,
+body.explore-mode .project-block,
+body.explore-mode .flip-card,
+body.explore-mode .fun-fact-container {
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.3);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+body.explore-mode .explore-preview-box:hover,
+body.explore-mode .project-block:hover,
+body.explore-mode .flip-card:hover,
+body.explore-mode .fun-fact-container:hover {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
+}
+
+/* Highlight texts */
+body.explore-mode h2,
+body.explore-mode .tech-title,
+body.explore-mode .fun-fact-container h3,
+body.explore-mode .project-block h3,
+body.explore-mode .flip-card-back h3,
+body.explore-mode .flip-card-front h3 {
+  color: var(--button);
+  border-bottom-color: var(--primary);
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+}
+
+body.explore-mode .tech-description,
+body.explore-mode .project-block p,
+body.explore-mode .fun-fact-text,
+body.explore-mode .flip-card-back ul li {
+  color: #cbd5e1;
+}
+
+body.explore-mode .explore-preview-box {
+  border-color: var(--button);
+}
+
+body.explore-mode .project-block code,
+body.explore-mode .code-scroll-wrapper pre {
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+body.explore-mode .timeline-step {
+  border: 1px solid var(--primary);
+}
+
+body.explore-mode .timeline-step:nth-child(1) {
+  background-color: var(--accent);
+  color: var(--bg-light);
+  border-color: var(--button);
+}
+
+body.explore-mode .fun-fact-button {
+  background-color: var(--button);
+  color: var(--bg-light);
+}
+
+body.explore-mode .fun-fact-button:hover {
+  background-color: #0ea5e9;
+}
+
+body.explore-mode a {
+  color: var(--button);
+}
+
+/* Specialized Interface */
+body.explore-mode #backToTop {
+  background-color: var(--primary);
+  color: #0f172a;
+}
+body.explore-mode #backToTop:hover {
+  background-color: var(--button);
+}
+
+body.explore-mode #clickScore {
+  background-color: var(--surface);
+  color: var(--button);
+  border: 1px solid var(--primary);
+}
+
+body.explore-mode #rewardMessage {
+  background-color: var(--success);
+  color: var(--bg-light);
+}
+
+body.explore-mode #finalMessage {
+  background-color: var(--accent);
+  color: var(--bg-light);
+}
+
+body.explore-mode input:checked+.slider {
+  background-color: var(--primary);
+}
+
+/* === Corporate Theme (Recruiter Mode) === */
+body:not(.explore-mode) {
+  --bg-light: #f8fafc;
+  --surface: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --accent: #2563eb;
+  --border-light: #e2e8f0;
+
+  background-color: var(--bg-light) !important;
+  color: var(--text-dark) !important;
+}
+
+body:not(.explore-mode) header {
+  background-color: var(--surface) !important;
+  border-bottom: 1px solid var(--border-light) !important;
+}
+
+body:not(.explore-mode) header .top-nav li a {
+  color: var(--text-muted) !important;
+}
+body:not(.explore-mode) header .top-nav li a:hover {
+  color: var(--accent) !important;
+}
+
+body:not(.explore-mode) header h1,
+body:not(.explore-mode) header p,
+body:not(.explore-mode) header i {
+  color: var(--text-dark) !important;
+}
+
+body:not(.explore-mode) .mode-label {
+  color: var(--text-muted) !important;
+}
+body:not(.explore-mode) header .contact-info a {
+  color: var(--accent) !important;
+}
+
+body:not(.explore-mode) .nav-and-toggle-container {
+  border-top-color: var(--border-light) !important;
+}
+
+body:not(.explore-mode) #about,
+body:not(.explore-mode) #projects,
+body:not(.explore-mode) #key-tech,
+body:not(.explore-mode) #skills,
+body:not(.explore-mode) #skill-path {
+  background-color: var(--bg-light) !important;
+}
+
+body:not(.explore-mode) .project,
+body:not(.explore-mode) .project-block,
+body:not(.explore-mode) .project-card-container,
+body:not(.explore-mode) .fun-fact-container,
+body:not(.explore-mode) .flip-card-front,
+body:not(.explore-mode) .flip-card-back,
+body:not(.explore-mode) .tech-table th,
+body:not(.explore-mode) .tech-table td,
+body:not(.explore-mode) footer,
+body:not(.explore-mode) img {
+  background-color: var(--surface) !important;
+  color: var(--text-dark) !important;
+  border-color: var(--border-light) !important;
+}
+
+body:not(.explore-mode) .flip-card-front,
+body:not(.explore-mode) .flip-card-back {
+  border: 1px solid var(--border-light) !important;
+}
+body:not(.explore-mode) .flip-card {
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+body:not(.explore-mode) .project {
+  border-left: 4px solid var(--accent) !important;
+}
+
+body:not(.explore-mode) h2,
+body:not(.explore-mode) .tech-title,
+body:not(.explore-mode) .fun-fact-container h3,
+body:not(.explore-mode) .project-block h3,
+body:not(.explore-mode) .flip-card-front h3,
+body:not(.explore-mode) .flip-card-back h3 {
+  color: var(--text-dark) !important;
+  border-bottom-color: var(--border-light) !important;
+}
+
+body:not(.explore-mode) p,
+body:not(.explore-mode) .project-block p,
+body:not(.explore-mode) .tech-description,
+body:not(.explore-mode) .fun-fact-text,
+body:not(.explore-mode) .flip-card-back ul li {
+  color: var(--text-muted) !important;
+}
+
+body:not(.explore-mode) a {
+  color: var(--accent) !important;
+}
+
+body:not(.explore-mode) .fun-fact-button,
+body:not(.explore-mode) #backToTop {
+  background-color: var(--accent) !important;
+  color: #fff !important;
+}
+body:not(.explore-mode) .fun-fact-button:hover,
+body:not(.explore-mode) #backToTop:hover {
+  background-color: #1d4ed8 !important;
+}
+
+body:not(.explore-mode) #rewardMessage,
+body:not(.explore-mode) #finalMessage {
+  background-color: var(--accent) !important;
+  color: #fff !important;
+}
+
+body:not(.explore-mode) #finalMessage a {
+  color: #fff !important;
+  text-decoration: underline !important;
+}
+
+body:not(.explore-mode) .timeline-step {
+  background-color: var(--surface) !important;
+  color: var(--text-dark) !important;
+  border: 1px solid var(--border-light) !important;
+}
+body:not(.explore-mode) .timeline-step:nth-child(1) {
+  background-color: var(--accent) !important;
+  color: #fff !important;
+}
+
+body:not(.explore-mode) .project-block code,
+body:not(.explore-mode) .code-scroll-wrapper pre {
+  background-color: var(--bg-light) !important;
+  color: var(--text-dark) !important;
+  border: 1px solid var(--border-light) !important;
+}
+
+body:not(.explore-mode) .slider {
+  background-color: #cbd5e1 !important;
+}
+body:not(.explore-mode) input:checked+.slider {
+  background-color: var(--accent) !important;
 }
