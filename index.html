@@ -12,11 +12,11 @@
       script.async = true;
       script.src = "https://www.googletagmanager.com/gtag/js?id=G-TV2XFWPRZQ";
       document.head.appendChild(script);
-      
+
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       window.gtag = gtag;
-      
+
       gtag('consent', 'default', {
         'ad_storage': 'denied',
         'ad_user_data': 'denied',
@@ -25,15 +25,15 @@
       });
       gtag('js', new Date());
       gtag('config', 'G-TV2XFWPRZQ');
-      
-      ['scroll', 'mousemove', 'touchstart', 'click'].forEach(evt => 
+
+      ['scroll', 'mousemove', 'touchstart', 'click'].forEach(evt =>
         window.removeEventListener(evt, loadGA)
       );
     }
-    
+
     // Load on first interaction to deeply satisfy Lighthouse Audit
-    ['scroll', 'mousemove', 'touchstart', 'click'].forEach(evt => 
-      window.addEventListener(evt, loadGA, {once: true, passive: true})
+    ['scroll', 'mousemove', 'touchstart', 'click'].forEach(evt =>
+      window.addEventListener(evt, loadGA, { once: true, passive: true })
     );
     // Fallback load after 5 seconds
     setTimeout(loadGA, 5000);
@@ -91,6 +91,8 @@
         </ul>
       </nav>
       <div id="clickScore" class="hidden-in-recruiter">⭐ Score: <span id="scoreCount">0</span></div>
+      <div id="questBox" class="hidden-in-recruiter">🎯 Mission: Explore 3 features <span
+          id="questProgress">(0/3)</span></div>
       <div class="mode-toggle-wrapper">
         <span class="mode-label">Recruiter</span>
         <label class="switch">
@@ -108,7 +110,7 @@
       <div class="container explore-preview-box">
         <h2 class="section-title" style="margin-top: 0;">✨ Explore Sandbox Preview</h2>
         <p style="text-align: center; font-size: 1.1em;">Welcome to the gamified side of my portfolio! Experimental
-          features and AI agents will appear here soon.</p>
+          features in this sandbox.</p>
       </div>
     </section>
 

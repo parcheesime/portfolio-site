@@ -1542,3 +1542,121 @@ body:not(.explore-mode) .particles {
     display: inline !important;
   }
 }
+
+/* ================================================== */
+/* QUEST BOX & HACKER MODE (Explore Mode Only) */
+/* ================================================== */
+#questBox {
+  background: var(--button, #8b5cf6);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(139, 92, 246, 0.4);
+  transition: all 0.3s ease;
+  cursor: default;
+  display: inline-block;
+}
+#questBox.update-flash {
+  background: #22c55e;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.6);
+}
+#questBox.mission-complete {
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+  animation: pulse 1s infinite alternate;
+  color: #000;
+  text-shadow: none;
+}
+
+/* Hacker Theme Override */
+body.explore-mode.hacker-mode {
+  background-color: #0d0d0d !important;
+  background-image: radial-gradient(#111 20%, transparent 20%), radial-gradient(#111 20%, transparent 20%);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  color: #0f0 !important;
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+body.explore-mode.hacker-mode header,
+body.explore-mode.hacker-mode .container,
+body.explore-mode.hacker-mode section {
+  background: rgba(0, 15, 0, 0.85) !important;
+  border: 1px solid #0f0;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.15) !important;
+}
+
+body.explore-mode.hacker-mode h1,
+body.explore-mode.hacker-mode h2,
+body.explore-mode.hacker-mode h3,
+body.explore-mode.hacker-mode .feature-title,
+body.explore-mode.hacker-mode p,
+body.explore-mode.hacker-mode ul,
+body.explore-mode.hacker-mode li,
+body.explore-mode.hacker-mode a,
+body.explore-mode.hacker-mode .timeline-step {
+  color: #0f0 !important;
+  text-shadow: 0 0 5px #0f0 !important;
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+body.explore-mode.hacker-mode .flip-card-front,
+body.explore-mode.hacker-mode .flip-card-back {
+  background: #000 !important;
+  border: 1px solid #0f0 !important;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.4) !important;
+}
+
+body.explore-mode.hacker-mode .code-scroll-wrapper ::slotted(pre),
+body.explore-mode.hacker-mode .code-scroll-wrapper pre {
+  background: #050505 !important;
+  color: #0f0 !important;
+  border: 1px dashed #0f0 !important;
+}
+
+/* Magic Cursor Particle Engine */
+.magic-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  font-size: 1.5rem;
+  color: #0f0; /* Hacker green */
+  text-shadow: 0 0 8px #0f0, 0 0 12px #fff;
+  animation: floatFade 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes floatFade {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, calc(-50% + 50px)) scale(0);
+    opacity: 0;
+  }
+}
+
+.quest-complete-banner {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: #0f0;
+  border: 2px solid #0f0;
+  padding: 1.5rem 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 0 20px #0f0;
+  z-index: 10000;
+  text-align: center;
+  animation: popIn 0.5s ease forwards;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: translate(-50%, -20%) scale(0.5); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
