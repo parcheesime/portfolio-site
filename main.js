@@ -1,3 +1,5 @@
+
+
 // --- App State & Feature Flags ---
 const appState = {
   mode: sessionStorage.getItem('portfolioMode') || "recruiter"
@@ -15,6 +17,7 @@ function applyMode() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+
   // Mode System Initialization
   applyMode();
   const modeSwitch = document.getElementById("modeSwitch");
@@ -61,17 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Wiggle animation for fun fact button (starts on scroll into view)
+  // Pulse animation for fun fact button (starts on scroll into view)
   const button = document.querySelector('.fun-fact-button');
-  let wiggleInterval;
+  let factPulseInterval;
 
   if (button) {
     const buttonObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && !wiggleInterval) {
-          wiggleInterval = setInterval(() => {
-            button.classList.add('wiggle');
-            setTimeout(() => button.classList.remove('wiggle'), 1000);
+        if (entry.isIntersecting && !factPulseInterval) {
+          factPulseInterval = setInterval(() => {
+            button.classList.add('pulse');
+            setTimeout(() => button.classList.remove('pulse'), 1500);
           }, 3500);
         }
       });
