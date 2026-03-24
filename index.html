@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TV2XFWPRZQ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
-    
+
     gtag('consent', 'default', {
       'ad_storage': 'denied',
       'ad_user_data': 'denied',
       'ad_personalization': 'denied',
       'analytics_storage': 'denied'
     });
-    
+
     gtag('js', new Date());
 
     gtag('config', 'G-TV2XFWPRZQ');
+  </script>
+  gtag('config', 'G-TV2XFWPRZQ');
   </script>
 
   <meta charset="UTF-8" />
@@ -28,10 +31,11 @@
 <body>
   <script>
     try {
-      if (localStorage.getItem('portfolioMode') === 'explore') {
+      localStorage.removeItem('portfolioMode'); // Clear old persistence
+      if (sessionStorage.getItem('portfolioMode') === 'explore') {
         document.body.classList.add('explore-mode');
       }
-    } catch (e) {}
+    } catch (e) { }
   </script>
 
   <header>
@@ -43,17 +47,22 @@
         <p>🌐 <a href="https://www.linkedin.com/in/aletia-trepte" target="_blank"
             rel="noopener noreferrer">linkedin.com/in/aletia-trepte</a></p>
         <p>
-          <svg style="margin-right: 8px; width: 1.25em; height: 1.25em; vertical-align: -0.125em; fill: currentColor;" viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+          <svg style="margin-right: 8px; width: 1.25em; height: 1.25em; vertical-align: -0.125em; fill: currentColor;"
+            viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+          </svg>
           <a href="https://github.com/parcheesime" target="_blank" rel="noopener noreferrer">
             github.com/parcheesime
           </a>
           <span class="show-in-recruiter" style="margin-left: 12px; font-weight: bold;">
-            | <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" style="margin-left: 8px; color: var(--accent); text-decoration: underline;">📄 Download Resume</a>
+            | <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer"
+              style="margin-left: 8px; color: var(--accent); text-decoration: underline;">📄 Download Resume</a>
           </span>
         </p>
       </div>
       <div class="profile-pic-wrapper">
-        <img src="assets/me.webp" alt="Aletia Trepte" class="profile-pic" width="120" height="120" />
+        <img src="assets/me2.webp" alt="Aletia Trepte" class="profile-pic" width="120" height="120" />
       </div>
     </div>
     <div class="nav-and-toggle-container">
@@ -78,71 +87,72 @@
 
   <div class="particles"></div>
   <main>
-  <section id="explore-preview" class="hidden-in-recruiter">
-    <div class="container explore-preview-box">
-      <h2 class="section-title" style="margin-top: 0;">✨ Explore Sandbox Preview</h2>
-      <p style="text-align: center; font-size: 1.1em;">Welcome to the gamified side of my portfolio! Experimental
-        features and AI agents will appear here soon.</p>
-    </div>
-  </section>
+    <section id="explore-preview" class="hidden-in-recruiter">
+      <div class="container explore-preview-box">
+        <h2 class="section-title" style="margin-top: 0;">✨ Explore Sandbox Preview</h2>
+        <p style="text-align: center; font-size: 1.1em;">Welcome to the gamified side of my portfolio! Experimental
+          features and AI agents will appear here soon.</p>
+      </div>
+    </section>
 
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">👩‍💼About Me</h2>
-      <div class="about-wrapper">
-        <div class="about-text">
-          <p><em>Welcome!
-              Thanks for stopping by. I’m a data and software engineer who builds clean systems, thoughtful automation,
-              and tools that support collaboration and mission-driven work.</em></p>
-        </div>
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">👩‍💼About Me</h2>
+        <div class="about-wrapper">
+          <div class="about-text">
+            <p><em>Welcome!
+                Thanks for stopping by. I’m a data and software engineer who builds clean systems, thoughtful
+                automation,
+                and tools that support collaboration and mission-driven work.</em></p>
+          </div>
 
-        <div class="fun-fact-container">
-          <h3>💡 Fun Fact About Me</h3>
-          <button class="fun-fact-button">Click for fun fact</button>
-          <p id="fact-box" class="fun-fact-text"></p>
+          <div class="fun-fact-container">
+            <h3>💡 Fun Fact About Me</h3>
+            <button class="fun-fact-button">Click for fun fact</button>
+            <p id="fact-box" class="fun-fact-text"></p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <script>
-    const facts = [
-      "Started college as a physics major. I'm drawn to the strange beauty of math in modern physics.",
-      "I love building data tools that do the work for you — automation, analytics, and a little AI magic go a long way.",
-      "MATLAB was my first programming language.",
-      "My second language was Java!",
-      "I founded a coding workshop business where I wore every hat, from instructor, to tech troubleshooter, to social media manager.",
-      "Favorite math proof: Euler’s formula. It’s even inked as a tattoo — that's how deep the connection runs."
-    ];
+    <script>
+      const facts = [
+        "Started college as a physics major. I'm drawn to the strange beauty of math in modern physics.",
+        "I love building data tools that do the work for you — automation, analytics, and a little AI magic go a long way.",
+        "MATLAB was my first programming language.",
+        "My second language was Java!",
+        "I founded a coding workshop business where I wore every hat, from instructor, to tech troubleshooter, to social media manager.",
+        "Favorite math proof: Euler’s formula. It’s even inked as a tattoo — that's how deep the connection runs."
+      ];
 
-    let currentFactIndex = 0;
+      let currentFactIndex = 0;
 
-    function showNextFact() {
-      const factBox = document.getElementById("fact-box");
-      factBox.style.opacity = 0;
+      function showNextFact() {
+        const factBox = document.getElementById("fact-box");
+        factBox.style.opacity = 0;
 
-      const factToShow = facts[currentFactIndex];
-      currentFactIndex = (currentFactIndex + 1) % facts.length;
+        const factToShow = facts[currentFactIndex];
+        currentFactIndex = (currentFactIndex + 1) % facts.length;
 
-      setTimeout(() => {
-        factBox.innerText = factToShow;
-        factBox.style.opacity = 1;
-      }, 200);
-    }
+        setTimeout(() => {
+          factBox.innerText = factToShow;
+          factBox.style.opacity = 1;
+        }, 200);
+      }
 
-  </script>
+    </script>
 
-  <section id="projects">
-    <h2 class="section-title">🧑‍💻 Some Projects</h2>
-    <div class="project-grid">
+    <section id="projects">
+      <h2 class="section-title">🧑‍💻 Some Projects</h2>
+      <div class="project-grid">
 
-      <!-- Front-End Engineering -->
-      <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h3 class="wiggle-text">⚡ Component Engineering @ Scale</h3>
-            <div class="code-scroll-wrapper">
-              <pre><code>// Respect reduced motion preference
+        <!-- Front-End Engineering -->
+        <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="wiggle-text">⚡ Component Engineering @ Scale</h3>
+              <div class="code-scroll-wrapper">
+                <pre><code>// Respect reduced motion preference
 const prefersReducedMotion = window.matchMedia(
   '(prefers-reduced-motion: reduce)'
 ).matches;
@@ -150,27 +160,30 @@ const prefersReducedMotion = window.matchMedia(
 if (!prefersReducedMotion) {
   animateBorder();
 }</code></pre>
+              </div>
+              <p>👉 "I build systems people actually interact with"</p>
             </div>
-            <p>👉 "I build systems people actually interact with"</p>
-          </div>
-          <div class="flip-card-back">
-            <h3>💻 Software Engineering (Front-End)</h3>
-            <ul>
-              <li><strong>🧩 Architecture:</strong> Built and modified Lit-based web components integrated with CMS-driven content.</li>
-              <li><strong>✨ UI / Styling:</strong> Implemented responsive UI features using Tailwind CSS and Eleventy (11ty).</li>
-              <li><strong>🌐 Accessibility:</strong> Debugged cross-browser rendering issues and accessibility behaviors (ARIA, keyboard navigation).</li>
-            </ul>
+            <div class="flip-card-back">
+              <h3>💻 Software Engineering (Front-End)</h3>
+              <ul>
+                <li><strong>🧩 Architecture:</strong> Built and modified Lit-based web components integrated with
+                  CMS-driven content.</li>
+                <li><strong>✨ UI / Styling:</strong> Implemented responsive UI features using Tailwind CSS and Eleventy
+                  (11ty).</li>
+                <li><strong>🌐 Accessibility:</strong> Debugged cross-browser rendering issues and accessibility
+                  behaviors (ARIA, keyboard navigation).</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Job Recovery -->
-      <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h3 class="wiggle-text">🔁 Jobs Recovery & Rebuild System</h3>
-            <div class="code-scroll-wrapper">
-              <pre># Save job settings to S3
+        <!-- Job Recovery -->
+        <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="wiggle-text">🔁 Jobs Recovery & Rebuild System</h3>
+              <div class="code-scroll-wrapper">
+                <pre># Save job settings to S3
           key = f"backup_jobs/job_{job_id}_{today}.json"
 
           s3.put_object(
@@ -179,26 +192,29 @@ if (!prefersReducedMotion) {
             Body=json_data,
             ContentType="application/json"
           )</pre>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>🔁 Jobs Recovery & Rebuild System</h3>
+              <ul>
+                <li><strong>⚙️ Automated Recovery:</strong> Rebuilds Databricks jobs via REST API with latest valid
+                  configurations.</li>
+                <li><strong>🔍 Architecture:</strong> Backed up comprehensive job metadata to AWS S3, securely managing
+                  edge cases.</li>
+                <li><strong>🚀 Impact:</strong> Drastically reduced devastating pipeline disaster recovery times from
+                  hours to mere minutes.</li>
+              </ul>
             </div>
           </div>
-          <div class="flip-card-back">
-            <h3>🔁 Jobs Recovery & Rebuild System</h3>
-            <ul>
-              <li><strong>⚙️ Automated Recovery:</strong> Rebuilds Databricks jobs via REST API with latest valid configurations.</li>
-              <li><strong>🔍 Architecture:</strong> Backed up comprehensive job metadata to AWS S3, securely managing edge cases.</li>
-              <li><strong>🚀 Impact:</strong> Drastically reduced devastating pipeline disaster recovery times from hours to mere minutes.</li>
-            </ul>
-          </div>
         </div>
-      </div>
 
-      <!-- Back4App -->
-      <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h3 class="wiggle-text">🧹 Back4App Class & Data Automation</h3>
-            <div class="code-scroll-wrapper">
-              <pre>import 'dotenv/config';
+        <!-- Back4App -->
+        <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="wiggle-text">🧹 Back4App Class & Data Automation</h3>
+              <div class="code-scroll-wrapper">
+                <pre>import 'dotenv/config';
           await fetch(`https://parseapi.back4app.com/classes/TestClass`, {
             method: 'DELETE',
             headers: {
@@ -206,26 +222,29 @@ if (!prefersReducedMotion) {
               'X-Parse-REST-API-Key': process.env.REST_KEY
             }
           });</pre>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>🧹 Back4App Class & Data Automation</h3>
+              <ul>
+                <li><strong>🛠 Automation:</strong> Dynamically generated Parse schemas and organically populated
+                  environments securely via Node.js scripts.</li>
+                <li><strong>🧪 Agile TDD:</strong> Engineered targeted teardown scripts to instantly reset and sanitize
+                  datasets between robust test runs.</li>
+                <li><strong>🔧 Tech Sandbox:</strong> JavaScript (ES Modules), Node.js, REST APIs, and Back4App
+                  configuration via Environment Variables.</li>
+              </ul>
             </div>
           </div>
-          <div class="flip-card-back">
-            <h3>🧹 Back4App Class & Data Automation</h3>
-            <ul>
-              <li><strong>🛠 Automation:</strong> Dynamically generated Parse schemas and organically populated environments securely via Node.js scripts.</li>
-              <li><strong>🧪 Agile TDD:</strong> Engineered targeted teardown scripts to instantly reset and sanitize datasets between robust test runs.</li>
-              <li><strong>🔧 Tech Sandbox:</strong> JavaScript (ES Modules), Node.js, REST APIs, and Back4App configuration via Environment Variables.</li>
-            </ul>
-          </div>
         </div>
-      </div>
 
-      <!-- FreightFlow -->
-      <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h3 class="wiggle-text">🚚 FreightFlow DBT + Pub/Sub Pipeline</h3>
-            <div class="code-scroll-wrapper">
-              <pre># Simulate freight event stream
+        <!-- FreightFlow -->
+        <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="wiggle-text">🚚 FreightFlow DBT + Pub/Sub Pipeline</h3>
+              <div class="code-scroll-wrapper">
+                <pre># Simulate freight event stream
           Listening on
           projects/dbt-learn-bigquery-444608/subscriptions/freight-sub...
 
@@ -234,26 +253,29 @@ if (!prefersReducedMotion) {
             "status_update": "in transit",
             "last_known_location": "Phoenix, AZ"
           }</pre>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>🚚 FreightFlow DBT + Pub/Sub Pipeline</h3>
+              <ul>
+                <li><strong>🔄 Event Streaming:</strong> Engineered real-time publisher/subscriber data pipelines
+                  utilizing Google Pub/Sub and Python.</li>
+                <li><strong>📦 Data Modeling:</strong> Orchestrated complete dbt staging, intermediate, and robust
+                  dimensional mart models mechanically.</li>
+                <li><strong>🧪 Mock Generation:</strong> Synthesized highly realistic geographic freight-tracking
+                  datasets at scale using Faker and Geopy.</li>
+              </ul>
             </div>
           </div>
-          <div class="flip-card-back">
-            <h3>🚚 FreightFlow DBT + Pub/Sub Pipeline</h3>
-            <ul>
-              <li><strong>🔄 Event Streaming:</strong> Engineered real-time publisher/subscriber data pipelines utilizing Google Pub/Sub and Python.</li>
-              <li><strong>📦 Data Modeling:</strong> Orchestrated complete dbt staging, intermediate, and robust dimensional mart models mechanically.</li>
-              <li><strong>🧪 Mock Generation:</strong> Synthesized highly realistic geographic freight-tracking datasets at scale using Faker and Geopy.</li>
-            </ul>
-          </div>
         </div>
-      </div>
 
-      <!-- Corporate Bond Deduplication -->
-      <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h3 class="wiggle-text">🛠️ Corporate Bond Pipeline Deduplication</h3>
-            <div class="code-scroll-wrapper">
-              <pre>// Scala: Watermarking, event-time processing
+        <!-- Corporate Bond Deduplication -->
+        <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="wiggle-text">🛠️ Corporate Bond Pipeline Deduplication</h3>
+              <div class="code-scroll-wrapper">
+                <pre>// Scala: Watermarking, event-time processing
           val ranked = df.withColumn("row_num", row_number().over(
             Window.partitionBy("security_description", "source_id", "record_id")
               .orderBy(when(col("is_C"), 3)
@@ -261,26 +283,29 @@ if (!prefersReducedMotion) {
                       .when(col("is_A"), 1)
                       .otherwise(0).desc)
           )).filter(col("row_num") === 1)</pre>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>🛠️ Corporate Bond Pipeline Deduplication</h3>
+              <ul>
+                <li><strong>⚙️ Pipeline Overhaul:</strong> Re-architected continuous ingestion and data-matching
+                  frameworks actively utilizing Scala + SQL.</li>
+                <li><strong>📊 Optimization:</strong> Drastically reduced duplicate entries applying aggressive window
+                  functions and data watermarks.</li>
+                <li><strong>🧰 Technical Sandbox:</strong> Scala, SQL, Delta Tables, Databricks clusters, AWS S3, and
+                  JSON Streaming APIs.</li>
+              </ul>
             </div>
           </div>
-          <div class="flip-card-back">
-            <h3>🛠️ Corporate Bond Pipeline Deduplication</h3>
-            <ul>
-              <li><strong>⚙️ Pipeline Overhaul:</strong> Re-architected continuous ingestion and data-matching frameworks actively utilizing Scala + SQL.</li>
-              <li><strong>📊 Optimization:</strong> Drastically reduced duplicate entries applying aggressive window functions and data watermarks.</li>
-              <li><strong>🧰 Technical Sandbox:</strong> Scala, SQL, Delta Tables, Databricks clusters, AWS S3, and JSON Streaming APIs.</li>
-            </ul>
-          </div>
         </div>
-      </div>
 
-      <!-- Teaching + Communication -->
-      <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h3 class="wiggle-text">🎓 Technical Teaching & Communication</h3>
-            <div class="code-scroll-wrapper">
-              <pre><code>class Educator {
+        <!-- Teaching + Communication -->
+        <div class="flip-card wiggle" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3 class="wiggle-text">🎓 Technical Teaching & Communication</h3>
+              <div class="code-scroll-wrapper">
+                <pre><code>class Educator {
   constructor() {
     this.focus = [
       "Explain Systems",
@@ -289,100 +314,109 @@ if (!prefersReducedMotion) {
     ];
   }
 }</code></pre>
+              </div>
+              <p>👉 "Empowering teams through clear communication"</p>
             </div>
-            <p>👉 "Empowering teams through clear communication"</p>
-          </div>
-          <div class="flip-card-back">
-            <h3>🎓 Teaching + Communication</h3>
-            <ul>
-              <li><strong>📚 Core Experience:</strong> 12+ years professionally teaching Computer Science and higher-level mathematics.</li>
-              <li><strong>🗣️ Systems Translation:</strong> Dedicatedly translating highly complex engineering architecture into widely understandable concepts.</li>
-              <li><strong>🛤️ Developer Curriculum:</strong> Building structured technical learning paths and managing core stakeholder communications.</li>
-            </ul>
+            <div class="flip-card-back">
+              <h3>🎓 Teaching + Communication</h3>
+              <ul>
+                <li><strong>📚 Core Experience:</strong> 12+ years professionally teaching Computer Science and
+                  higher-level mathematics.</li>
+                <li><strong>🗣️ Systems Translation:</strong> Dedicatedly translating highly complex engineering
+                  architecture into widely understandable concepts.</li>
+                <li><strong>🛤️ Developer Curriculum:</strong> Building structured technical learning paths and managing
+                  core stakeholder communications.</li>
+              </ul>
+            </div>
           </div>
         </div>
+
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <section id="skill-path">
-    <div class="container">
-      <h2 class="section-title">🧭 My Engineering Journey</h2>
-      <p style="text-align: center; color: var(--text-muted); font-style: italic; margin-bottom: 2rem;">✨ Click the nodes to uncover the full story.</p>
-      <div class="timeline-vertical">
-        <div class="timeline-step" data-tooltip="Build simulations in MATLAB for chaos theory and numerical analysis.">
-          📐 Math / MATLAB</div>
-        <div class="timeline-step" data-tooltips='[
+    <section id="skill-path">
+      <div class="container">
+        <h2 class="section-title">🧭 My Engineering Journey</h2>
+        <p style="text-align: center; color: var(--text-muted); font-style: italic; margin-bottom: 2rem;">✨ Click the
+          nodes to uncover the full story.</p>
+        <div class="timeline-vertical">
+          <div class="timeline-step"
+            data-tooltip="Build simulations in MATLAB for chaos theory and numerical analysis.">
+            📐 Math / MATLAB</div>
+          <div class="timeline-step" data-tooltips='[
           "My Pythoning began building games using Tkinter and Pygame. (click again)",
           "Transformed data using Pandas and PySpark, then loaded it into warehouses and databases.",
           "Built backend workflows that query and transform data using Python and SQL."
         ]'>
-          🐍 Python
-        </div>
+            🐍 Python
+          </div>
 
-        <div class="timeline-step" data-tooltip="Work in WSL and various Linux distros — strong with command line.">🖥️
-          Linux</div>
-        <div class="timeline-step" data-tooltip="Build responsive websites using HTML, CSS, and JavaScript.">🌐 HTML /
-          CSS / JS</div>
-        <div class="timeline-step" data-tooltips='[
+          <div class="timeline-step" data-tooltip="Work in WSL and various Linux distros — strong with command line.">
+            🖥️
+            Linux</div>
+          <div class="timeline-step" data-tooltip="Build responsive websites using HTML, CSS, and JavaScript.">🌐 HTML /
+            CSS / JS</div>
+          <div class="timeline-step" data-tooltips='[
           "Connected to third-party APIs to collect and process data for reports, dashboards, and automation. (click again)",
           "Built my own APIs using FastAPI and Flask to serve datasets, expose endpoints, and support frontend or team use.",
           "Wrapped APIs with scheduling or logic turning raw endpoints into usable services for apps or data pipelines."
         ]'>
-          🔗 APIs
-        </div>
-        <div class="timeline-step"
-          data-tooltip="Automate data pulls, cleans, and workflows using Python and shell scripts.">⚙️ Automation</div>
-        <div class="timeline-step" data-tooltips='[
+            🔗 APIs
+          </div>
+          <div class="timeline-step"
+            data-tooltip="Automate data pulls, cleans, and workflows using Python and shell scripts.">⚙️ Automation
+          </div>
+          <div class="timeline-step" data-tooltips='[
         "I enforce data integrity, deduplication, and pipeline logic with window functions. (click again)",
         "Use SQL for data modeling and database interaction across projects."
         ]'>
-          🧮 SQL
-        </div>
-        <div class="timeline-step"
-          data-tooltip="Most comfortable in Sigma and Power BI — built live dashboards for teams.">📊 Dashboards &
-          Observability</div>
-        <div class="timeline-step" data-tooltip="Practice test-driven development in Swift using Core Data and XCTest.">
-          🧪 TDD</div>
-        <div class="timeline-step" data-tooltip="Build ETL/ELT pipelines using PySpark, Delta Tables, and SQL.">🔁
-          Pipelines</div>
-        <div class="timeline-step"
-          data-tooltip="Engineer streaming pipelines for real-time trade data (Databricks + S3).">⚡ Streaming Data</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="container">
-      <h2 class="section-title">🚀 My Technology</h2>
-      <div class="skills-container">
-        <div class="tooltip" data-tooltip="Python: scripting, data analysis, and automation.">
-          <img src="assets/icons/python.jpg" alt="Python" />
-        </div>
-        <div class="tooltip" data-tooltip="SQL: querying and modeling data for insights.">
-          <img src="assets/icons/sql.png" alt="SQL" />
-        </div>
-        <div class="tooltip" data-tooltip="AWS: cloud-based storage and data workflows.">
-          <img src="assets/icons/aws.png" alt="AWS" />
-        </div>
-        <div class="tooltip" data-tooltip="dbt: transforming and modeling data with clarity.">
-          <img src="assets/icons/dbt.png" alt="dbt" />
-        </div>
-        <div class="tooltip" data-tooltip="Google Educator: certified classroom tech integration.">
-          <img src="assets/icons/ged.png" alt="google educator" />
-        </div>
-        <div class="tooltip" data-tooltip="Google Data Analytics: certification in EDA and visualization.">
-          <img src="assets/icons/gdac.jpg" alt="google data analytics" />
-        </div>
-        <div class="tooltip" data-tooltip="GitHub: version control and collaboration.">
-          <img src="assets/icons/github.png" alt="GitHub" />
+            🧮 SQL
+          </div>
+          <div class="timeline-step"
+            data-tooltip="Most comfortable in Sigma and Power BI — built live dashboards for teams.">📊 Dashboards &
+            Observability</div>
+          <div class="timeline-step"
+            data-tooltip="Practice test-driven development in Swift using Core Data and XCTest.">
+            🧪 TDD</div>
+          <div class="timeline-step" data-tooltip="Build ETL/ELT pipelines using PySpark, Delta Tables, and SQL.">🔁
+            Pipelines</div>
+          <div class="timeline-step"
+            data-tooltip="Engineer streaming pipelines for real-time trade data (Databricks + S3).">⚡ Streaming Data
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <button id="backToTop" title="Back to Top">⬆️</button>
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">🚀 My Technology</h2>
+        <div class="skills-container">
+          <div class="tooltip" data-tooltip="Python: scripting, data analysis, and automation.">
+            <img src="assets/icons/python.jpg" alt="Python" />
+          </div>
+          <div class="tooltip" data-tooltip="SQL: querying and modeling data for insights.">
+            <img src="assets/icons/sql.png" alt="SQL" />
+          </div>
+          <div class="tooltip" data-tooltip="AWS: cloud-based storage and data workflows.">
+            <img src="assets/icons/aws.png" alt="AWS" />
+          </div>
+          <div class="tooltip" data-tooltip="dbt: transforming and modeling data with clarity.">
+            <img src="assets/icons/dbt.png" alt="dbt" />
+          </div>
+          <div class="tooltip" data-tooltip="Google Educator: certified classroom tech integration.">
+            <img src="assets/icons/ged.png" alt="google educator" />
+          </div>
+          <div class="tooltip" data-tooltip="Google Data Analytics: certification in EDA and visualization.">
+            <img src="assets/icons/gdac.jpg" alt="google data analytics" />
+          </div>
+          <div class="tooltip" data-tooltip="GitHub: version control and collaboration.">
+            <img src="assets/icons/github.png" alt="GitHub" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button id="backToTop" title="Back to Top">⬆️</button>
   </main>
 
   <footer>
