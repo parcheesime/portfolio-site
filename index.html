@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TV2XFWPRZQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'G-TV2XFWPRZQ');
-</script>
-
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TV2XFWPRZQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+    
+    gtag('js', new Date());
+
+    gtag('config', 'G-TV2XFWPRZQ');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aletia Trepte | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-
 </head>
 
 <body>
@@ -54,7 +61,6 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#key-tech">Skills</a></li>
           <li><a href="#skill-path">Journey</a></li>
         </ul>
       </nav>
@@ -70,6 +76,7 @@
     </div>
   </header>
 
+  <div class="particles"></div>
   <main>
   <section id="explore-preview" class="hidden-in-recruiter">
     <div class="container explore-preview-box">
@@ -301,7 +308,7 @@ if (!prefersReducedMotion) {
 
   <section id="skill-path">
     <div class="container">
-      <h2 class="section-heading">🧭 My Engineering Journey</h2>
+      <h2 class="section-title">🧭 My Engineering Journey</h2>
       <p style="text-align: center; color: var(--text-muted); font-style: italic; margin-bottom: 2rem;">✨ Click the nodes to uncover the full story.</p>
       <div class="timeline-vertical">
         <div class="timeline-step" data-tooltip="Build simulations in MATLAB for chaos theory and numerical analysis.">

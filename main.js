@@ -1,12 +1,6 @@
 // --- App State & Feature Flags ---
 const appState = {
-  mode: localStorage.getItem('portfolioMode') || "recruiter",
-  features: {
-    explorePreview: true,
-    aiGuide: false,
-    sandboxMap: false,
-    achievements: false
-  }
+  mode: localStorage.getItem('portfolioMode') || "recruiter"
 };
 
 function applyMode() {
@@ -95,21 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
       buttonObserver.observe(button);
     }
 
-    // Fade-in effect on scroll
-    const fadeEls = document.querySelectorAll('.project-block');
-    const appearOptions = { threshold: 0.3 };
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
 
-    fadeEls.forEach(el => {
-      el.classList.add('fade-in');
-      appearOnScroll.observe(el);
-    });
 
     // Track which cards have been hovered
     const hoveredCards = new Set();
