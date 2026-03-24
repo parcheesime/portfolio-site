@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateQuest(featureName) {
+    if (appState.mode !== 'explore') return;
     if (exploredFeatures.has(featureName) || exploredFeatures.size >= 3) return;
     
     exploredFeatures.add(featureName);
@@ -82,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modeSwitch.addEventListener("change", (e) => {
       appState.mode = e.target.checked ? "explore" : "recruiter";
       sessionStorage.setItem('portfolioMode', appState.mode);
-      applyMode();
+      window.location.reload();
     });
   }
 
