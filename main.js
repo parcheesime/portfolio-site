@@ -324,15 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Hide active timeline card if clicking outside
-  document.addEventListener('click', (e) => {
-    if (lastClickedStep && !e.target.closest('.timeline-step')) {
-      lastClickedStep.classList.remove('active');
-      lastClickedStep.textContent = lastClickedStep.getAttribute('data-original-text');
-      lastClickedStep.classList.add('is-icon-state');
-      lastClickedStep = null;
-    }
-  });
+
 
   // Back to top button behavior
   const backToTop = document.getElementById("backToTop");
@@ -347,13 +339,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-window.addEventListener("scroll", () => {
-  backToTop.classList.toggle("show", window.scrollY > 400);
-});
-
-backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-  }
-});
 
