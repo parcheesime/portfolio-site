@@ -28,29 +28,29 @@ document.addEventListener("DOMContentLoaded", () => {
       questBox.classList.add("mission-complete");
       questBox.classList.remove("update-flash");
     }
-    
+
     document.body.classList.add("hacker-mode");
-    
+
     // Magic Cursor Particle Engine
     let lastTime = 0;
     document.addEventListener("mousemove", (e) => {
       if (!document.body.classList.contains('explore-mode')) return;
-      
+
       const now = Date.now();
       if (now - lastTime < 50) return;
       lastTime = now;
-      
+
       const particle = document.createElement("div");
       particle.classList.add("magic-particle");
       const chars = ['0', '1', '\\\\', '/', '*', '>', '<'];
       particle.textContent = chars[Math.floor(Math.random() * chars.length)];
       particle.style.left = e.clientX + 'px';
       particle.style.top = e.clientY + 'px';
-      
+
       document.body.appendChild(particle);
       setTimeout(() => particle.remove(), 1000);
     });
-    
+
     const banner = document.createElement("div");
     banner.classList.add("quest-complete-banner");
     banner.textContent = "SYSTEM OVERRIDE DETECTED. HACKER MODE ENGAGED.";
@@ -61,9 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateQuest(featureName) {
     if (appState.mode !== 'explore') return;
     if (exploredFeatures.has(featureName) || exploredFeatures.size >= 3) return;
-    
+
     exploredFeatures.add(featureName);
-    
+
     if (questProgressEl && questBox) {
       questProgressEl.textContent = `(${exploredFeatures.size}/3)`;
       questBox.classList.remove("update-flash");
@@ -253,69 +253,86 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 50);
   }
 
-  // Multi-tooltip + reset + wiggle support
+  // Multi-tooltip + popup card support + wiggle
   let lastClickedStep = null;
   const clickedSteps = new Set();
   let completeTimeout = null;
 
   steps.forEach(step => {
     const tooltips = JSON.parse(step.getAttribute('data-tooltips') || '[]');
-    const originalText = step.textContent;
+    const originalText = step.textContent.trim();
     step.setAttribute('data-original-text', originalText);
     step.classList.add('is-icon-state');
-    let clickIndex = 0;
 
     step.addEventListener('click', () => {
       updateQuest('timeline');
-      // Hide the previous node
+      // Restore previous node
       if (lastClickedStep && lastClickedStep !== step) {
-        lastClickedStep.classList.remove('visible', 'active');
+        lastClickedStep.classList.remove('active');
+        lastClickedStep.textContent = lastClickedStep.getAttribute('data-original-text');
+        lastClickedStep.classList.add('is-icon-state');
       }
+
+      if (step.classList.contains('active')) {
+        // Toggle off if clicking the same node
+        step.classList.remove('active');
+        step.textContent = step.getAttribute('data-original-text');
+        step.classList.add('is-icon-state');
+        lastClickedStep = null;
+        return;
+      }
+
       lastClickedStep = step;
       clickedSteps.add(step);
-      step.classList.add('active'); // Glide node exactly to front and center
 
+      // Build card content
+      let contentHtml = `<div class="card-title">${originalText}</div><div class="card-content">`;
       if (tooltips.length > 0) {
-        if (clickIndex === 0) {
-          step.textContent = tooltips[0];
-        } else if (clickIndex < tooltips.length) {
-          step.textContent = tooltips[clickIndex];
-        } else {
-          step.textContent = originalText; // reset back to icon
-        }
-
-        step.classList.toggle('is-icon-state', step.textContent === originalText);
-
-        // Trigger wiggle
-        step.classList.add("wiggle");
-        setTimeout(() => step.classList.remove("wiggle"), 600);
-        incrementScore();
-        clickIndex = (clickIndex + 1) % (tooltips.length + 1);
+        contentHtml += '<ul>';
+        tooltips.forEach(t => contentHtml += `<li style="margin-bottom: 4px;">${t}</li>`);
+        contentHtml += '</ul>';
       } else {
         const tooltip = step.getAttribute('data-tooltip');
-        step.textContent = (step.textContent === originalText) ? tooltip : originalText;
-        step.classList.toggle('is-icon-state', step.textContent === originalText);
-        incrementScore();
+        if (tooltip) {
+          contentHtml += `<p>${tooltip}</p>`;
+        }
       }
+      contentHtml += `</div>`;
+
+      step.innerHTML = contentHtml;
+      step.classList.remove('is-icon-state');
+      step.classList.add('active'); // Glide node exactly to front and center
+
+      // Trigger wiggle
+      step.classList.add("wiggle");
+      setTimeout(() => step.classList.remove("wiggle"), 600);
+      incrementScore();
 
       // Check if all nodes are clicked
       if (clickedSteps.size === steps.length) {
         clearTimeout(completeTimeout);
         completeTimeout = setTimeout(() => {
           clickedSteps.clear();
+          if (lastClickedStep) {
+            lastClickedStep.textContent = lastClickedStep.getAttribute('data-original-text');
+            lastClickedStep.classList.remove('active');
+          }
           lastClickedStep = null;
-          steps.forEach(s => s.dispatchEvent(new Event('reset-timeline')));
           resetSpiral();
-        }, 4000); // 4 sec finale timer!
+        }, 5000); // 5 sec finale timer!
       }
-    });
-
-    step.addEventListener('reset-timeline', () => {
-      clickIndex = 0;
     });
   });
 
-
+  // Hide active timeline card if clicking outside
+  document.addEventListener('click', (e) => {
+    if (lastClickedStep && !e.target.closest('.timeline-step')) {
+      lastClickedStep.classList.remove('active');
+      lastClickedStep.textContent = lastClickedStep.getAttribute('data-original-text');
+      lastClickedStep.classList.add('is-icon-state');
+      lastClickedStep = null;
+    }
+  });
 
   // Back to top button behavior
   const backToTop = document.getElementById("backToTop");
@@ -327,6 +344,16 @@ document.addEventListener("DOMContentLoaded", () => {
     backToTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+  }
+});
+
+window.addEventListener("scroll", () => {
+  backToTop.classList.toggle("show", window.scrollY > 400);
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
   }
 });
 
