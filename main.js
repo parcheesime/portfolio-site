@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const banner = document.createElement("div");
     banner.classList.add("quest-complete-banner");
-    banner.textContent = "SYSTEM OVERRIDE DETECTED. HACKER MODE ENGAGED.";
+    banner.textContent = "🏗️ Engineering Lab Unlocked";
     document.body.appendChild(banner);
     setTimeout(() => banner.remove(), 4000);
   }
@@ -97,28 +97,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function incrementScore() {
     score++;
-    scoreDisplay.textContent = score;
+    if (scoreDisplay) scoreDisplay.textContent = score;
+
+    // Only show score announcements in explore mode
+    if (appState.mode !== 'explore') return;
 
     // 10-point reward (only once)
     if (score >= 10 && !rewardShown) {
       rewardShown = true;
-      rewardMessage.classList.add("show");
+      if (rewardMessage) rewardMessage.classList.add("show");
 
       // Hide 10-point message after 4 seconds
       setTimeout(() => {
-        rewardMessage.classList.remove("show");
+        if (rewardMessage) rewardMessage.classList.remove("show");
       }, 4000);
     }
 
     // 20-point message (trigger exactly at 20)
     if (score === 20) {
       const finalMessage = document.getElementById("finalMessage");
-      finalMessage.classList.add("show");
+      if (finalMessage) {
+        finalMessage.classList.add("show");
 
-      // Hide 20-point message after 6 seconds
-      setTimeout(() => {
-        finalMessage.classList.remove("show");
-      }, 7000);
+        // Hide 20-point message after 6 seconds
+        setTimeout(() => {
+          finalMessage.classList.remove("show");
+        }, 7000);
+      }
     }
   }
 
@@ -151,8 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
     buttonObserver.observe(button);
   }
 
-
-
   // Track which cards have been hovered
   const hoveredCards = new Set();
 
@@ -166,7 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
 
   // Timeline: Pulse each step when skill-path is in view
   const steps = document.querySelectorAll('.timeline-step');
@@ -225,7 +227,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (journeySection) {
     journeyObserver.observe(journeySection);
   }
-
 
   function resetSpiral() {
     if (pulseInterval) {
@@ -324,8 +325,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
-
   // Back to top button behavior
   const backToTop = document.getElementById("backToTop");
   if (backToTop) {
@@ -338,5 +337,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
 

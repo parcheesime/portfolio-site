@@ -471,8 +471,8 @@ main,
   margin: 0 auto;
   display: block;
   /* Elliptical radius scaling factors: wider X, shorter Y */
-  --cx: clamp(120px, 20vw, 200px);
-  --cy: clamp(50px, 10vw, 100px);
+  --cx: clamp(90px, 16vw, 150px);
+  --cy: clamp(40px, 8vw, 70px);
 }
 
 /* Remove old background path */
@@ -654,6 +654,30 @@ main,
 .timeline-step:nth-child(11) {
   --angle: 72.5deg;
   --m: 3.32;
+  z-index: 6;
+}
+
+.timeline-step:nth-child(12) {
+  --angle: 210deg;
+  --m: 3.46;
+  z-index: 5;
+}
+
+.timeline-step:nth-child(13) {
+  --angle: 347.5deg;
+  --m: 3.61;
+  z-index: 4;
+}
+
+.timeline-step:nth-child(14) {
+  --angle: 125deg;
+  --m: 3.74;
+  z-index: 3;
+}
+
+.timeline-step:nth-child(15) {
+  --angle: 262.5deg;
+  --m: 3.87;
   z-index: 2;
 }
 
@@ -817,6 +841,21 @@ html {
   overflow: hidden;
   background: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 5px solid #1e003a;
+  animation: borderShift 8s ease-in-out infinite;
+}
+
+.project-grid > .flip-card:nth-child(1) { animation-delay: 0s; }
+.project-grid > .flip-card:nth-child(2) { animation-delay: 0.5s; }
+.project-grid > .flip-card:nth-child(3) { animation-delay: 1.0s; }
+.project-grid > .flip-card:nth-child(4) { animation-delay: 1.5s; }
+.project-grid > .flip-card:nth-child(5) { animation-delay: 2.0s; }
+.project-grid > .flip-card:nth-child(6) { animation-delay: 2.5s; }
+
+@keyframes borderShift {
+  0% { border-color: #1e003a; }
+  50% { border-color: #a5b4fc; }
+  100% { border-color: #1e003a; }
 }
 
 .flip-card-inner {
@@ -832,10 +871,6 @@ html {
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
-}
-
-.flip-card:hover.wiggle {
-  animation-play-state: paused;
 }
 
 /* Flip on click for mobile */
@@ -893,39 +928,7 @@ html {
   font-size: 0.9em;
 }
 
-@keyframes spacedWiggle {
 
-  0%,
-  100% {
-    transform: rotate(0deg);
-  }
-
-  10% {
-    transform: rotate(1.5deg);
-  }
-
-  20% {
-    transform: rotate(-1.5deg);
-  }
-
-  30% {
-    transform: rotate(1.5deg);
-  }
-
-  40% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-
-  /* rest of time is pause */
-}
-
-.flip-card.wiggle {
-  animation: spacedWiggle 3s ease-in-out infinite;
-}
 
 /* === 3. Back to Top Button === */
 #backToTop {
@@ -1326,7 +1329,7 @@ body:not(.explore-mode) img {
 
 body:not(.explore-mode) .flip-card-front,
 body:not(.explore-mode) .flip-card-back {
-  border: 1px solid var(--border-light) !important;
+  border: none !important;
 }
 body:not(.explore-mode) .flip-card {
   box-shadow: none !important;
@@ -1469,12 +1472,12 @@ body:not(.explore-mode) .particles {
   h1 {
     font-size: 2rem !important;
   }
-  
+
   h2.section-title, h2 {
     font-size: 1.5rem !important;
     word-wrap: break-word;
   }
-  
+
   .contact-info p, .contact-info a {
     word-break: break-word;
     overflow-wrap: break-word;
@@ -1501,7 +1504,7 @@ body:not(.explore-mode) .particles {
     gap: 20px;
     padding: 20px 0;
   }
-  
+
   .timeline-step {
     position: static !important;
     transform: none !important;
@@ -1511,7 +1514,7 @@ body:not(.explore-mode) .particles {
     width: 90% !important;
     max-width: 400px !important;
   }
-  
+
   /* Disable active center glide since we are stacking them */
   .timeline-step.active {
     animation: none !important;
@@ -1519,7 +1522,7 @@ body:not(.explore-mode) .particles {
     z-index: 10 !important;
     box-shadow: 0 0 15px var(--accent);
   }
-  
+
   /* Disable unroll popSpiral */
   .timeline-step.visible {
     animation: none !important;
@@ -1546,13 +1549,13 @@ body:not(.explore-mode) .particles {
     gap: 3rem;
     text-align: left;
   }
-  
+
   .about-text {
     flex: 1;
     max-width: 60%;
     min-width: 0;
   }
-  
+
   .fun-fact-container {
     flex: 1;
     max-width: 40%;
@@ -1697,4 +1700,29 @@ body.explore-mode.hacker-mode .code-scroll-wrapper pre {
 @keyframes popIn {
   from { opacity: 0; transform: translate(-50%, -20%) scale(0.5); }
   to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Project Card Badges */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-weight: 600;
+}
+
+body.explore-mode .badge {
+  background: rgba(139, 92, 246, 0.15);
+  color: #22d3ee;
+  border: 1px solid rgba(34, 211, 238, 0.3);
 }

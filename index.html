@@ -42,7 +42,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aletia Trepte | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=9" />
 </head>
 
 <body>
@@ -165,59 +165,59 @@
       <h2 class="section-title">🧑‍💻 Some Projects</h2>
       <div class="project-grid">
 
+        <project-card front-title="🌐 Google I/O Platform Engineering" back-title="💻 Software Engineering (Front-End)">
+          <span class="badge">Lit</span>
+          <span class="badge">TypeScript</span>
+          <span class="badge">Tailwind</span>
+          <pre><code>@property({ type: String })
+title = '';
 
-        <project-card front-title="⚡ Component Engineering @ Scale" back-title="💻 Software Engineering (Front-End)"
-          quote="I engineer useful, informative, and human-centered systems">
-          <pre><code>// Respect reduced motion preference
-const prefersReducedMotion = window.matchMedia(
-  '(prefers-reduced-motion: reduce)'
-).matches;
+render() {
+  return html`&lt;h2&gt;${this.title}&lt;/h2&gt;`;
+}
+</code></pre>
 
-if (!prefersReducedMotion) {
-  animateBorder();
-}</code></pre>
           <ul>
-            <li><strong>🧩 Architecture:</strong> Built and modified Lit-based web components integrated with
-              CMS-driven content.</li>
-            <li><strong>✨ UI / Styling:</strong> Implemented responsive UI features using Tailwind CSS and Eleventy
-              (11ty).</li>
-            <li><strong>🌐 Accessibility:</strong> Debugged cross-browser rendering issues and accessibility
-              behaviors (ARIA, keyboard navigation).</li>
+            <li><strong>🧩 Components:</strong> Built and modified Lit-based web components integrated with CMS-driven
+              content.</li>
+            <li><strong>🎨 UI Engineering:</strong> Implemented responsive features using Tailwind CSS and Eleventy.
+            </li>
+            <li><strong>🚀 Launch Support:</strong> Supported production updates across multiple Google I/O 2026 launch
+              phases.</li>
           </ul>
         </project-card>
-
 
         <project-card front-title="🔁 Jobs Recovery & Rebuild System" back-title="🔁 Jobs Recovery & Rebuild System">
-          <pre># Save job settings to S3
-          key = f"backup_jobs/job_{job_id}_{today}.json"
+          <span class="badge">Python</span>
+          <span class="badge">AWS S3</span>
+          <span class="badge">Databricks</span>
+          <pre><code>key = f"backup_jobs/job_{job_id}_{today}.json"
 
-          s3.put_object(
-            Bucket=bucket_name,
-            Key=key,
-            Body=json_data,
-            ContentType="application/json"
-          )</pre>
+s3.put_object(
+    Bucket=bucket_name,
+    Key=key,
+    Body=json_data
+)</code></pre>
           <ul>
-            <li><strong>⚙️ Automated Recovery:</strong> Rebuilds Databricks jobs via REST API with latest valid
-              configurations.</li>
-            <li><strong>🔍 Architecture:</strong> Backed up comprehensive job metadata to AWS S3, securely managing
-              edge cases.</li>
-            <li><strong>🚀 Impact:</strong> Drastically reduced devastating pipeline disaster recovery times from
-              hours to mere minutes.</li>
+            <li><strong>🧰 Automation:</strong> Backed up job configurations and metadata for reliable recovery.</li>
+            <li><strong>☁️ Cloud Storage:</strong> Stored validated job settings in AWS S3 as reusable JSON snapshots.
+            </li>
+            <li><strong>🚑 Recovery:</strong> Rebuilt Databricks jobs through REST API workflows after failure
+              scenarios.</li>
           </ul>
         </project-card>
-
 
         <project-card front-title="🧹 Back4App Class & Data Automation"
           back-title="🧹 Back4App Class & Data Automation">
-          <pre>import 'dotenv/config';
-          await fetch(`https://parseapi.back4app.com/classes/TestClass`, {
-            method: 'DELETE',
-            headers: {
-              'X-Parse-Application-Id': process.env.APP_ID,
-              'X-Parse-REST-API-Key': process.env.REST_KEY
-            }
-          });</pre>
+          <span class="badge">TDD</span>
+          <span class="badge">REST API</span>
+          <span class="badge">Back4App</span>
+          <pre><code>await fetch(url, {
+  method: 'DELETE',
+  headers: {
+    'X-Parse-Application-Id': APP_ID
+  }
+});</code></pre>
           <ul>
             <li><strong>🛠 Automation:</strong> Dynamically generated Parse schemas and organically populated
               environments securely via Node.js scripts.</li>
@@ -228,18 +228,16 @@ if (!prefersReducedMotion) {
           </ul>
         </project-card>
 
+        <project-card front-title="♿ Accessibility Engineering" back-title="♿ Accessibility Engineering">
+          <span class="badge">JavaScript</span>
+          <span class="badge">a11y</span>
+          <span class="badge">WCAG</span>
+          <pre>const ratio = calculateContrast(
+  textColor,
+  backgroundColor
+);
 
-        <project-card front-title="🚚 FreightFlow DBT + Pub/Sub Pipeline"
-          back-title="🚚 FreightFlow DBT + Pub/Sub Pipeline">
-          <pre># Simulate freight event stream
-          Listening on
-          projects/dbt-learn-bigquery-444608/subscriptions/freight-sub...
-
-          Received message: {
-            "shipment_id": "feb156c6-788a-4a95",
-            "status_update": "in transit",
-            "last_known_location": "Phoenix, AZ"
-          }</pre>
+return ratio >= 4.5;</pre>
           <ul>
             <li><strong>🔄 Event Streaming:</strong> Engineered real-time publisher/subscriber data pipelines
               utilizing Google Pub/Sub and Python.</li>
@@ -250,17 +248,16 @@ if (!prefersReducedMotion) {
           </ul>
         </project-card>
 
+        <project-card front-title="🛠️ Data Pipeline Deduplication" back-title="🛠️ Data Pipeline Deduplication">
+          <span class="badge">Scala</span>
+          <span class="badge">Apache Spark</span>
+          <span class="badge">Delta Tables</span>
+          <pre><code>val w = Window.partitionBy("security_id")
+  .orderBy(col("priority").desc)
 
-        <project-card front-title="🛠️ Corporate Bond Pipeline Deduplication"
-          back-title="🛠️ Corporate Bond Pipeline Deduplication">
-          <pre>// Scala: Watermarking, event-time processing
-          val ranked = df.withColumn("row_num", row_number().over(
-            Window.partitionBy("security_description", "source_id", "record_id")
-              .orderBy(when(col("is_C"), 3)
-                      .when(col("is_B"), 2)
-                      .when(col("is_A"), 1)
-                      .otherwise(0).desc)
-          )).filter(col("row_num") === 1)</pre>
+val ranked = df
+  .withColumn("row_num", row_number().over(w))
+  .filter(col("row_num") === 1)</code></pre>
           <ul>
             <li><strong>⚙️ Pipeline Overhaul:</strong> Re-architected continuous ingestion and data-matching
               frameworks actively utilizing Scala + SQL.</li>
@@ -271,9 +268,10 @@ if (!prefersReducedMotion) {
           </ul>
         </project-card>
 
-
-        <project-card front-title="🎓 Technical Teaching & Communication" back-title="🎓 Teaching + Communication"
-          quote="Empowering teams through clear communication">
+        <project-card front-title="🎓 Technical Teaching & Communication" back-title="🎓 Teaching + Communication">
+          <span class="badge">Computer Science</span>
+          <span class="badge">Curriculum</span>
+          <span class="badge">Mentorship</span>
           <pre><code>class Educator {
   constructor() {
     this.focus = [
@@ -318,6 +316,18 @@ if (!prefersReducedMotion) {
             Linux</div>
           <div class="timeline-step" data-tooltip="Build responsive websites using HTML, CSS, and JavaScript.">🌐 HTML /
             CSS / JS</div>
+          <div class="timeline-step" data-tooltip="Developed responsive web components for Google I/O using Lit, Tailwind CSS, and Eleventy.">
+            🌐 Web Engineering</div>
+          <div class="timeline-step" data-tooltip="Audited and implemented ARIA compliance, contrast ratios, and keyboard navigation.">
+            ♿ Accessibility</div>
+          <div class="timeline-step" data-tooltip="Collaborated across cross-functional teams to review high-impact UI and pipeline updates.">
+            🔍 Code Review</div>
+          <div class="timeline-step" data-tooltips='[
+            "Configured and monitored PLX workflows supporting sustainability data processing and reporting.",
+            "Used SQL, DataNexus, and Salesforce NZC to investigate discrepancies and validate outputs.",
+            "Promoted and verified changes across development, staging, and production environments."
+          ]'>
+            🏢 Enterprise Data Systems</div>
           <div class="timeline-step" data-tooltips='[
           "Connected to third-party APIs to collect and process data for reports, dashboards, and automation.",
           "Built my own APIs using FastAPI and Flask to serve datasets, expose endpoints, and support frontend or team use.",
@@ -385,9 +395,8 @@ if (!prefersReducedMotion) {
     <p>© 2025 Aletia Trepte</p>
   </footer>
 
-
-  <script src="components/project-card.js" defer></script>
-  <script src="main.js" defer></script>
+  <script src="components/project-card.js?v=9" defer></script>
+  <script src="main.js?v=6" defer></script>
 
   <div id="rewardMessage">🏅 You hit 10 clicks! Thanks for exploring ✨</div>
   <div id="finalMessage">🎯 I'm glad you stayed! Let's connect — <a href="https://www.linkedin.com/in/aletia-trepte"
