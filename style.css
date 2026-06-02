@@ -187,7 +187,7 @@ footer {
 
 section {
   scroll-margin-top: 100px;
-  padding: 60px 20px;
+  padding: 20px;
   box-sizing: border-box;
 }
 
@@ -616,9 +616,9 @@ body.explore-mode {
   justify-content: space-between;
   gap: 1rem;
   max-width: 100%;
-  margin: 10px auto 0;
-  padding: 10px 1em 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0 auto 10px;
+  padding: 0 1em 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #skill-path {
@@ -1390,7 +1390,7 @@ body.explore-mode header {
 }
 
 body.explore-mode .nav-and-toggle-container {
-  border-top-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
 .hidden-in-recruiter {
@@ -1577,7 +1577,7 @@ body:not(.explore-mode) header .contact-info a {
 }
 
 body:not(.explore-mode) .nav-and-toggle-container {
-  border-top-color: var(--border-light) !important;
+  border-bottom-color: var(--border-light) !important;
 }
 
 body:not(.explore-mode) #about,

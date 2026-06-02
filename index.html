@@ -56,6 +56,26 @@
   </script>
 
   <header>
+    <div class="nav-and-toggle-container">
+      <nav class="top-nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skill-path">Journey</a></li>
+        </ul>
+      </nav>
+      <div id="clickScore" class="hidden-in-recruiter">⭐ Score: <span id="scoreCount">0</span></div>
+      <div id="questBox" class="hidden-in-recruiter">🎯 Mission: Explore 3 features <span
+          id="questProgress">(0/3)</span></div>
+      <div class="mode-toggle-wrapper">
+        <span class="mode-label">Recruiter</span>
+        <label class="switch">
+          <input type="checkbox" id="modeSwitch" aria-label="Toggle Explore Mode">
+          <span class="slider round"></span>
+        </label>
+        <span class="mode-label">Explore</span>
+      </div>
+    </div>
     <div class="header-container">
       <div class="contact-info">
         <h1>Aletia Trepte</h1>
@@ -80,26 +100,6 @@
       </div>
       <div class="profile-pic-wrapper">
         <img src="assets/me2.webp" alt="Aletia Trepte" class="profile-pic" width="120" height="120" />
-      </div>
-    </div>
-    <div class="nav-and-toggle-container">
-      <nav class="top-nav">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skill-path">Journey</a></li>
-        </ul>
-      </nav>
-      <div id="clickScore" class="hidden-in-recruiter">⭐ Score: <span id="scoreCount">0</span></div>
-      <div id="questBox" class="hidden-in-recruiter">🎯 Mission: Explore 3 features <span
-          id="questProgress">(0/3)</span></div>
-      <div class="mode-toggle-wrapper">
-        <span class="mode-label">Recruiter</span>
-        <label class="switch">
-          <input type="checkbox" id="modeSwitch" aria-label="Toggle Explore Mode">
-          <span class="slider round"></span>
-        </label>
-        <span class="mode-label">Explore</span>
       </div>
     </div>
   </header>
