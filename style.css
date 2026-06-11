@@ -2031,3 +2031,32 @@ body.explore-mode .badge {
   color: #22d3ee;
   border: 1px solid rgba(34, 211, 238, 0.3);
 }
+
+/* ================================================== */
+/* ACCESSIBILITY: Reduced Motion */
+/* ================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  header,
+  .flip-card,
+  .timeline-step.pulse,
+  .fun-fact-button.pulse,
+  #questBox.mission-complete {
+    animation: none !important;
+  }
+
+  .timeline-step.visible {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) scale(1) !important;
+  }
+
+  .particles,
+  .particles::before,
+  .particles::after {
+    display: none !important;
+  }
+}
