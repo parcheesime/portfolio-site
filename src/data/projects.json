@@ -1,0 +1,27 @@
+[
+    {
+        "id": "google-io",
+        "frontTitle": "🌐 Google I/O Platform Engineering",
+        "backTitle": "💻 Software Engineering (Front-End)",
+        "badges": [
+            "Lit",
+            "TypeScript",
+            "Tailwind"
+        ],
+        "code": "@property({ type: String })\ntitle = '';\n\nrender() {\n  return html`<h2>${this.title}</h2>`;\n}",
+        "bullets": [
+            {
+                "label": "🧩 Components",
+                "text": "Built and modified Lit-based web components integrated with CMS-driven content."
+            },
+            {
+                "label": "🎨 UI Engineering",
+                "text": "Implemented responsive features using Tailwind CSS and Eleventy."
+            },
+            {
+                "label": "🚀 Launch Support",
+                "text": "Supported production updates across multiple Google I/O 2026 launch phases."
+            }
+        ]
+    }
+]

@@ -4,8 +4,10 @@ import { initFunFacts } from "./features/fun-facts.js";
 import { initJourney } from "./features/journey.js";
 import { incrementScore } from "./features/score-system.js";
 import { createQuestSystem } from "./features/quest-system.js";
+import { renderProjects } from "./features/render-projects.js";
+import { hydrateProjectCards } from "../components/project-card.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const quest = createQuestSystem();
 
     initModeToggle();
@@ -13,4 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initFunFacts(quest.updateQuest);
     initJourney(quest.updateQuest, incrementScore);
+
+    await renderProjects();
+    hydrateProjectCards();
 });
