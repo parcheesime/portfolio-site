@@ -6,6 +6,7 @@ import { incrementScore } from "./features/score-system.js";
 import { createQuestSystem } from "./features/quest-system.js";
 import { renderProjects } from "./features/render-projects.js";
 import { hydrateProjectCards } from "../components/project-card.js";
+import { renderJourney } from "./features/render-journey.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
     const quest = createQuestSystem();
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     initBackToTop();
 
     initFunFacts(quest.updateQuest);
+    await renderJourney();
     initJourney(quest.updateQuest, incrementScore);
 
     await renderProjects();
