@@ -52,12 +52,12 @@
         ]
     },
     {
-        "id": "apis",
-        "label": "🔗 APIs",
+        "id": "workflow-engineering",
+        "label": "🌱 Workflow Engineering",
         "tooltips": [
-            "Connected to third-party APIs to collect and process data for reports, dashboards, and automation.",
-            "Built my own APIs using FastAPI and Flask to serve datasets, expose endpoints, and support frontend or team use.",
-            "Wrapped APIs with scheduling or logic turning raw endpoints into usable services for apps or data pipelines."
+            "Configured and monitored enterprise data workflows supporting sustainability reporting.",
+            "Validated reporting outputs and investigated failures using SQL and internal reporting systems.",
+            "Promoted and verified changes across development, staging, and production environments."
         ]
     },
     {
@@ -94,12 +94,12 @@
         "tooltip": "Engineer streaming pipelines for real-time trade data (Databricks + S3)."
     },
     {
-        "id": "workflow-engineering",
-        "label": "🌱 Workflow Engineering",
+        "id": "apis",
+        "label": "🔗 APIs",
         "tooltips": [
-            "Configured and monitored enterprise data workflows supporting sustainability reporting.",
-            "Validated reporting outputs and investigated failures using SQL and internal reporting systems.",
-            "Promoted and verified changes across development, staging, and production environments."
+            "Connected to third-party APIs to collect and process data for reports, dashboards, and automation.",
+            "Built my own APIs using FastAPI and Flask to serve datasets, expose endpoints, and support frontend or team use.",
+            "Wrapped APIs with scheduling or logic turning raw endpoints into usable services for apps or data pipelines."
         ]
     }
 ]
