@@ -23,5 +23,130 @@
                 "text": "Supported production updates across multiple Google I/O 2026 launch phases."
             }
         ]
+    },
+    {
+        "id": "jobs-recovery",
+        "frontTitle": "🔁 Jobs Recovery & Rebuild System",
+        "backTitle": "🔁 Jobs Recovery & Rebuild System",
+        "badges": [
+            "Python",
+            "AWS S3",
+            "Databricks"
+        ],
+        "code": "key = f\"backup_jobs/job_{job_id}_{today}.json\"\n\ns3.put_object(\n    Bucket=bucket_name,\n    Key=key,\n    Body=json_data\n)",
+        "bullets": [
+            {
+                "label": "🧰 Automation",
+                "text": "Backed up job configurations and metadata for reliable recovery."
+            },
+            {
+                "label": "☁️ Cloud Storage",
+                "text": "Stored validated job settings in AWS S3 as reusable JSON snapshots."
+            },
+            {
+                "label": "🚑 Recovery",
+                "text": "Rebuilt Databricks jobs through REST API workflows after failure scenarios."
+            }
+        ]
+    },
+    {
+        "id": "back4app",
+        "frontTitle": "🧹 Back4App Class & Data Automation",
+        "backTitle": "🧹 Back4App Class & Data Automation",
+        "badges": [
+            "TDD",
+            "REST API",
+            "Back4App"
+        ],
+        "code": "await fetch(url, {\n  method: 'DELETE',\n  headers: {\n    'X-Parse-Application-Id': APP_ID\n  }\n});",
+        "bullets": [
+            {
+                "label": "🛠 Automation",
+                "text": "Dynamically generated Parse schemas and organically populated environments securely via Node.js scripts."
+            },
+            {
+                "label": "🧪 Agile TDD",
+                "text": "Engineered targeted teardown scripts to instantly reset and sanitize datasets between robust test runs."
+            },
+            {
+                "label": "🔧 Tech Sandbox",
+                "text": "JavaScript (ES Modules), Node.js, REST APIs, and Back4App configuration via Environment Variables."
+            }
+        ]
+    },
+    {
+        "id": "accessibility",
+        "frontTitle": "♿ Accessibility Engineering",
+        "backTitle": "♿ Accessibility Engineering",
+        "badges": [
+            "JavaScript",
+            "a11y",
+            "WCAG"
+        ],
+        "code": "const ratio = calculateContrast(\n  textColor,\n  backgroundColor\n);\n\nreturn ratio >= 4.5;",
+        "bullets": [
+            {
+                "label": "🔄 Event Streaming",
+                "text": "Engineered real-time publisher/subscriber data pipelines utilizing Google Pub/Sub and Python."
+            },
+            {
+                "label": "📦 Data Modeling",
+                "text": "Orchestrated complete dbt staging, intermediate, and robust dimensional mart models mechanically."
+            },
+            {
+                "label": "🧪 Mock Generation",
+                "text": "Synthesized highly realistic geographic freight-tracking datasets at scale using Faker and Geopy."
+            }
+        ]
+    },
+    {
+        "id": "deduplication",
+        "frontTitle": "🛠️ Data Pipeline Deduplication",
+        "backTitle": "🛠️ Data Pipeline Deduplication",
+        "badges": [
+            "Scala",
+            "Apache Spark",
+            "Delta Tables"
+        ],
+        "code": "val w = Window.partitionBy(\"security_id\")\n  .orderBy(col(\"priority\").desc)\n\nval ranked = df\n  .withColumn(\"row_num\", row_number().over(w))\n  .filter(col(\"row_num\") === 1)",
+        "bullets": [
+            {
+                "label": "⚙️ Pipeline Overhaul",
+                "text": "Re-architected continuous ingestion and data-matching frameworks actively utilizing Scala + SQL."
+            },
+            {
+                "label": "📊 Optimization",
+                "text": "Drastically reduced duplicate entries applying aggressive window functions and data watermarks."
+            },
+            {
+                "label": "🧰 Technical Sandbox",
+                "text": "Scala, SQL, Delta Tables, Databricks clusters, AWS S3, and JSON Streaming APIs."
+            }
+        ]
+    },
+    {
+        "id": "google-sustainability",
+        "frontTitle": "🌱 Google Sustainability",
+        "backTitle": "📊 Data Engineering & Workflows",
+        "badges": [
+            "SQL",
+            "Google Cloud",
+            "Data Pipelines"
+        ],
+        "code": "pipeline {\n  name: \"sustainability_reporting\"\n  source: \"activity_data\"\n  transform: \"validation_sql\"\n  output: \"reporting_table\"\n}\n\nenvironments: [\"dev\", \"staging\", \"prod\"]\nmonitoring: [\"failures\", \"record_counts\"]",
+        "bullets": [
+            {
+                "label": "⚙️ Workflow Engineering",
+                "text": "Configured, deployed, and monitored data workflows across dev, staging, and prod environments supporting sustainability reporting systems."
+            },
+            {
+                "label": "🔍 Data Validation & SQL",
+                "text": "Reconciled discrepancies, investigated workflow failures, and validated outputs using SQL, internal reporting platforms, and CRM data."
+            },
+            {
+                "label": "🤝 Stakeholder Collaboration",
+                "text": "Worked directly with stakeholders to gather requirements, prioritize requests, and balance competing operational and project priorities."
+            }
+        ]
     }
 ]
