@@ -31,7 +31,11 @@
     {
         "id": "accessibility",
         "label": "♿ Accessibility",
-        "tooltip": "Audited and implemented ARIA compliance, contrast ratios, and keyboard navigation."
+        "tooltips": [
+            "Implemented ARIA improvements, keyboard navigation, and screen-reader support.",
+            "Tested with NVDA, Narrator, VoiceOver, and Windows High Contrast Mode.",
+            "Helped prepare accessibility fixes for Google I/O production launches."
+        ]
     },
     {
         "id": "code-review",
@@ -88,5 +92,14 @@
         "id": "streaming-data",
         "label": "⚡ Streaming Data",
         "tooltip": "Engineer streaming pipelines for real-time trade data (Databricks + S3)."
+    },
+    {
+        "id": "workflow-engineering",
+        "label": "🌱 Workflow Engineering",
+        "tooltips": [
+            "Configured and monitored enterprise data workflows supporting sustainability reporting.",
+            "Validated reporting outputs and investigated failures using SQL and internal reporting systems.",
+            "Promoted and verified changes across development, staging, and production environments."
+        ]
     }
 ]
