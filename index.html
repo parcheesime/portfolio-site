@@ -4,12 +4,29 @@
 <head>
 
   <script>
-    window.plausible = window.plausible || function () {
-      (window.plausible.q = window.plausible.q || []).push(arguments);
+    // Replace this with your GA4 Measurement ID from Admin > Data streams > Web.
+    const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
     };
+    window.gtag = gtag;
+
+    gtag("consent", "default", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "granted",
+    });
+    gtag("js", new Date());
+    gtag("config", GA_MEASUREMENT_ID);
+
+    const gaScript = document.createElement("script");
+    gaScript.async = true;
+    gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(gaScript);
   </script>
-  <!-- Replace data-domain with the domain configured in Plausible, e.g. your GitHub Pages host. -->
-  <script defer data-domain="parcheesime.github.io" src="https://plausible.io/js/script.js"></script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />

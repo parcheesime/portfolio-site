@@ -26,8 +26,11 @@ export function trackEvent(eventName, props = {}) {
     const safeProps = getSafeProps(props);
 
     try {
-        if (typeof window.plausible === "function") {
-            window.plausible(eventName, { props: safeProps });
+        if (typeof window.gtag === "function") {
+            window.gtag("event", eventName, {
+                event_category: "portfolio",
+                ...safeProps,
+            });
         }
     } catch (error) {
         // Analytics should never interrupt portfolio interactions.
