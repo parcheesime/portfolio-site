@@ -1,3 +1,5 @@
+import { trackEvent } from "./analytics.js";
+
 export function initJourney(updateQuest, incrementScore) {
     // all journey code
     // Timeline: Pulse each step when skill-path is in view
@@ -89,13 +91,14 @@ export function initJourney(updateQuest, incrementScore) {
     const clickedSteps = new Set();
     let completeTimeout = null;
 
-    steps.forEach(step => {
+    steps.forEach((step, index) => {
         const tooltips = JSON.parse(step.getAttribute('data-tooltips') || '[]');
         const originalText = step.textContent.trim();
         step.setAttribute('data-original-text', originalText);
         step.classList.add('is-icon-state');
 
         step.addEventListener('click', () => {
+            trackEvent("journey_step_click", { step_index: index + 1 });
             updateQuest('timeline');
             // Restore previous node
             if (lastClickedStep && lastClickedStep !== step) {

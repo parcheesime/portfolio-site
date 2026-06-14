@@ -7,10 +7,12 @@ import { createQuestSystem } from "./features/quest-system.js";
 import { renderProjects } from "./features/render-projects.js";
 import { hydrateProjectCards } from "../components/project-card.js";
 import { renderJourney } from "./features/render-journey.js";
+import { initAnalyticsTracking } from "./features/analytics.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
     const quest = createQuestSystem();
 
+    initAnalyticsTracking();
     initModeToggle();
     initBackToTop();
 

@@ -10,6 +10,7 @@ export async function renderProjects() {
 
     container.innerHTML = projects.map(project => `
         <project-card
+            project-id="${project.id}"
             front-title="${project.frontTitle}"
             back-title="${project.backTitle}">
 

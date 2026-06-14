@@ -1,4 +1,5 @@
 import { appState } from "../app-state.js";
+import { trackEvent } from "./analytics.js";
 
 export function createQuestSystem() {
 
@@ -8,6 +9,8 @@ export function createQuestSystem() {
     const questProgressEl = document.getElementById("questProgress");
 
     function unlockHackerMode() {
+        trackEvent("achievement_unlocked", { achievement: "engineering_lab" });
+
         if (questBox) {
             questBox.innerHTML = "🏆 Hack The Planet. You're In.";
             questBox.classList.add("mission-complete");

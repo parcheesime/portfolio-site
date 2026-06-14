@@ -1,6 +1,9 @@
+import { trackEvent } from "../src/features/analytics.js";
+
 // Vanilla JS Component Engine for <project-card> tags
 export function hydrateProjectCards() {
   document.querySelectorAll("project-card").forEach(card => {
+    const projectId = card.getAttribute("project-id") || "";
     const frontTitle = card.getAttribute("front-title") || "";
     const backTitle = card.getAttribute("back-title") || frontTitle;
     const quote = card.getAttribute("quote") || "";
@@ -18,7 +21,7 @@ export function hydrateProjectCards() {
     const wrapper = document.createElement("div");
 
     wrapper.innerHTML = `
-      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <h3 class="wiggle-text">${frontTitle}</h3>
@@ -33,6 +36,13 @@ export function hydrateProjectCards() {
       </div>
     `;
 
-    card.replaceWith(wrapper.firstElementChild);
+    const hydratedCard = wrapper.firstElementChild;
+
+    hydratedCard.addEventListener("click", () => {
+      hydratedCard.classList.toggle("flipped");
+      trackEvent("project_card_click", { project_id: projectId });
+    });
+
+    card.replaceWith(hydratedCard);
   });
 }

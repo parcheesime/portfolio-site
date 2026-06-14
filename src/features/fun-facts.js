@@ -1,4 +1,5 @@
 import { incrementScore } from "./score-system.js";
+import { trackEvent } from "./analytics.js";
 
 const facts = [
     "Started college as a physics major. I'm drawn to the strange beauty of math in modern physics.",
@@ -47,6 +48,7 @@ export function initFunFacts(updateQuest) {
     );
 
     button.addEventListener("click", () => {
+        trackEvent("fun_fact_click");
         updateQuest("fact");
         showNextFact();
 
