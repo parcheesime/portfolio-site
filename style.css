@@ -345,6 +345,10 @@ body.explore-mode .tooltip::before {
   max-width: 1050px;
 }
 
+.about-text em {
+  text-wrap: pretty;
+}
+
 .fun-fact-container {
   background-color: white;
   border: 2px solid #fff;
