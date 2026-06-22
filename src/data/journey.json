@@ -1,105 +1,72 @@
 [
     {
-        "id": "math-matlab",
-        "label": "📐 Math / MATLAB",
-        "tooltip": "Build simulations in MATLAB for chaos theory and numerical analysis."
-    },
-    {
-        "id": "python",
-        "label": "🐍 Python",
-        "tooltips": [
-            "My Pythoning began building games using Tkinter and Pygame.",
-            "Transformed data using Pandas and PySpark, then loaded it into warehouses and databases.",
-            "Built backend workflows that query and transform data using Python and SQL."
-        ]
-    },
-    {
-        "id": "linux",
-        "label": "🖥️ Linux",
-        "tooltip": "Work in WSL and various Linux distros — strong with command line."
-    },
-    {
-        "id": "html-css-js",
-        "label": "🌐 HTML / CSS / JS",
-        "tooltip": "Build responsive websites using HTML, CSS, and JavaScript."
-    },
-    {
         "id": "web-engineering",
         "label": "🌐 Web Engineering",
-        "tooltip": "Developed responsive web components for Google I/O using Lit, Tailwind CSS, and Eleventy."
+        "category": "Software"
     },
     {
         "id": "accessibility",
         "label": "♿ Accessibility",
-        "tooltips": [
-            "Implemented ARIA improvements, keyboard navigation, and screen-reader support.",
-            "Tested with NVDA, Narrator, VoiceOver, and Windows High Contrast Mode.",
-            "Helped prepare accessibility fixes for Google I/O production launches."
-        ]
+        "category": "Software"
     },
     {
-        "id": "code-review",
-        "label": "🔍 Code Review",
-        "tooltip": "Collaborated across cross-functional teams to review high-impact UI and pipeline updates."
+        "id": "analytics",
+        "label": "📈 Analytics & Reporting",
+        "category": "Data"
     },
     {
-        "id": "enterprise-data-systems",
-        "label": "🏢 Enterprise Data Systems",
-        "tooltips": [
-            "Configured and monitored PLX workflows supporting sustainability data processing and reporting.",
-            "Used SQL, AG-MDM, and Salesforce to investigate discrepancies and validate outputs.",
-            "Promoted and verified changes across development, staging, and production environments."
-        ]
-    },
-    {
-        "id": "workflow-engineering",
-        "label": "🌱 Workflow Engineering",
-        "tooltips": [
-            "Configured and monitored enterprise data workflows supporting sustainability reporting.",
-            "Validated reporting outputs and investigated failures using SQL and internal reporting systems.",
-            "Promoted and verified changes across development, staging, and production environments."
-        ]
+        "id": "data-quality",
+        "label": "🧹 Data Quality",
+        "category": "Data"
     },
     {
         "id": "automation",
         "label": "⚙️ Automation",
-        "tooltip": "Automate data pulls, cleans, and workflows using Python and shell scripts."
-    },
-    {
-        "id": "sql",
-        "label": "🧮 SQL",
-        "tooltips": [
-            "I enforce data integrity, deduplication, and pipeline logic with window functions.",
-            "Use SQL for data modeling and database interaction across projects."
-        ]
-    },
-    {
-        "id": "dashboards-observability",
-        "label": "📊 Dashboards & Observability",
-        "tooltip": "Most comfortable in Sigma and Power BI — built live dashboards for teams."
-    },
-    {
-        "id": "tdd",
-        "label": "🧪 TDD",
-        "tooltip": "Practice test-driven development in Swift using Core Data and XCTest."
-    },
-    {
-        "id": "pipelines",
-        "label": "🔁 Pipelines",
-        "tooltip": "Build ETL/ELT pipelines using PySpark, Delta Tables, and SQL."
-    },
-    {
-        "id": "streaming-data",
-        "label": "⚡ Streaming Data",
-        "tooltip": "Engineer streaming pipelines for real-time trade data (Databricks + S3)."
+        "category": "Systems"
     },
     {
         "id": "apis",
         "label": "🔗 APIs",
-        "tooltips": [
-            "Connected to third-party APIs to collect and process data for reports, dashboards, and automation.",
-            "Built my own APIs using FastAPI and Flask to serve datasets, expose endpoints, and support frontend or team use.",
-            "Wrapped APIs with scheduling or logic turning raw endpoints into usable services for apps or data pipelines."
-        ]
+        "category": "Systems"
+    },
+    {
+        "id": "sql",
+        "label": "🧮 SQL",
+        "category": "Data"
+    },
+    {
+        "id": "enterprise-data-systems",
+        "label": "🏢 Enterprise Data Systems",
+        "category": "Data"
+    },
+    {
+        "id": "workflow-engineering",
+        "label": "🔁 Workflow Engineering",
+        "category": "Systems"
+    },
+    {
+        "id": "streaming-data",
+        "label": "⚡ Streaming Data",
+        "category": "Data"
+    },
+    {
+        "id": "pipelines",
+        "label": "🔁 Data Pipelines",
+        "category": "Data"
+    },
+    {
+        "id": "mobile-development",
+        "label": "📱 Mobile Foundations",
+        "category": "Software"
+    },
+    {
+        "id": "civic-data",
+        "label": "🗺️ Civic Data",
+        "category": "Data"
+    },
+    {
+        "id": "code-review",
+        "label": "🔍 Code Review",
+        "category": "Collaboration"
     }
 ]

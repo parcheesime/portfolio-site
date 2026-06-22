@@ -1,151 +1,350 @@
 [
     {
+        "id": "bondcliq-customer-engagement",
+        "title": "Customer Engagement Automation Platform",
+        "frontTitle": "📬 Customer Engagement Automation",
+        "backTitle": "📊 Campaigns, Analytics & Reporting",
+        "organization": "BondCliQ",
+        "employer": "BondCliQ",
+        "role": "Data Analyst Engineer",
+        "dates": "2022-2024",
+        "badges": [
+            "Python",
+            "MailChimp API",
+            "Salesforce",
+            "AWS S3"
+        ],
+        "relatedSkills": [
+            "python",
+            "sql",
+            "apis",
+            "automation",
+            "analytics"
+        ],
+        "code": "campaign = mailchimp.create_campaign(...)\nhtml = load_template_from_s3()\naudience = build_salesforce_audience()\nmailchimp.schedule(campaign, send_time)",
+        "bullets": [
+            {
+                "label": "🚀 End-to-End Ownership",
+                "text": "Owned the complete customer engagement workflow, including campaign creation, audience management, automation, performance tracking, and stakeholder reporting."
+            },
+            {
+                "label": "📬 Campaign Engineering",
+                "text": "Built and managed custom email campaigns using Python automation, extending MailChimp beyond native platform capabilities to support business requirements."
+            },
+            {
+                "label": "☁️ Dynamic Content Delivery",
+                "text": "Managed HTML email templates stored in AWS S3 and dynamically incorporated content into outbound campaigns and scheduled communications."
+            },
+            {
+                "label": "🔗 Data Integration",
+                "text": "Combined Salesforce and MailChimp datasets to create a unified view of customer engagement, campaign activity, and audience performance."
+            },
+            {
+                "label": "📊 Internal Analytics",
+                "text": "Developed dashboards and recurring reports used during weekly stakeholder meetings to review campaign effectiveness, customer engagement trends, and business metrics."
+            }
+        ]
+    },
+    {
+        "id": "bondcliq-data-quality",
+        "title": "Data Quality & Pipeline Monitoring",
+        "frontTitle": "📊 Data Quality & Pipeline Monitoring",
+        "backTitle": "⚡ Streaming Data Operations",
+        "organization": "BondCliQ",
+        "employer": "BondCliQ",
+        "role": "Data Analyst Engineer",
+        "dates": "2022-2024",
+        "badges": [
+            "SQL",
+            "PySpark",
+            "Databricks",
+            "Delta Lake"
+        ],
+        "relatedSkills": [
+            "sql",
+            "data-quality",
+            "dashboards-observability",
+            "pipelines",
+            "streaming-data",
+            "enterprise-data-systems"
+        ],
+        "code": "duplicates = bonds\n  .withColumn(\n    \"row_num\",\n    row_number().over(window)\n  )\n  .filter(col(\"row_num\") > 1)",
+        "bullets": [
+            {
+                "label": "📈 Observability Dashboard",
+                "text": "Designed and built the company's first data quality and pipeline health dashboard, providing visibility into production data processing and operational performance."
+            },
+            {
+                "label": "🔍 Root Cause Analysis",
+                "text": "Investigated pipeline failures, data anomalies, and processing issues by analyzing streaming workflows and production datasets."
+            },
+            {
+                "label": "🧹 Data Quality Improvements",
+                "text": "Identified and resolved bond matching and duplicate record issues, reducing duplicate entries by approximately 20%."
+            },
+            {
+                "label": "⚡ Streaming Operations",
+                "text": "Supported real-time market data pipelines running throughout trading hours, ensuring reliable delivery of analytics and reporting datasets."
+            }
+        ]
+    },
+    {
+        "id": "bondcliq-backup-recovery",
+        "title": "Databricks Backup & Recovery Platform",
+        "frontTitle": "🔁 Databricks Backup & Recovery",
+        "backTitle": "☁️ Enterprise Automation & Recovery",
+        "organization": "BondCliQ",
+        "employer": "BondCliQ",
+        "role": "Data Analyst Engineer",
+        "dates": "2022-2024",
+        "badges": [
+            "Python",
+            "Databricks API",
+            "AWS S3",
+            "boto3"
+        ],
+        "relatedSkills": [
+            "python",
+            "automation",
+            "apis",
+            "enterprise-data-systems",
+            "workflow-engineering"
+        ],
+        "code": "query_json = export_query(query_id)\n\ns3.put_object(\n  Bucket=bucket_name,\n  Key=backup_key,\n  Body=query_json\n)",
+        "bullets": [
+            {
+                "label": "🧰 Automated Backups",
+                "text": "Built a Python-based platform that automatically backed up Databricks query assets and metadata to Amazon S3 on a daily schedule."
+            },
+            {
+                "label": "🔗 Databricks API Integration",
+                "text": "Leveraged the Databricks API to export and manage analytics assets, reducing manual recovery effort and improving operational resilience."
+            },
+            {
+                "label": "📋 Self-Service Visibility",
+                "text": "Generated spreadsheet-based inventory reports alongside cloud backups, allowing teams to quickly review assets without navigating S3 storage directly."
+            },
+            {
+                "label": "🚑 Recovery & Continuity",
+                "text": "Maintained two weeks of recoverable daily snapshots, supporting data safety, accessibility, and business continuity for analytics operations."
+            }
+        ]
+    },
+    {
         "id": "google-io",
-        "frontTitle": "🌐 Google I/O Platform Engineering",
-        "backTitle": "💻 Software Engineering (Front-End)",
+        "title": "Google I/O 2026",
+        "frontTitle": "🌐 Google I/O 2026",
+        "backTitle": "💻 Front-End Platform Engineering",
+        "organization": "Google",
+        "employer": "Left Field Labs",
+        "role": "Software Engineer",
+        "dates": "2025-2026",
         "badges": [
             "Lit",
             "TypeScript",
-            "Tailwind"
+            "Tailwind",
+            "Accessibility"
+        ],
+        "relatedSkills": [
+            "html-css-js",
+            "web-engineering",
+            "accessibility",
+            "analytics",
+            "code-review"
         ],
         "code": "@property({ type: String })\ntitle = '';\n\nrender() {\n  return html`<h2>${this.title}</h2>`;\n}",
         "bullets": [
             {
-                "label": "🧩 Components",
-                "text": "Built and modified Lit-based web components integrated with CMS-driven content."
+                "label": "🧩 Component Engineering",
+                "text": "Built and enhanced Lit-based web components integrated with CMS-driven content across the Google I/O platform."
             },
             {
-                "label": "🎨 UI Engineering",
-                "text": "Implemented responsive features using Tailwind CSS and Eleventy."
+                "label": "🎨 Front-End Development",
+                "text": "Implemented responsive user experiences using TypeScript, Tailwind CSS, and Eleventy, supporting high-traffic event content and registration flows."
             },
             {
-                "label": "🚀 Launch Support",
-                "text": "Supported production updates across multiple Google I/O 2026 launch phases."
-            }
-        ]
-    },
-    {
-        "id": "jobs-recovery",
-        "frontTitle": "🔁 Jobs Recovery & Rebuild System",
-        "backTitle": "🔁 Jobs Recovery & Rebuild System",
-        "badges": [
-            "Python",
-            "AWS S3",
-            "Databricks"
-        ],
-        "code": "key = f\"backup_jobs/job_{job_id}_{today}.json\"\n\ns3.put_object(\n    Bucket=bucket_name,\n    Key=key,\n    Body=json_data\n)",
-        "bullets": [
-            {
-                "label": "🧰 Automation",
-                "text": "Backed up job configurations and metadata for reliable recovery."
+                "label": "♿ Accessibility",
+                "text": "Contributed accessibility improvements including keyboard navigation, screen-reader support, ARIA enhancements, and reduced-motion experiences."
             },
             {
-                "label": "☁️ Cloud Storage",
-                "text": "Stored validated job settings in AWS S3 as reusable JSON snapshots."
+                "label": "📊 Analytics & Instrumentation",
+                "text": "Implemented analytics tracking and user interaction instrumentation to support measurement of engagement and platform usage."
             },
             {
-                "label": "🚑 Recovery",
-                "text": "Rebuilt Databricks jobs through REST API workflows after failure scenarios."
-            }
-        ]
-    },
-    {
-        "id": "back4app",
-        "frontTitle": "🧹 Back4App Class & Data Automation",
-        "backTitle": "🧹 Back4App Class & Data Automation",
-        "badges": [
-            "TDD",
-            "REST API",
-            "Back4App"
-        ],
-        "code": "await fetch(url, {\n  method: 'DELETE',\n  headers: {\n    'X-Parse-Application-Id': APP_ID\n  }\n});",
-        "bullets": [
-            {
-                "label": "🛠 Automation",
-                "text": "Dynamically generated Parse schemas and organically populated environments securely via Node.js scripts."
-            },
-            {
-                "label": "🧪 Agile TDD",
-                "text": "Engineered targeted teardown scripts to instantly reset and sanitize datasets between robust test runs."
-            },
-            {
-                "label": "🔧 Tech Sandbox",
-                "text": "JavaScript (ES Modules), Node.js, REST APIs, and Back4App configuration via Environment Variables."
-            }
-        ]
-    },
-    {
-        "id": "accessibility",
-        "frontTitle": "♿ Accessibility Engineering",
-        "backTitle": "♿ Accessibility Engineering",
-        "badges": [
-            "JavaScript",
-            "a11y",
-            "WCAG"
-        ],
-        "code": "const ratio = calculateContrast(\n  textColor,\n  backgroundColor\n);\n\nreturn ratio >= 4.5;",
-        "bullets": [
-            {
-                "label": "🔄 Event Streaming",
-                "text": "Engineered real-time publisher/subscriber data pipelines utilizing Google Pub/Sub and Python."
-            },
-            {
-                "label": "📦 Data Modeling",
-                "text": "Orchestrated complete dbt staging, intermediate, and robust dimensional mart models mechanically."
-            },
-            {
-                "label": "🧪 Mock Generation",
-                "text": "Synthesized highly realistic geographic freight-tracking datasets at scale using Faker and Geopy."
-            }
-        ]
-    },
-    {
-        "id": "deduplication",
-        "frontTitle": "🛠️ Data Pipeline Deduplication",
-        "backTitle": "🛠️ Data Pipeline Deduplication",
-        "badges": [
-            "Scala",
-            "Apache Spark",
-            "Delta Tables"
-        ],
-        "code": "val w = Window.partitionBy(\"security_id\")\n  .orderBy(col(\"priority\").desc)\n\nval ranked = df\n  .withColumn(\"row_num\", row_number().over(w))\n  .filter(col(\"row_num\") === 1)",
-        "bullets": [
-            {
-                "label": "⚙️ Pipeline Overhaul",
-                "text": "Re-architected continuous ingestion and data-matching frameworks actively utilizing Scala + SQL."
-            },
-            {
-                "label": "📊 Optimization",
-                "text": "Drastically reduced duplicate entries applying aggressive window functions and data watermarks."
-            },
-            {
-                "label": "🧰 Technical Sandbox",
-                "text": "Scala, SQL, Delta Tables, Databricks clusters, AWS S3, and JSON Streaming APIs."
+                "label": "🚀 Production Launches",
+                "text": "Supported multiple Google I/O launch phases through code reviews, testing, bug fixes, and coordinated production deployments."
             }
         ]
     },
     {
         "id": "google-sustainability",
-        "frontTitle": "🌱 Google Sustainability",
-        "backTitle": "📊 Data Engineering & Workflows",
+        "title": "Sustainability Reporting Platform",
+        "frontTitle": "🌱 Sustainability Reporting Platform",
+        "backTitle": "📊 Enterprise Data Quality & Reporting",
+        "organization": "Google",
+        "employer": "Left Field Labs",
+        "role": "Data / Workflow Engineer",
+        "dates": "2025",
         "badges": [
             "SQL",
-            "Google Cloud",
-            "Data Pipelines"
+            "Data Quality",
+            "Enterprise Workflows",
+            "Sustainability"
         ],
-        "code": "pipeline {\n  name: \"sustainability_reporting\"\n  source: \"activity_data\"\n  transform: \"validation_sql\"\n  output: \"reporting_table\"\n}\n\nenvironments: [\"dev\", \"staging\", \"prod\"]\nmonitoring: [\"failures\", \"record_counts\"]",
+        "relatedSkills": [
+            "sql",
+            "data-quality",
+            "workflow-engineering",
+            "enterprise-data-systems",
+            "analytics",
+            "automation"
+        ],
+        "code": "-- Validate reporting counts\nSELECT reporting_year,\n       COUNT(*) AS record_count\nFROM sustainability_reporting\nGROUP BY reporting_year;",
         "bullets": [
             {
-                "label": "⚙️ Workflow Engineering",
-                "text": "Configured, deployed, and monitored data workflows across dev, staging, and prod environments supporting sustainability reporting systems."
+                "label": "🧹 Data Validation & Reconciliation",
+                "text": "Validated and reconciled multiple years of sustainability reporting data, investigating discrepancies across interconnected enterprise systems and reporting workflows."
             },
             {
-                "label": "🔍 Data Validation & SQL",
-                "text": "Reconciled discrepancies, investigated workflow failures, and validated outputs using SQL, internal reporting platforms, and CRM data."
+                "label": "🔄 Data Quality & Deduplication",
+                "text": "Identified reporting inconsistencies, duplicate records, and workflow issues to improve accuracy and reliability of sustainability datasets."
+            },
+            {
+                "label": "⚙️ Workflow Operations",
+                "text": "Configured, monitored, tested, and supported reporting workflows across development, staging, and production environments."
+            },
+            {
+                "label": "📊 Enterprise Reporting",
+                "text": "Supported sustainability reporting initiatives by validating outputs, investigating failures, and ensuring consistency across reporting systems."
             },
             {
                 "label": "🤝 Stakeholder Collaboration",
-                "text": "Worked directly with stakeholders to gather requirements, prioritize requests, and balance competing operational and project priorities."
+                "text": "Worked closely with business and technical stakeholders to prioritize requests, validate requirements, and support operational reporting needs."
+            }
+        ]
+    },
+    {
+        "id": "hopeview-mobile",
+        "title": "HopeView Mobile Platform",
+        "frontTitle": "📱 HopeView Mobile Platform",
+        "backTitle": "🧩 App Data Architecture",
+        "organization": "HopeView",
+        "employer": "HopeView",
+        "role": "Software Engineer",
+        "dates": "2022",
+        "badges": [
+            "Back4App",
+            "REST APIs",
+            "Node.js",
+            "Mobile Apps"
+        ],
+        "relatedSkills": [
+            "apis",
+            "automation",
+            "workflow-engineering",
+            "tdd"
+        ],
+        "code": "await fetch(url, {\n  method: 'DELETE',\n  headers: {\n    'X-Parse-Application-Id': APP_ID\n  }\n});",
+        "bullets": [
+            {
+                "label": "📱 Mobile Platform Foundations",
+                "text": "Contributed to the early architecture of a mobile application, helping define how application content and user data would be structured and delivered."
+            },
+            {
+                "label": "🗂 Data Modeling",
+                "text": "Designed approaches for managing onboarding content, user agreements, instructional resources, and application data required before user interaction."
+            },
+            {
+                "label": "🛠 Environment Automation",
+                "text": "Built automation tooling that generated and populated application data structures while supporting rapid development and testing workflows."
+            },
+            {
+                "label": "🧪 Test Environment Management",
+                "text": "Developed teardown and rebuild processes that reset application datasets and supported repeatable testing during early product development."
+            }
+        ]
+    },
+    {
+        "id": "hack-for-la",
+        "title": "District Files",
+        "frontTitle": "🏙️ District Files",
+        "backTitle": "📊 Civic Data Automation",
+        "organization": "Hack for LA",
+        "employer": null,
+        "role": "Civic Data Contributor / Project Maintainer",
+        "dates": "2022-Present",
+        "badges": [
+            "Python",
+            "GitHub Actions",
+            "GeoJSON",
+            "Open Data"
+        ],
+        "relatedSkills": [
+            "python",
+            "sql",
+            "apis",
+            "automation",
+            "workflow-engineering"
+        ],
+        "code": "python run_district_pipeline.py\n\ngit push origin main\n# GitHub Actions generates updated district files",
+        "bullets": [
+            {
+                "label": "🗺️ Civic Data Pipeline",
+                "text": "Maintains an automated workflow that generates and publishes Los Angeles district boundary datasets used by civic technology projects."
+            },
+            {
+                "label": "⚙️ Automation & Operations",
+                "text": "Owns ongoing maintenance of scheduled workflows, data generation processes, repository operations, and release management."
+            },
+            {
+                "label": "📦 Open Data Distribution",
+                "text": "Produces machine-readable geographic datasets including GeoJSON and JSON outputs that support mapping, analysis, and civic applications."
+            },
+            {
+                "label": "🤝 Open Source Collaboration",
+                "text": "Collaborates with volunteers across engineering, product, and data teams to improve accessibility and reliability of public-interest datasets."
+            }
+        ]
+    },
+    {
+        "id": "airthings-dashboard",
+        "title": "Airthings Dashboard",
+        "frontTitle": "🌬️ Airthings Dashboard",
+        "backTitle": "📈 Air Quality Monitoring",
+        "organization": "Personal Project",
+        "employer": null,
+        "role": "Designer & Developer",
+        "dates": "2026-Present",
+        "badges": [
+            "Python",
+            "MongoDB",
+            "Streamlit",
+            "Linux"
+        ],
+        "relatedSkills": [
+            "python",
+            "apis",
+            "automation",
+            "analytics-reporting",
+            "web-engineering"
+        ],
+        "code": "python save_raw_readings.py\npython app.py\n# Dashboard updates automatically from Airthings API",
+        "bullets": [
+            {
+                "label": "🌬️ Environmental Data Platform",
+                "text": "Built a monitoring platform that collects indoor air quality measurements from Airthings devices, stores historical readings, and visualizes long-term environmental trends."
+            },
+            {
+                "label": "⚙️ Automated Data Pipeline",
+                "text": "Developed scheduled Python ingestion workflows that retrieve sensor data from the Airthings API and persist readings into MongoDB Atlas with duplicate protection and time-series indexing."
+            },
+            {
+                "label": "📊 Analytics Dashboard",
+                "text": "Created a Streamlit and Plotly dashboard to explore VOC, particulate matter, temperature, humidity, and other environmental metrics through hover inspection and historical trend analysis."
+            },
+            {
+                "label": "🖥️ Linux Infrastructure",
+                "text": "Configured a self-hosted Ubuntu Server environment using Docker, cron jobs, and SSH administration to support continuous data collection and dashboard availability."
             }
         ]
     }
