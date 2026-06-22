@@ -33,6 +33,7 @@
   --button: var(--accent-gold);
   --button-hover: var(--accent-gold-soft);
   --header-gradient: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
+  --sticky-nav-offset: 72px;
 }
 
 body {
@@ -168,8 +169,10 @@ section {
 }
 
 #project-explorer,
-#skill-map {
-  scroll-margin-top: 16px;
+#skill-map,
+#skills,
+#about {
+  scroll-margin-top: var(--sticky-nav-offset);
 }
 
 table {
