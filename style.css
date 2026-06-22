@@ -491,6 +491,7 @@ img {
   margin: 0 auto 10px;
   padding: 0 1em 10px;
   border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
 }
 
 @keyframes buttonPulse {
@@ -574,7 +575,7 @@ html {
   max-width: 880px;
 }
 
-.homepage-intro p + p {
+.homepage-intro p+p {
   margin-top: 10px;
 }
 
@@ -701,7 +702,7 @@ html {
   padding-left: 1.25rem;
 }
 
-.project-detail__bullets li + li {
+.project-detail__bullets li+li {
   margin-top: 4px;
 }
 
@@ -794,13 +795,19 @@ html {
   bottom: 30px;
   right: 20px;
   z-index: 1000;
-  background-color: var(--accent);
-  color: var(--bg-primary);
-  border: none;
-  border-radius: 50%;
-  padding: 12px 16px;
-  font-size: 1.2em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.32);
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
@@ -813,7 +820,9 @@ html {
 }
 
 #backToTop:hover {
-  background-color: var(--accent-gold-soft);
+  background-color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: var(--bg-primary);
 }
 
 body {
@@ -912,12 +921,12 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.3);
+  background: rgba(214, 167, 86, 0.28);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 116, 139, 0.6);
+  background: rgba(214, 167, 86, 0.5);
 }
 
 /* === Mobile Layout Fixes === */
