@@ -33,6 +33,7 @@ A responsive portfolio site built as a modular front-end application. It combine
 │       ├── analytics.js
 │       ├── back-to-top.js
 │       ├── fun-facts.js
+│       ├── project-explorer.js
 │       └── render-projects.js
 ├── components/
 │   └── project-card.js
@@ -45,8 +46,8 @@ A responsive portfolio site built as a modular front-end application. It combine
 ## Architecture
 
 - `src/main.js` wires up the app on `DOMContentLoaded`
-- `src/features/render-projects.js` loads project content from JSON
-- `components/project-card.js` hydrates the custom project card interaction
+- `src/features/project-explorer.js` initializes the project explorer shell
+- `src/features/render-projects.js` and `components/project-card.js` are retained for project rendering work
 - `src/features/analytics.js` centralizes GA4 event tracking
 
 ## Design And Accessibility
