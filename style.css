@@ -48,7 +48,7 @@ html,
 body {
   max-width: 100vw;
   position: relative;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 body::before {
@@ -73,9 +73,6 @@ header {
   background: var(--header-gradient);
   color: var(--text-primary);
   padding: 1rem 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
 }
 
 .header-container {
@@ -466,30 +463,37 @@ img {
 
 .top-nav ul {
   display: flex;
-  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .top-nav li a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--accent-gold-soft);
-  font-size: 0.9em;
+  color: var(--text-secondary) !important;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  letter-spacing: 1px;
+}
+
+.top-nav li a:hover {
+  color: var(--accent-gold-soft) !important;
 }
 
 .nav-and-toggle-container {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  max-width: 100%;
-  margin: 0 auto 10px;
-  padding: 0 1em 10px;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0.55rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(18, 20, 23, 0.98);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
 }
@@ -842,11 +846,11 @@ header {
   border-bottom: 1px solid var(--border) !important;
 }
 
-header .top-nav li a {
+.top-nav li a {
   color: var(--text-secondary) !important;
 }
 
-header .top-nav li a:hover {
+.top-nav li a:hover {
   color: var(--accent-gold-soft) !important;
 }
 
@@ -950,19 +954,6 @@ a {
   }
 }
 
-/* Target 2: Header Navigation */
-@media (max-width: 768px) {
-  .nav-and-toggle-container {
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.2rem;
-    padding-bottom: 2rem;
-  }
-}
-
-/* === Tablet Layout Fixes (769px - 1024px) === */
-
-/* Target 2: Maximize "About Me" Row */
 @media (min-width: 769px) {
   .about-wrapper {
     flex-direction: row;
