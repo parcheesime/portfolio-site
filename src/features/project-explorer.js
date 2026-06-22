@@ -13,6 +13,7 @@ const explorerState = {
     selectedProjectId: null,
     detailPanel: null,
     navPanel: null,
+    skillMap: null,
 };
 
 export async function initProjectExplorer() {
@@ -22,6 +23,7 @@ export async function initProjectExplorer() {
     const detailPanel = explorer.querySelector("[data-project-detail]");
     if (!detailPanel) return;
     const navPanel = explorer.querySelector("[data-project-nav]");
+    const skillMap = document.querySelector("[data-skill-map]");
 
     try {
         const [projects, skills] = await Promise.all([
@@ -34,8 +36,10 @@ export async function initProjectExplorer() {
         explorerState.selectedProjectId = explorerState.projects[0]?.id || null;
         explorerState.detailPanel = detailPanel;
         explorerState.navPanel = navPanel;
+        explorerState.skillMap = skillMap;
 
         renderProjectNavigation();
+        renderSkillMap();
         updateSelectedProject();
     } catch (error) {
         renderStatus(detailPanel, "Project details are unavailable right now.");
@@ -128,6 +132,7 @@ function updateSelectedProject() {
 
     renderProjectDetail(explorerState.detailPanel, selectedProject, explorerState.skills);
     updateNavigationState();
+    updateSkillMap();
 }
 
 function updateNavigationState() {
@@ -165,6 +170,58 @@ function handleProjectNavKeydown(event) {
     const nextButton = buttons[getNextIndex()];
     nextButton.focus();
     selectProject(nextButton.dataset.projectId);
+}
+
+function renderSkillMap() {
+    const { skillMap, skills } = explorerState;
+    if (!skillMap) return;
+
+    skillMap.replaceChildren();
+
+    const list = document.createElement("ul");
+    list.className = "skill-map__list";
+
+    skills.forEach((skill) => {
+        if (!skill?.id || !skill?.label) return;
+
+        const item = document.createElement("li");
+        item.className = "skill-map__node";
+        item.dataset.skillId = skill.id;
+
+        const label = document.createElement("span");
+        label.className = "skill-map__label";
+        label.textContent = skill.label;
+
+        const status = document.createElement("span");
+        status.className = "skill-map__status";
+        status.textContent = "Used in selected project";
+
+        item.append(label, status);
+        list.append(item);
+    });
+
+    skillMap.append(list);
+}
+
+function updateSkillMap() {
+    const { skillMap } = explorerState;
+    if (!skillMap) return;
+
+    const activeSkillIds = getActiveSkillIds();
+
+    skillMap.querySelectorAll("[data-skill-id]").forEach((node) => {
+        const isActive = activeSkillIds.has(node.dataset.skillId);
+        node.classList.toggle("is-active", isActive);
+        node.setAttribute("aria-current", isActive ? "true" : "false");
+    });
+}
+
+function getActiveSkillIds() {
+    const selectedProject = explorerState.projects.find(
+        (project) => project.id === explorerState.selectedProjectId
+    );
+
+    return new Set(selectedProject?.relatedSkills || []);
 }
 
 function renderProjectDetail(container, project, skills) {

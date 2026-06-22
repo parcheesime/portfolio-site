@@ -146,10 +146,9 @@
             "Accessibility"
         ],
         "relatedSkills": [
-            "html-css-js",
             "web-engineering",
             "accessibility",
-            "analytics",
+            "analytics-reporting",
             "code-review"
         ],
         "code": "@property({ type: String })\ntitle = '';\n\nrender() {\n  return html`<h2>${this.title}</h2>`;\n}",
@@ -195,9 +194,7 @@
             "sql",
             "data-quality",
             "workflow-engineering",
-            "enterprise-data-systems",
-            "analytics",
-            "automation"
+            "enterprise-data-systems"
         ],
         "code": "-- Validate reporting counts\nSELECT reporting_year,\n       COUNT(*) AS record_count\nFROM sustainability_reporting\nGROUP BY reporting_year;",
         "bullets": [
@@ -322,11 +319,10 @@
             "Linux"
         ],
         "relatedSkills": [
-            "python",
             "apis",
             "automation",
             "analytics-reporting",
-            "web-engineering"
+            "data-quality"
         ],
         "code": "python save_raw_readings.py\npython app.py\n# Dashboard updates automatically from Airthings API",
         "bullets": [
