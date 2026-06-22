@@ -1,7 +1,18 @@
+const PROJECT_ORDER = [
+    "google-io",
+    "google-sustainability",
+    "bondcliq-data-quality",
+    "airthings-dashboard",
+    "hack-for-la",
+    "hopeview-mobile",
+];
+
 const explorerState = {
     projects: [],
     skills: [],
     selectedProjectId: null,
+    detailPanel: null,
+    navPanel: null,
 };
 
 export async function initProjectExplorer() {
@@ -10,6 +21,7 @@ export async function initProjectExplorer() {
 
     const detailPanel = explorer.querySelector("[data-project-detail]");
     if (!detailPanel) return;
+    const navPanel = explorer.querySelector("[data-project-nav]");
 
     try {
         const [projects, skills] = await Promise.all([
@@ -17,15 +29,24 @@ export async function initProjectExplorer() {
             loadSkillData(),
         ]);
 
-        explorerState.projects = projects;
+        explorerState.projects = orderProjects(projects);
         explorerState.skills = skills;
-        explorerState.selectedProjectId = projects[0]?.id || null;
+        explorerState.selectedProjectId = explorerState.projects[0]?.id || null;
+        explorerState.detailPanel = detailPanel;
+        explorerState.navPanel = navPanel;
 
-        const selectedProject = projects.find((project) => project.id === explorerState.selectedProjectId);
-        renderProjectDetail(detailPanel, selectedProject, skills);
+        renderProjectNavigation();
+        updateSelectedProject();
     } catch (error) {
         renderStatus(detailPanel, "Project details are unavailable right now.");
     }
+}
+
+function orderProjects(projects) {
+    const projectsById = new Map(projects.map((project) => [project.id, project]));
+    return PROJECT_ORDER
+        .map((projectId) => projectsById.get(projectId))
+        .filter(Boolean);
 }
 
 async function loadProjectData() {
@@ -58,6 +79,92 @@ function getSkillLabels(skillIds = [], skills = []) {
     return skillIds
         .filter(Boolean)
         .map((skillId) => labelsById.get(skillId) || humanizeId(skillId));
+}
+
+function renderProjectNavigation() {
+    const { navPanel, projects } = explorerState;
+    if (!navPanel) return;
+
+    navPanel.replaceChildren();
+
+    if (projects.length === 0) {
+        renderStatus(navPanel, "Project navigation coming next.");
+        return;
+    }
+
+    const list = document.createElement("ul");
+    list.className = "project-nav__list";
+
+    projects.forEach((project) => {
+        const item = document.createElement("li");
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = "project-nav__button";
+        button.dataset.projectId = project.id;
+        button.textContent = getProjectNavLabel(project);
+        button.addEventListener("click", () => selectProject(project.id));
+        button.addEventListener("keydown", handleProjectNavKeydown);
+
+        item.append(button);
+        list.append(item);
+    });
+
+    navPanel.append(list);
+    updateNavigationState();
+}
+
+function selectProject(projectId) {
+    if (projectId === explorerState.selectedProjectId) return;
+
+    explorerState.selectedProjectId = projectId;
+    updateSelectedProject();
+}
+
+function updateSelectedProject() {
+    const selectedProject = explorerState.projects.find(
+        (project) => project.id === explorerState.selectedProjectId
+    );
+
+    renderProjectDetail(explorerState.detailPanel, selectedProject, explorerState.skills);
+    updateNavigationState();
+}
+
+function updateNavigationState() {
+    const { navPanel, selectedProjectId } = explorerState;
+    if (!navPanel) return;
+
+    navPanel.querySelectorAll("[data-project-id]").forEach((button) => {
+        const isSelected = button.dataset.projectId === selectedProjectId;
+        button.classList.toggle("is-selected", isSelected);
+        button.setAttribute("aria-current", isSelected ? "true" : "false");
+        button.setAttribute("aria-pressed", String(isSelected));
+    });
+}
+
+function handleProjectNavKeydown(event) {
+    const buttons = Array.from(
+        explorerState.navPanel?.querySelectorAll("[data-project-id]") || []
+    );
+    const currentIndex = buttons.indexOf(event.currentTarget);
+    if (currentIndex === -1) return;
+
+    const keyActions = {
+        ArrowDown: () => (currentIndex + 1) % buttons.length,
+        ArrowRight: () => (currentIndex + 1) % buttons.length,
+        ArrowUp: () => (currentIndex - 1 + buttons.length) % buttons.length,
+        ArrowLeft: () => (currentIndex - 1 + buttons.length) % buttons.length,
+        Home: () => 0,
+        End: () => buttons.length - 1,
+    };
+
+    const getNextIndex = keyActions[event.key];
+    if (!getNextIndex) return;
+
+    event.preventDefault();
+    const nextButton = buttons[getNextIndex()];
+    nextButton.focus();
+    selectProject(nextButton.dataset.projectId);
 }
 
 function renderProjectDetail(container, project, skills) {
@@ -99,6 +206,12 @@ function renderProjectDetail(container, project, skills) {
     if (links) fragment.append(links);
 
     container.append(fragment);
+}
+
+function getProjectNavLabel(project) {
+    if (project.id === "bondcliq-data-quality") return "BondCliQ Data Platform";
+    if (project.id === "google-sustainability") return "Sustainability Platform";
+    return project.title || project.frontTitle || humanizeId(project.id);
 }
 
 function createProjectHeader(project) {

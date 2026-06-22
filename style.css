@@ -682,6 +682,38 @@ html {
   min-height: 120px;
 }
 
+.project-nav__list {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-nav__button {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  color: var(--text-dark);
+  cursor: pointer;
+  display: block;
+  font: inherit;
+  padding: 12px 14px;
+  text-align: left;
+  width: 100%;
+}
+
+.project-nav__button:hover,
+.project-nav__button:focus-visible {
+  border-color: var(--accent);
+}
+
+.project-nav__button.is-selected {
+  background: rgba(97, 155, 138, 0.12);
+  border-color: var(--accent);
+  color: var(--charcoal-blue);
+  font-weight: 700;
+}
+
 .project-detail__header {
   margin-bottom: 20px;
 }
