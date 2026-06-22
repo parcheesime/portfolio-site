@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    // Replace this with your GA4 Measurement ID from Admin > Data streams > Web.
+    const GA_MEASUREMENT_ID = "G-TV2XFWPRZQ";
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag = gtag;
+
+    gtag("consent", "default", {
+      analytics_storage: "granted",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+    });
+    gtag("js", new Date());
+    gtag("config", GA_MEASUREMENT_ID);
+
+    const gaScript = document.createElement("script");
+    gaScript.async = true;
+    gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(gaScript);
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Aletia Trepte</title>
+  <link rel="stylesheet" href="style.css?v=10" />
+</head>
+
+<body>
+  <header>
+    <div class="nav-and-toggle-container">
+      <nav class="top-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#skill-map">Skill Map</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-container">
+      <div class="contact-info">
+        <h1>Aletia Trepte</h1>
+        <p>📞 (619) 707-8130</p>
+        <p>📧 aletia.trepte@gmail.com</p>
+        <p>🌐 <a href="https://www.linkedin.com/in/aletia-trepte" target="_blank" data-analytics-event="linkedin_click"
+            rel="noopener noreferrer">linkedin.com/in/aletia-trepte</a></p>
+        <p>
+          <a href="https://github.com/parcheesime" target="_blank" rel="noopener noreferrer"
+            data-analytics-event="contact_click" data-analytics-contact-type="github">
+            github.com/parcheesime
+          </a>
+          <span style="margin-left: 12px; font-weight: bold;">
+            | <a href="assets/Aletia Trepte 2026.pdf" target="_blank" rel="noopener noreferrer"
+              data-analytics-event="resume_download"
+              style="margin-left: 8px; color: var(--accent); text-decoration: underline;">📄 Download Resume</a>
+          </span>
+        </p>
+      </div>
+      <div class="profile-pic-wrapper">
+        <img src="assets/me2.webp" alt="Aletia Trepte" class="profile-pic" width="120" height="120" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="about-page">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-wrapper">
+          <div class="about-text">
+            <p><em>Welcome!
+                Thanks for stopping by. I'm a data and software engineer who builds clean systems, thoughtful
+                automation,
+                and tools that support collaboration and mission-driven work.</em></p>
+          </div>
+
+          <div class="fun-fact-container">
+            <h3>Fun Fact About Me</h3>
+            <button class="fun-fact-button">Click for fun fact</button>
+            <p id="fact-box" class="fun-fact-text"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button id="backToTop" title="Back to Top">⬆️</button>
+  </main>
+
+  <footer>
+    <p>© 2025 Aletia Trepte</p>
+  </footer>
+
+  <script type="module" src="src/main.js?v=2"></script>
+</body>
+
+</html>
