@@ -24,7 +24,7 @@ export function hydrateProjectCards() {
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <h3 class="wiggle-text">${frontTitle}</h3>
+            <h3>${frontTitle}</h3>
             ${preContent ? `<div class="code-scroll-wrapper">\n${preContent.outerHTML}\n</div>` : ""}
             ${badgesHTML}
           </div>

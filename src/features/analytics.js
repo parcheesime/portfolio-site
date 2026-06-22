@@ -6,13 +6,11 @@ const EVENT_NAMES = new Set([
     "resume_download",
     "contact_click",
     "fun_fact_click",
-    "journey_step_click",
 ]);
 
 const SAFE_PROP_NAMES = new Set([
     "contact_type",
     "project_id",
-    "step_index",
 ]);
 
 export function trackEvent(eventName, props = {}) {

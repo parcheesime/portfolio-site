@@ -9,7 +9,7 @@ A responsive portfolio site built as a modular front-end application. It combine
 ## Highlights
 
 - Modular ES module architecture for clear feature boundaries and maintainable behavior
-- Data-driven rendering from JSON for projects and journey content
+- Data-driven rendering from JSON for project content
 - Custom Web Components for reusable project card interactions
 - GA4 analytics instrumentation for key engagement events
 - Accessibility work with semantic structure, keyboard-friendly interactions, and Lighthouse-focused improvements
@@ -28,14 +28,11 @@ A responsive portfolio site built as a modular front-end application. It combine
 ├── src/
 │   ├── main.js
 │   ├── data/
-│   │   ├── projects.json
-│   │   └── journey.json
+│   │   └── projects.json
 │   └── features/
 │       ├── analytics.js
 │       ├── back-to-top.js
 │       ├── fun-facts.js
-│       ├── journey.js
-│       ├── render-journey.js
 │       └── render-projects.js
 ├── components/
 │   └── project-card.js
@@ -48,7 +45,7 @@ A responsive portfolio site built as a modular front-end application. It combine
 ## Architecture
 
 - `src/main.js` wires up the app on `DOMContentLoaded`
-- `src/features/render-projects.js` and `src/features/render-journey.js` load content from JSON
+- `src/features/render-projects.js` loads project content from JSON
 - `components/project-card.js` hydrates the custom project card interaction
 - `src/features/analytics.js` centralizes GA4 event tracking
 
