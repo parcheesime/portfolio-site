@@ -19,7 +19,8 @@
             "sql",
             "apis",
             "automation",
-            "analytics"
+            "analytics",
+            "enterprise-data-systems"
         ],
         "code": "campaign = mailchimp.create_campaign(...)\nhtml = load_template_from_s3()\naudience = build_salesforce_audience()\nmailchimp.schedule(campaign, send_time)",
         "bullets": [
@@ -66,7 +67,9 @@
             "dashboards-observability",
             "pipelines",
             "streaming-data",
-            "data-engineering"
+            "data-engineering",
+            "enterprise-data-systems",
+            "automation"
         ],
         "code": "duplicates = bonds\n  .withColumn(\n    \"row_num\",\n    row_number().over(window)\n  )\n  .filter(col(\"row_num\") > 1)",
         "bullets": [
@@ -149,7 +152,8 @@
             "web-engineering",
             "accessibility",
             "analytics-reporting",
-            "code-review"
+            "code-review",
+            "analytics"
         ],
         "code": "@property({ type: String })\ntitle = '';\n\nrender() {\n  return html`<h2>${this.title}</h2>`;\n}",
         "bullets": [
@@ -193,6 +197,7 @@
         "relatedSkills": [
             "sql",
             "data-quality",
+            "data-engineering",
             "workflow-engineering",
             "enterprise-data-systems"
         ],
@@ -322,7 +327,9 @@
             "apis",
             "automation",
             "analytics-reporting",
-            "data-quality"
+            "data-quality",
+            "data-engineering",
+            "python"
         ],
         "code": "python save_raw_readings.py\npython app.py\n# Dashboard updates automatically from Airthings API",
         "bullets": [

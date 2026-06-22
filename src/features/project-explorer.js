@@ -11,9 +11,11 @@ const explorerState = {
     projects: [],
     skills: [],
     selectedProjectId: null,
+    selectedSkillId: null,
     detailPanel: null,
     navPanel: null,
     skillMap: null,
+    skillProjectsPanel: null,
 };
 
 export async function initProjectExplorer() {
@@ -34,6 +36,7 @@ export async function initProjectExplorer() {
         explorerState.projects = orderProjects(projects);
         explorerState.skills = skills;
         explorerState.selectedProjectId = explorerState.projects[0]?.id || null;
+        explorerState.selectedSkillId = null;
         explorerState.detailPanel = detailPanel;
         explorerState.navPanel = navPanel;
         explorerState.skillMap = skillMap;
@@ -185,8 +188,12 @@ function renderSkillMap() {
         if (!skill?.id || !skill?.label) return;
 
         const item = document.createElement("li");
-        item.className = "skill-map__node";
-        item.dataset.skillId = skill.id;
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "skill-map__node";
+        button.dataset.skillId = skill.id;
+        button.setAttribute("aria-pressed", "false");
+        button.addEventListener("click", () => selectSkill(skill.id));
 
         const label = document.createElement("span");
         label.className = "skill-map__label";
@@ -196,11 +203,21 @@ function renderSkillMap() {
         status.className = "skill-map__status";
         status.textContent = "Used in selected project";
 
-        item.append(label, status);
+        button.append(label, status);
+        item.append(button);
         list.append(item);
     });
 
-    skillMap.append(list);
+    const projectsPanel = document.createElement("div");
+    projectsPanel.className = "skill-map__projects";
+    projectsPanel.dataset.skillProjects = "";
+    projectsPanel.setAttribute("aria-live", "polite");
+    projectsPanel.hidden = true;
+
+    skillMap.append(list, projectsPanel);
+
+    explorerState.skillProjectsPanel = projectsPanel;
+    renderSkillProjects(explorerState.selectedSkillId);
 }
 
 function updateSkillMap() {
@@ -211,9 +228,79 @@ function updateSkillMap() {
 
     skillMap.querySelectorAll("[data-skill-id]").forEach((node) => {
         const isActive = activeSkillIds.has(node.dataset.skillId);
+        const isSelected = node.dataset.skillId === explorerState.selectedSkillId;
         node.classList.toggle("is-active", isActive);
-        node.setAttribute("aria-current", isActive ? "true" : "false");
+        node.classList.toggle("is-selected", isSelected);
+        node.setAttribute("aria-pressed", String(isSelected));
     });
+}
+
+function selectSkill(skillId) {
+    if (skillId === explorerState.selectedSkillId) {
+        renderSkillProjects(skillId);
+        return;
+    }
+
+    explorerState.selectedSkillId = skillId;
+    updateSkillMap();
+    renderSkillProjects(skillId);
+}
+
+function getProjectsForSkill(skillId) {
+    if (!skillId) return [];
+
+    return explorerState.projects.filter((project) =>
+        Array.isArray(project?.relatedSkills) && project.relatedSkills.includes(skillId)
+    );
+}
+
+function renderSkillProjects(skillId) {
+    const { skillProjectsPanel, skills } = explorerState;
+    if (!skillProjectsPanel) return;
+
+    skillProjectsPanel.replaceChildren();
+    skillProjectsPanel.hidden = !skillId;
+
+    if (!skillId) return;
+
+    const projects = getProjectsForSkill(skillId);
+    const skillLabel =
+        skills.find((skill) => skill?.id === skillId)?.label || humanizeId(skillId);
+
+    const sectionTitle = document.createElement("h4");
+    sectionTitle.textContent = "Used in these projects:";
+
+    const skillLabelText = document.createElement("p");
+    skillLabelText.className = "skill-map__projects-label";
+    skillLabelText.textContent = skillLabel;
+
+    skillProjectsPanel.append(sectionTitle, skillLabelText);
+
+    if (projects.length === 0) {
+        const emptyState = document.createElement("p");
+        emptyState.className = "skill-map__projects-empty";
+        emptyState.textContent = "No projects use this skill yet.";
+        skillProjectsPanel.append(emptyState);
+        return;
+    }
+
+    const list = document.createElement("ul");
+    list.className = "skill-map__projects-list";
+
+    projects.forEach((project) => {
+        const item = document.createElement("li");
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = "skill-map__project-button";
+        button.textContent = getProjectNavLabel(project);
+        button.addEventListener("click", () => selectProject(project.id));
+
+        item.append(button);
+        list.append(item);
+    });
+
+    skillProjectsPanel.append(list);
 }
 
 function getActiveSkillIds() {
@@ -245,13 +332,6 @@ function renderProjectDetail(container, project, skills) {
 
     const bullets = createBulletSection(project.bullets);
     if (bullets) fragment.append(bullets);
-
-    const relatedSkills = createTextList(
-        "Related Skills",
-        getSkillLabels(project.relatedSkills, skills),
-        "project-pill-list"
-    );
-    if (relatedSkills) fragment.append(relatedSkills);
 
     const metrics = createMetricsSection(project.metrics);
     if (metrics) fragment.append(metrics);
