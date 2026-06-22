@@ -682,6 +682,62 @@ html {
   min-height: 120px;
 }
 
+.project-detail__header {
+  margin-bottom: 20px;
+}
+
+.project-detail__meta {
+  margin-top: 8px;
+}
+
+.project-detail__image {
+  margin: 0 0 24px;
+}
+
+.project-detail__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: cover;
+  padding: 0;
+}
+
+.project-detail__section {
+  margin-top: 24px;
+}
+
+.project-detail__section h4 {
+  margin-bottom: 10px;
+}
+
+.project-detail__section ul {
+  padding-left: 1.25rem;
+}
+
+.project-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.project-pill-list li {
+  background: rgba(252, 202, 70, 0.28);
+  border: 1px solid rgba(252, 202, 70, 0.7);
+  border-radius: 999px;
+  color: var(--charcoal-blue);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 10px;
+}
+
+.project-detail pre {
+  overflow-x: auto;
+  white-space: pre;
+}
+
 @media (min-width: 900px) {
   .project-explorer {
     grid-template-columns: minmax(0, 2fr) minmax(240px, 0.8fr);

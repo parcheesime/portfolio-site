@@ -1,0 +1,20 @@
+[
+  { "id": "accessibility", "label": "Accessibility" },
+  { "id": "analytics", "label": "Analytics" },
+  { "id": "analytics-reporting", "label": "Analytics & Reporting" },
+  { "id": "apis", "label": "APIs" },
+  { "id": "automation", "label": "Automation" },
+  { "id": "code-review", "label": "Code Review" },
+  { "id": "dashboards-observability", "label": "Dashboards & Observability" },
+  { "id": "data-engineering", "label": "Data Engineering" },
+  { "id": "data-quality", "label": "Data Quality" },
+  { "id": "enterprise-data-systems", "label": "Enterprise Data Systems" },
+  { "id": "html-css-js", "label": "HTML, CSS & JavaScript" },
+  { "id": "pipelines", "label": "Pipelines" },
+  { "id": "python", "label": "Python" },
+  { "id": "sql", "label": "SQL" },
+  { "id": "streaming-data", "label": "Streaming Data" },
+  { "id": "tdd", "label": "Test-Driven Development" },
+  { "id": "web-engineering", "label": "Web Engineering" },
+  { "id": "workflow-engineering", "label": "Workflow Engineering" }
+]
