@@ -645,12 +645,12 @@ html {
 }
 
 .project-explorer-section {
-  padding: 60px 20px;
+  padding: 36px 24px;
 }
 
 .section-heading {
-  margin: 0 auto 28px;
-  max-width: 1100px;
+  margin: 0 0 20px;
+  max-width: none;
 }
 
 .section-kicker {
@@ -664,29 +664,52 @@ html {
 
 .project-explorer {
   display: grid;
-  gap: 20px;
+  gap: 16px;
+  grid-template-areas:
+    "nav"
+    "detail"
+    "skill";
   grid-template-columns: minmax(0, 1fr);
-  margin: 0 auto;
-  max-width: 1100px;
+  margin: 0;
+  max-width: none;
 }
 
 .project-detail,
-.project-nav {
+.project-nav,
+.skill-map-panel {
   background: var(--surface);
   border: 1px solid var(--border-light);
   border-radius: 8px;
-  padding: 24px;
+  padding: 18px;
+}
+
+.project-detail {
+  grid-area: detail;
 }
 
 .project-nav {
-  min-height: 120px;
+  grid-area: nav;
+}
+
+.skill-map-panel {
+  grid-area: skill;
+}
+
+.project-panel-title {
+  margin-bottom: 12px;
 }
 
 .project-nav__list {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   list-style: none;
   padding-left: 0;
+}
+
+.project-nav__list li {
+  flex: 1 1 150px;
+  min-width: 0;
 }
 
 .project-nav__button {
@@ -697,7 +720,7 @@ html {
   cursor: pointer;
   display: block;
   font: inherit;
-  padding: 12px 14px;
+  padding: 10px 12px;
   text-align: left;
   width: 100%;
 }
@@ -715,15 +738,15 @@ html {
 }
 
 .project-detail__header {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .project-detail__meta {
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .project-detail__image {
-  margin: 0 0 24px;
+  margin: 0 0 16px;
 }
 
 .project-detail__image img {
@@ -736,21 +759,25 @@ html {
 }
 
 .project-detail__section {
-  margin-top: 24px;
+  margin-top: 14px;
 }
 
 .project-detail__section h4 {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .project-detail__section ul {
   padding-left: 1.25rem;
 }
 
+.project-detail__bullets li + li {
+  margin-top: 4px;
+}
+
 .project-pill-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   list-style: none;
   padding-left: 0 !important;
 }
@@ -762,17 +789,15 @@ html {
   color: var(--charcoal-blue);
   font-size: 0.85rem;
   font-weight: 600;
-  padding: 4px 10px;
-}
-
-.project-detail pre {
-  overflow-x: auto;
-  white-space: pre;
+  padding: 3px 9px;
 }
 
 @media (min-width: 900px) {
   .project-explorer {
-    grid-template-columns: minmax(0, 2fr) minmax(240px, 0.8fr);
+    grid-template-areas:
+      "nav nav"
+      "detail skill";
+    grid-template-columns: minmax(0, 2.2fr) minmax(280px, 0.8fr);
   }
 }
 
@@ -791,15 +816,9 @@ html {
   padding: 0;
 }
 
-.skill-map-section {
-  background: #ffffff;
-  margin-top: 0;
-  padding: 48px 20px;
-}
-
 .skill-map {
-  margin: 0 auto;
-  max-width: 1100px;
+  margin: 0;
+  max-width: none;
 }
 
 .skill-map__list {

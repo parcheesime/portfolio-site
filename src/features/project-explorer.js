@@ -253,9 +253,6 @@ function renderProjectDetail(container, project, skills) {
     );
     if (relatedSkills) fragment.append(relatedSkills);
 
-    const codeSample = createCodeSample(project.code);
-    if (codeSample) fragment.append(codeSample);
-
     const metrics = createMetricsSection(project.metrics);
     if (metrics) fragment.append(metrics);
 
@@ -353,19 +350,6 @@ function createBulletSection(bullets = []) {
     });
 
     section.append(list);
-    return section;
-}
-
-function createCodeSample(code) {
-    if (!code) return null;
-
-    const section = createSection("Code Sample");
-    const pre = document.createElement("pre");
-    const codeElement = document.createElement("code");
-    codeElement.textContent = code;
-
-    pre.append(codeElement);
-    section.append(pre);
     return section;
 }
 
