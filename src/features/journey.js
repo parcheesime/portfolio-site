@@ -1,6 +1,6 @@
 import { trackEvent } from "./analytics.js";
 
-export function initJourney(updateQuest, incrementScore) {
+export function initJourney() {
     // all journey code
     // Timeline: Pulse each step when skill-path is in view
     const steps = document.querySelectorAll('.timeline-step');
@@ -99,7 +99,6 @@ export function initJourney(updateQuest, incrementScore) {
 
         step.addEventListener('click', () => {
             trackEvent("journey_step_click", { step_index: index + 1 });
-            updateQuest('timeline');
             // Restore previous node
             if (lastClickedStep && lastClickedStep !== step) {
                 lastClickedStep.classList.remove('active');
@@ -140,7 +139,6 @@ export function initJourney(updateQuest, incrementScore) {
             // Trigger wiggle
             step.classList.add("wiggle");
             setTimeout(() => step.classList.remove("wiggle"), 600);
-            incrementScore();
 
             // Check if all nodes are clicked
             if (clickedSteps.size === steps.length) {

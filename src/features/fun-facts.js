@@ -1,4 +1,3 @@
-import { incrementScore } from "./score-system.js";
 import { trackEvent } from "./analytics.js";
 
 const facts = [
@@ -11,7 +10,6 @@ const facts = [
 ];
 
 let currentFactIndex = 0;
-let factClicks = 0;
 let factPulseInterval;
 
 function showNextFact() {
@@ -29,7 +27,7 @@ function showNextFact() {
     }, 200);
 }
 
-export function initFunFacts(updateQuest) {
+export function initFunFacts() {
     const button = document.querySelector(".fun-fact-button");
     if (!button) return;
 
@@ -49,13 +47,7 @@ export function initFunFacts(updateQuest) {
 
     button.addEventListener("click", () => {
         trackEvent("fun_fact_click");
-        updateQuest("fact");
         showNextFact();
-
-        if (factClicks < facts.length) {
-            incrementScore();
-            factClicks++;
-        }
     });
 
     buttonObserver.observe(button);

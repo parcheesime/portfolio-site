@@ -5,17 +5,12 @@ const EVENT_NAMES = new Set([
     "linkedin_click",
     "resume_download",
     "contact_click",
-    "explore_mode_enabled",
-    "explore_mode_disabled",
     "fun_fact_click",
     "journey_step_click",
-    "achievement_unlocked",
 ]);
 
 const SAFE_PROP_NAMES = new Set([
-    "achievement",
     "contact_type",
-    "mode",
     "project_id",
     "step_index",
 ]);

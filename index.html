@@ -35,15 +35,6 @@
 </head>
 
 <body>
-  <script>
-    try {
-      localStorage.removeItem('portfolioMode'); // Clear old persistence
-      if (sessionStorage.getItem('portfolioMode') === 'explore') {
-        document.body.classList.add('explore-mode');
-      }
-    } catch (e) { }
-  </script>
-
   <header>
     <div class="nav-and-toggle-container">
       <nav class="top-nav">
@@ -53,17 +44,6 @@
           <li><a href="#skill-path">Journey</a></li>
         </ul>
       </nav>
-      <div id="clickScore" class="hidden-in-recruiter">⭐ Score: <span id="scoreCount">0</span></div>
-      <div id="questBox" class="hidden-in-recruiter">🎯 Mission: Explore 3 features <span
-          id="questProgress">(0/3)</span></div>
-      <div class="mode-toggle-wrapper">
-        <span class="mode-label">Recruiter</span>
-        <label class="switch">
-          <input type="checkbox" id="modeSwitch" aria-label="Toggle Explore Mode">
-          <span class="slider round"></span>
-        </label>
-        <span class="mode-label">Explore</span>
-      </div>
     </div>
     <div class="header-container">
       <div class="contact-info">
@@ -82,7 +62,7 @@
             data-analytics-event="contact_click" data-analytics-contact-type="github">
             github.com/parcheesime
           </a>
-          <span class="show-in-recruiter" style="margin-left: 12px; font-weight: bold;">
+          <span style="margin-left: 12px; font-weight: bold;">
             | <a href="assets/Aletia Trepte 2026.pdf" target="_blank" rel="noopener noreferrer"
               data-analytics-event="resume_download"
               style="margin-left: 8px; color: var(--accent); text-decoration: underline;">📄 Download Resume</a>
@@ -95,16 +75,7 @@
     </div>
   </header>
 
-  <div class="particles"></div>
   <main>
-    <section id="explore-preview" class="hidden-in-recruiter">
-      <div class="container explore-preview-box">
-        <h2 class="section-title" style="margin-top: 0;">✨ Explore Sandbox Preview</h2>
-        <p style="text-align: center; font-size: 1.1em;">Welcome to the gamified side of my portfolio! Experimental
-          features in this sandbox.</p>
-      </div>
-    </section>
-
     <section id="about">
       <div class="container">
         <h2 class="section-title">👩‍💼About Me</h2>
@@ -268,10 +239,6 @@
   </footer>
 
   <script type="module" src="src/main.js?v=2"></script>
-
-  <div id="rewardMessage">🏅 You hit 10 clicks! Thanks for exploring ✨</div>
-  <div id="finalMessage">🎯 I'm glad you stayed! Let's connect — <a href="https://www.linkedin.com/in/aletia-trepte"
-      target="_blank" data-analytics-event="linkedin_click">LinkedIn</a></div>
 
 </body>
 

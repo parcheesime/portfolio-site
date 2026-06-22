@@ -1,6 +1,6 @@
 # Aletia Trepte | Portfolio Website
 
-A responsive portfolio site built as a modular front-end application. It combines static content, JSON-driven rendering, analytics, and two distinct interaction modes to present both a polished recruiter view and a more experimental explore view.
+A responsive portfolio site built as a modular front-end application. It combines static content, JSON-driven rendering, analytics, and accessible interactions to present project and skills work clearly.
 
 ## Live Site
 
@@ -13,8 +13,6 @@ A responsive portfolio site built as a modular front-end application. It combine
 - Custom Web Components for reusable project card interactions
 - GA4 analytics instrumentation for key engagement events
 - Accessibility work with semantic structure, keyboard-friendly interactions, and Lighthouse-focused improvements
-- Recruiter vs Explore Mode for two different presentation styles in one site
-- Gamification system with score, quests, and feature-based interactions
 - Responsive design improvements across mobile, tablet, and desktop layouts
 - GitHub Pages deployment for static hosting
 - Reduced motion support through `prefers-reduced-motion`
@@ -29,7 +27,6 @@ A responsive portfolio site built as a modular front-end application. It combine
 ├── style.css
 ├── src/
 │   ├── main.js
-│   ├── app-state.js
 │   ├── data/
 │   │   ├── projects.json
 │   │   └── journey.json
@@ -38,11 +35,8 @@ A responsive portfolio site built as a modular front-end application. It combine
 │       ├── back-to-top.js
 │       ├── fun-facts.js
 │       ├── journey.js
-│       ├── mode-toggle.js
-│       ├── quest-system.js
 │       ├── render-journey.js
-│       ├── render-projects.js
-│       └── score-system.js
+│       └── render-projects.js
 ├── components/
 │   └── project-card.js
 └── assets/
@@ -57,8 +51,6 @@ A responsive portfolio site built as a modular front-end application. It combine
 - `src/features/render-projects.js` and `src/features/render-journey.js` load content from JSON
 - `components/project-card.js` hydrates the custom project card interaction
 - `src/features/analytics.js` centralizes GA4 event tracking
-- `src/features/mode-toggle.js` manages Recruiter and Explore modes
-- `src/features/quest-system.js` and `src/features/score-system.js` provide the gamified experience
 
 ## Design And Accessibility
 
@@ -82,7 +74,6 @@ The site is published through GitHub Pages. The live URL is configured at:
 ## Future Roadmap
 
 - Add more projects and case studies
-- Expand the explore-mode gamification layer
 - Add richer motion and transition states where appropriate
 - Continue refining accessibility, performance, and content structure
 

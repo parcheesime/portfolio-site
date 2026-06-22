@@ -318,17 +318,6 @@ table {
   transform: translateX(-50%) translateY(0);
 }
 
-/* Explore Mode (Dark Mode) Custom Tooltips */
-body.explore-mode .tooltip::after {
-  background: rgba(30, 41, 59, 0.98) !important;
-  border-color: var(--hover-color, var(--primary)) !important;
-  color: #f8fafc !important;
-}
-
-body.explore-mode .tooltip::before {
-  border-top-color: rgba(30, 41, 59, 0.98) !important;
-}
-
 .about-wrapper {
   display: flex;
   flex-direction: column;
@@ -575,45 +564,19 @@ img {
   border-color: var(--hover-color, var(--seagrass));
 }
 
-/* Recruiter Mode overrides for Skills */
-body:not(.explore-mode) .skills-pill {
+.skills-pill {
   background-color: #ffffff !important;
   border-color: #e2e8f0 !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
 }
 
-body:not(.explore-mode) .skills-pill-text {
+.skills-pill-text {
   color: #0f172a !important;
 }
 
-body:not(.explore-mode) .skills-pill:hover {
+.skills-pill:hover {
   border-color: var(--hover-color, var(--seagrass)) !important;
   box-shadow: 0 6px 16px var(--hover-glow, rgba(97, 155, 138, 0.18)) !important;
-}
-
-/* Explore Mode (Dark Mode) overrides for Skills */
-body.explore-mode .skills-pill {
-  background-color: #1f3441 !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
-}
-
-body.explore-mode .skills-pill-text {
-  color: #f8fafc !important;
-}
-
-body.explore-mode .skills-pill:hover {
-  background-color: #1f3441 !important;
-  border-color: var(--hover-color, var(--muted-olive)) !important;
-  box-shadow: 0 6px 16px var(--hover-glow, rgba(161, 193, 129, 0.24)) !important;
-}
-
-body.explore-mode .github-svg-icon {
-  fill: #ffffff !important;
-}
-
-body.explore-mode {
-  --github-hover: #ffffff;
 }
 
 .top-nav ul {
@@ -1337,256 +1300,7 @@ html {
   text-decoration: underline;
 }
 
-/* === Mode Switch === */
-.mode-toggle-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: center;
-}
-
-.mode-label {
-  font-size: 0.9em;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #cfd9d4;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: .4s;
-}
-
-input:checked+.slider {
-  background-color: var(--seagrass);
-}
-
-input:focus+.slider {
-  box-shadow: 0 0 0 3px rgba(97, 155, 138, 0.35);
-}
-
-input:checked+.slider:before {
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 24px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-.explore-preview-box {
-  background: #eef5f2;
-  border-radius: 12px;
-  padding: 2rem;
-  margin-top: 2rem;
-  border: 2px dashed var(--seagrass);
-}
-
-/* === Explore Mode Styles === */
-body.explore-mode {
-  --bg-light: #182d39;
-  --surface: #203847;
-  --button: var(--seagrass);
-  --button-hover: var(--muted-olive);
-  --primary: var(--muted-olive);
-  --accent: var(--golden-pollen);
-  --success: var(--seagrass);
-  --text-dark: #f8fafc;
-  --text-muted: #d2ddd7;
-  background: radial-gradient(circle at top, #233d4d, #10232d);
-  cursor: crosshair;
-}
-
-body.explore-mode header {
-  background: var(--header-gradient);
-  background-size: 400% 400%;
-  border-bottom: 2px solid var(--primary);
-}
-
-body.explore-mode .nav-and-toggle-container {
-  border-bottom-color: rgba(255, 255, 255, 0.1);
-}
-
-.hidden-in-recruiter {
-  display: none !important;
-}
-
-body.explore-mode .hidden-in-recruiter {
-  display: block !important;
-}
-
-.show-in-recruiter {
-  display: inline-block;
-}
-
-body.explore-mode .show-in-recruiter {
-  display: none !important;
-}
-
-/* Apply Backgrounds and Text Colors */
-body.explore-mode #about,
-body.explore-mode #projects,
-body.explore-mode #key-tech,
-body.explore-mode #skills,
-body.explore-mode #skill-path {
-  background: var(--bg-light);
-}
-
-/* Use Surface Color */
-body.explore-mode .explore-preview-box,
-body.explore-mode .project,
-body.explore-mode .project-block,
-body.explore-mode .project-card-container,
-body.explore-mode .flip-card,
-body.explore-mode .flip-card-front,
-body.explore-mode .flip-card-back,
-body.explore-mode .fun-fact-container,
-body.explore-mode .tech-table th,
-body.explore-mode .tech-table td,
-body.explore-mode img,
-body.explore-mode .timeline-step,
-body.explore-mode footer {
-  background: var(--surface);
-  background-color: var(--surface);
-  color: var(--text-dark);
-  border-color: var(--primary);
-}
-
-/* Card Glows */
-body.explore-mode .explore-preview-box,
-body.explore-mode .project-block,
-body.explore-mode .flip-card,
-body.explore-mode .fun-fact-container {
-  box-shadow: 0 0 12px rgba(97, 155, 138, 0.22);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-body.explore-mode .explore-preview-box:hover,
-body.explore-mode .project-block:hover,
-body.explore-mode .flip-card:hover,
-body.explore-mode .fun-fact-container:hover {
-  box-shadow: 0 0 20px rgba(161, 193, 129, 0.35);
-}
-
-/* Highlight texts */
-body.explore-mode h2,
-body.explore-mode .tech-title,
-body.explore-mode .fun-fact-container h3,
-body.explore-mode .project-block h3,
-body.explore-mode .flip-card-back h3,
-body.explore-mode .flip-card-front h3 {
-  color: var(--button);
-  border-bottom-color: var(--primary);
-  text-shadow: 0 0 8px rgba(97, 155, 138, 0.35);
-}
-
-body.explore-mode .tech-description,
-body.explore-mode .project-block p,
-body.explore-mode .fun-fact-text,
-body.explore-mode .flip-card-back ul li {
-  color: var(--text-muted);
-}
-
-body.explore-mode .explore-preview-box {
-  border-color: var(--button);
-}
-
-body.explore-mode .project-block code,
-body.explore-mode .code-scroll-wrapper pre {
-  background: var(--bg-light);
-  color: var(--text-dark);
-}
-
-body.explore-mode .timeline-step {
-  border: 1px solid var(--primary);
-}
-
-body.explore-mode .timeline-step:nth-child(1) {
-  background-color: var(--accent);
-  color: var(--charcoal-blue);
-  border-color: var(--button);
-}
-
-body.explore-mode .fun-fact-button {
-  background-color: var(--button);
-  color: #ffffff;
-}
-
-body.explore-mode .fun-fact-button:hover {
-  background-color: var(--button-hover);
-  color: var(--charcoal-blue);
-}
-
-body.explore-mode a {
-  color: var(--button);
-}
-
-/* Specialized Interface */
-body.explore-mode #backToTop {
-  background-color: var(--button);
-  color: #ffffff;
-}
-
-body.explore-mode #backToTop:hover {
-  background-color: var(--button-hover);
-  color: var(--charcoal-blue);
-}
-
-body.explore-mode #clickScore {
-  background-color: var(--surface);
-  color: var(--button);
-  border: 1px solid var(--primary);
-}
-
-body.explore-mode #rewardMessage {
-  background-color: var(--reward);
-  color: var(--charcoal-blue);
-}
-
-body.explore-mode #finalMessage {
-  background-color: var(--accent);
-  color: var(--charcoal-blue);
-}
-
-body.explore-mode input:checked+.slider {
-  background-color: var(--primary);
-}
-
-/* === Corporate Theme (Recruiter Mode) === */
-body:not(.explore-mode) {
+body {
   --bg-light: #f8fafc;
   --surface: #ffffff;
   --text-dark: #0f172a;
@@ -1598,150 +1312,127 @@ body:not(.explore-mode) {
   color: var(--text-dark) !important;
 }
 
-body:not(.explore-mode) header {
+header {
   background: var(--header-gradient) !important;
   background-size: 400% 400% !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
-body:not(.explore-mode) header .top-nav li a {
+header .top-nav li a {
   color: rgba(255, 255, 255, 0.92) !important;
 }
 
-body:not(.explore-mode) header .top-nav li a:hover {
+header .top-nav li a:hover {
   color: var(--reward) !important;
 }
 
-body:not(.explore-mode) header h1,
-body:not(.explore-mode) header p,
-body:not(.explore-mode) header i {
+header h1,
+header p,
+header i {
   color: #ffffff !important;
 }
 
-body:not(.explore-mode) .mode-label {
-  color: rgba(255, 255, 255, 0.9) !important;
-}
-
-body:not(.explore-mode) header .contact-info a {
+header .contact-info a {
   color: #ffffff !important;
   text-decoration: underline;
 }
 
-body:not(.explore-mode) .nav-and-toggle-container {
+.nav-and-toggle-container {
   border-bottom-color: rgba(255, 255, 255, 0.2) !important;
 }
 
-body:not(.explore-mode) #about,
-body:not(.explore-mode) #projects,
-body:not(.explore-mode) #key-tech,
-body:not(.explore-mode) #skills,
-body:not(.explore-mode) #skill-path {
+#about,
+#projects,
+#key-tech,
+#skills,
+#skill-path {
   background-color: var(--bg-light) !important;
 }
 
-body:not(.explore-mode) .project,
-body:not(.explore-mode) .project-block,
-body:not(.explore-mode) .project-card-container,
-body:not(.explore-mode) .fun-fact-container,
-body:not(.explore-mode) .flip-card-front,
-body:not(.explore-mode) .flip-card-back,
-body:not(.explore-mode) .tech-table th,
-body:not(.explore-mode) .tech-table td,
-body:not(.explore-mode) footer,
-body:not(.explore-mode) img {
+.project,
+.project-block,
+.project-card-container,
+.fun-fact-container,
+.flip-card-front,
+.flip-card-back,
+.tech-table th,
+.tech-table td,
+footer,
+img {
   background-color: var(--surface) !important;
   color: var(--text-dark) !important;
   border-color: var(--border-light) !important;
 }
 
-body:not(.explore-mode) .flip-card-front,
-body:not(.explore-mode) .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   border: none !important;
 }
 
-body:not(.explore-mode) footer {
+footer {
   background-color: var(--charcoal-blue) !important;
   color: #ffffff !important;
 }
 
-body:not(.explore-mode) .flip-card {
+.flip-card {
   box-shadow: none !important;
   background-color: transparent !important;
 }
 
-body:not(.explore-mode) .project {
+.project {
   border-left: 4px solid var(--accent) !important;
 }
 
-body:not(.explore-mode) h2,
-body:not(.explore-mode) .tech-title,
-body:not(.explore-mode) .fun-fact-container h3,
-body:not(.explore-mode) .project-block h3,
-body:not(.explore-mode) .flip-card-front h3,
-body:not(.explore-mode) .flip-card-back h3 {
+h2,
+.tech-title,
+.fun-fact-container h3,
+.project-block h3,
+.flip-card-front h3,
+.flip-card-back h3 {
   color: var(--text-dark) !important;
   border-bottom-color: var(--seagrass) !important;
 }
 
-body:not(.explore-mode) p,
-body:not(.explore-mode) .project-block p,
-body:not(.explore-mode) .tech-description,
-body:not(.explore-mode) .fun-fact-text,
-body:not(.explore-mode) .flip-card-back ul li {
+p,
+.project-block p,
+.tech-description,
+.fun-fact-text,
+.flip-card-back ul li {
   color: var(--text-muted) !important;
 }
 
-body:not(.explore-mode) a {
+a {
   color: var(--accent) !important;
 }
 
-body:not(.explore-mode) .fun-fact-button,
-body:not(.explore-mode) #backToTop {
+.fun-fact-button,
+#backToTop {
   background-color: var(--accent) !important;
   color: #fff !important;
 }
 
-body:not(.explore-mode) .fun-fact-button:hover,
-body:not(.explore-mode) #backToTop:hover {
+.fun-fact-button:hover,
+#backToTop:hover {
   background-color: var(--muted-olive) !important;
   color: var(--charcoal-blue) !important;
 }
 
-body:not(.explore-mode) #rewardMessage,
-body:not(.explore-mode) #finalMessage {
-  background-color: var(--reward) !important;
-  color: var(--charcoal-blue) !important;
-}
-
-body:not(.explore-mode) #finalMessage a {
-  color: var(--charcoal-blue) !important;
-  text-decoration: underline !important;
-}
-
-body:not(.explore-mode) .timeline-step {
+.timeline-step {
   background-color: var(--surface) !important;
   color: var(--text-dark) !important;
   border: 1px solid var(--border-light) !important;
 }
 
-body:not(.explore-mode) .timeline-step:nth-child(1) {
+.timeline-step:nth-child(1) {
   background-color: var(--reward) !important;
   color: var(--charcoal-blue) !important;
 }
 
-body:not(.explore-mode) .project-block code,
-body:not(.explore-mode) .code-scroll-wrapper pre {
+.project-block code,
+.code-scroll-wrapper pre {
   background-color: var(--bg-light) !important;
   color: var(--text-dark) !important;
   border: 1px solid var(--border-light) !important;
-}
-
-body:not(.explore-mode) .slider {
-  background-color: #cbd5e1 !important;
-}
-
-body:not(.explore-mode) input:checked+.slider {
-  background-color: var(--accent) !important;
 }
 
 /* Custom Scrollbar */
@@ -1761,18 +1452,6 @@ body:not(.explore-mode) input:checked+.slider {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(100, 116, 139, 0.6);
-}
-
-body.explore-mode ::-webkit-scrollbar-thumb {
-  background: rgba(97, 155, 138, 0.35);
-}
-
-body.explore-mode ::-webkit-scrollbar-thumb:hover {
-  background: rgba(161, 193, 129, 0.55);
-}
-
-body:not(.explore-mode) .particles {
-  display: none;
 }
 
 .particles {
@@ -1832,7 +1511,7 @@ body:not(.explore-mode) .particles {
   }
 }
 
-/* Target 2: Header Navigation & Mode Toggle */
+/* Target 2: Header Navigation */
 @media (max-width: 768px) {
   .nav-and-toggle-container {
     flex-direction: column;
@@ -1930,139 +1609,6 @@ body:not(.explore-mode) .particles {
     white-space: normal;
   }
 
-  .contact-info .show-in-recruiter {
-    display: inline !important;
-  }
-}
-
-/* ================================================== */
-/* QUEST BOX & HACKER MODE (Explore Mode Only) */
-/* ================================================== */
-#questBox {
-  background: var(--button, var(--seagrass));
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  box-shadow: 0 4px 10px rgba(97, 155, 138, 0.35);
-  transition: all 0.3s ease;
-  cursor: default;
-  display: inline-block;
-}
-
-#questBox.update-flash {
-  background: var(--muted-olive);
-  transform: scale(1.1);
-  color: var(--charcoal-blue);
-  box-shadow: 0 4px 15px rgba(161, 193, 129, 0.45);
-}
-
-#questBox.mission-complete {
-  background: linear-gradient(90deg, #ff00ff, #00ffff);
-  animation: pulse 1s infinite alternate;
-  color: #000;
-  text-shadow: none;
-}
-
-/* Hacker Theme Override */
-body.explore-mode.hacker-mode {
-  background-color: #0d0d0d !important;
-  background-image: radial-gradient(#111 20%, transparent 20%), radial-gradient(#111 20%, transparent 20%);
-  background-size: 20px 20px;
-  background-position: 0 0, 10px 10px;
-  color: #0f0 !important;
-  font-family: 'Courier New', Courier, monospace !important;
-}
-
-body.explore-mode.hacker-mode header,
-body.explore-mode.hacker-mode .container,
-body.explore-mode.hacker-mode section {
-  background: rgba(0, 15, 0, 0.85) !important;
-  border: 1px solid #0f0;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.15) !important;
-}
-
-body.explore-mode.hacker-mode h1,
-body.explore-mode.hacker-mode h2,
-body.explore-mode.hacker-mode h3,
-body.explore-mode.hacker-mode .feature-title,
-body.explore-mode.hacker-mode p,
-body.explore-mode.hacker-mode ul,
-body.explore-mode.hacker-mode li,
-body.explore-mode.hacker-mode a,
-body.explore-mode.hacker-mode .timeline-step {
-  color: #0f0 !important;
-  text-shadow: 0 0 5px #0f0 !important;
-  font-family: 'Courier New', Courier, monospace !important;
-}
-
-body.explore-mode.hacker-mode .flip-card-front,
-body.explore-mode.hacker-mode .flip-card-back {
-  background: #000 !important;
-  border: 1px solid #0f0 !important;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.4) !important;
-}
-
-body.explore-mode.hacker-mode .code-scroll-wrapper ::slotted(pre),
-body.explore-mode.hacker-mode .code-scroll-wrapper pre {
-  background: #050505 !important;
-  color: #0f0 !important;
-  border: 1px dashed #0f0 !important;
-}
-
-/* Magic Cursor Particle Engine */
-.magic-particle {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  font-size: 1.5rem;
-  color: #0f0;
-  /* Hacker green */
-  text-shadow: 0 0 8px #0f0, 0 0 12px #fff;
-  animation: floatFade 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-@keyframes floatFade {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(-50%, calc(-50% + 50px)) scale(0);
-    opacity: 0;
-  }
-}
-
-.quest-complete-banner {
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.9);
-  color: #0f0;
-  border: 2px solid #0f0;
-  padding: 1.5rem 3rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  font-family: 'Courier New', monospace;
-  box-shadow: 0 0 20px #0f0;
-  z-index: 10000;
-  text-align: center;
-  animation: popIn 0.5s ease forwards;
-}
-
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -20%) scale(0.5);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
 }
 
 /* Project Card Badges */
@@ -2085,12 +1631,6 @@ body.explore-mode.hacker-mode .code-scroll-wrapper pre {
   border: 1px solid rgba(252, 202, 70, 0.7);
 }
 
-body.explore-mode .badge {
-  background: rgba(252, 202, 70, 0.16);
-  color: var(--golden-pollen);
-  border: 1px solid rgba(252, 202, 70, 0.45);
-}
-
 /* ================================================== */
 /* ACCESSIBILITY: Reduced Motion */
 /* ================================================== */
@@ -2102,8 +1642,7 @@ body.explore-mode .badge {
   header,
   .flip-card,
   .timeline-step.pulse,
-  .fun-fact-button.pulse,
-  #questBox.mission-complete {
+  .fun-fact-button.pulse {
     animation: none !important;
   }
 
