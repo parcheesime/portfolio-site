@@ -68,5 +68,10 @@
         "id": "code-review",
         "label": "🔍 Code Review",
         "category": "Collaboration"
+    },
+    {
+        "id": "data-engineering",
+        "label": "🏗️ Data Engineering",
+        "category": "Data"
     }
 ]
