@@ -4,10 +4,7 @@ export function initBackToTop() {
     if (!backToTop) return;
 
     window.addEventListener("scroll", () => {
-        backToTop.classList.toggle(
-            "show",
-            window.scrollY > 400
-        );
+        backToTop.classList.toggle("show", window.scrollY > 400);
     });
 
     backToTop.addEventListener("click", () => {

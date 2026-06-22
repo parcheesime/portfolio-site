@@ -1,7 +1,4 @@
 const EVENT_NAMES = new Set([
-    "project_card_click",
-    "project_github_click",
-    "project_live_demo_click",
     "linkedin_click",
     "resume_download",
     "contact_click",
@@ -10,7 +7,6 @@ const EVENT_NAMES = new Set([
 
 const SAFE_PROP_NAMES = new Set([
     "contact_type",
-    "project_id",
 ]);
 
 export function trackEvent(eventName, props = {}) {
@@ -37,7 +33,6 @@ export function initAnalyticsTracking() {
 
         trackEvent(target.dataset.analyticsEvent, {
             contact_type: target.dataset.analyticsContactType,
-            project_id: target.dataset.analyticsProjectId,
         });
     });
 }
