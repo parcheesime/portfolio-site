@@ -69,7 +69,8 @@
             "streaming-data",
             "data-engineering",
             "enterprise-data-systems",
-            "automation"
+            "automation",
+            "apis"
         ],
         "code": "duplicates = bonds\n  .withColumn(\n    \"row_num\",\n    row_number().over(window)\n  )\n  .filter(col(\"row_num\") > 1)",
         "bullets": [
