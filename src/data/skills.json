@@ -66,5 +66,9 @@
   {
     "id": "workflow-engineering",
     "label": "Workflow Engineering"
+  },
+  {
+    "id": "docker",
+    "label": "Docker"
   }
 ]
