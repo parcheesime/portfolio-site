@@ -644,13 +644,6 @@ html {
   grid-area: nav;
 }
 
-/* .skill-map-panel {
-  grid-area: skill;
-  display: flex;
-  flex-direction: column;
-  overflow: visible;
-} */
-
 .skill-map {
   display: flex;
   flex: 1;
@@ -693,7 +686,9 @@ html {
   border-color: var(--accent-gold);
 }
 
-.project-nav__button.is-selected {
+.project-nav__button.is-active,
+.project-nav__button.is-selected,
+.project-nav__button.is-related {
   background: rgba(214, 167, 86, 0.16);
   border-color: var(--accent-gold);
   color: var(--accent-gold-soft);
@@ -706,6 +701,12 @@ html {
 
 .project-detail__meta {
   margin-top: 6px;
+}
+
+.skill-detail__summary {
+  color: var(--text-secondary);
+  font-size: 0.94rem;
+  margin-top: 18px;
 }
 
 .project-detail__image {
@@ -753,6 +754,41 @@ html {
   font-size: 0.85rem;
   font-weight: 600;
   padding: 3px 9px;
+}
+
+.skill-detail__description {
+  margin-top: 10px;
+}
+
+.skill-detail__projects-list {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  margin-top: 20px;
+  padding-left: 0 !important;
+}
+
+.skill-detail__project-button {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: block;
+  font: inherit;
+  padding: 10px 12px;
+  text-align: left;
+  width: 100%;
+}
+
+.skill-detail__project-button:hover,
+.skill-detail__project-button:focus-visible {
+  border-color: var(--accent-gold);
+}
+
+.skill-detail__empty {
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 @media (min-width: 900px) {
@@ -835,57 +871,6 @@ html {
 
 .skill-map__node.is-active .skill-map__status {
   display: block;
-}
-
-.skill-map__projects {
-  border-top: 1px solid var(--border);
-  margin-top: auto;
-  padding-top: 14px;
-}
-
-.skill-map__projects h4 {
-  margin-bottom: 6px;
-}
-
-.skill-map__projects-label {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: 8px;
-}
-
-.skill-map__projects-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.skill-map__projects-list li+li {
-  margin-top: 6px;
-}
-
-.skill-map__project-button {
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  color: var(--text-primary);
-  cursor: pointer;
-  display: block;
-  font: inherit;
-  font-size: 0.84rem;
-  line-height: 1.15;
-  padding: 6px 10px;
-  text-align: left;
-  width: 100%;
-}
-
-.skill-map__project-button:hover,
-.skill-map__project-button:focus-visible {
-  border-color: var(--accent-gold);
-}
-
-.skill-map__projects-empty {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin: 0;
 }
 
 @media (min-width: 900px) {

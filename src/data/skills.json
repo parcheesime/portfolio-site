@@ -40,10 +40,6 @@
     "label": "Enterprise Data Systems"
   },
   {
-    "id": "pipelines",
-    "label": "Pipelines"
-  },
-  {
     "id": "python",
     "label": "Python"
   },

@@ -19,7 +19,7 @@
             "sql",
             "apis",
             "automation",
-            "analytics",
+            "analytics-reporting",
             "enterprise-data-systems"
         ],
         "code": "campaign = mailchimp.create_campaign(...)\nhtml = load_template_from_s3()\naudience = build_salesforce_audience()\nmailchimp.schedule(campaign, send_time)",
@@ -65,7 +65,6 @@
             "sql",
             "data-quality",
             "dashboards-observability",
-            "pipelines",
             "streaming-data",
             "data-engineering",
             "enterprise-data-systems",
@@ -153,8 +152,7 @@
             "web-engineering",
             "accessibility",
             "analytics-reporting",
-            "code-review",
-            "analytics"
+            "code-review"
         ],
         "code": "@property({ type: String })\ntitle = '';\n\nrender() {\n  return html`<h2>${this.title}</h2>`;\n}",
         "bullets": [
@@ -197,6 +195,7 @@
         ],
         "relatedSkills": [
             "sql",
+            "analytics",
             "data-quality",
             "data-engineering",
             "workflow-engineering",
@@ -245,7 +244,8 @@
             "apis",
             "automation",
             "workflow-engineering",
-            "tdd"
+            "tdd",
+            "code-review"
         ],
         "code": "await fetch(url, {\n  method: 'DELETE',\n  headers: {\n    'X-Parse-Application-Id': APP_ID\n  }\n});",
         "bullets": [
@@ -280,7 +280,8 @@
             "Python",
             "GitHub Actions",
             "GeoJSON",
-            "Open Data"
+            "Open Data",
+            "code-review"
         ],
         "relatedSkills": [
             "python",
