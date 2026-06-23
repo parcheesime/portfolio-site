@@ -37,12 +37,20 @@
 }
 
 body {
+  --bg-light: var(--bg-primary);
+  --surface: var(--bg-secondary);
+  --text-dark: var(--text-primary);
+  --text-muted: var(--text-secondary);
+  --accent: var(--accent-gold);
+  --border-light: var(--border);
+
   font-family: var(--font-body);
   margin: 0;
   padding: 0;
   line-height: 1.6;
   background: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--bg-light) !important;
+  color: var(--text-dark) !important;
 }
 
 html,
@@ -71,7 +79,8 @@ body::before {
 }
 
 header {
-  background: var(--header-gradient);
+  background: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--border) !important;
   color: var(--text-primary);
   padding: 1rem 1rem;
 }
@@ -105,7 +114,7 @@ header {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent) !important;
   text-decoration: none;
 }
 
@@ -140,8 +149,8 @@ h2 {
 }
 
 footer {
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-secondary) !important;
   text-align: center;
   padding: 1rem 0;
   margin-top: 2rem;
@@ -272,9 +281,11 @@ table {
 }
 
 .fun-fact-container {
-  background-color: var(--bg-secondary);
+  background-color: var(--surface) !important;
   border: 1px solid var(--border);
+  border-color: var(--border) !important;
   border-radius: 16px;
+  color: var(--text-dark) !important;
   padding: 20px 30px;
   max-width: 600px;
   text-align: center;
@@ -288,8 +299,8 @@ table {
 }
 
 .fun-fact-button {
-  background-color: var(--button);
-  color: var(--bg-primary);
+  background-color: var(--accent) !important;
+  color: var(--bg-primary) !important;
   font-size: 1.1em;
   padding: 0.7em 1.2em;
   border: none;
@@ -301,7 +312,8 @@ table {
 }
 
 .fun-fact-button:hover {
-  background-color: var(--button-hover);
+  background-color: var(--accent-gold-soft) !important;
+  color: var(--bg-primary) !important;
   transform: scale(1.05);
 }
 
@@ -324,7 +336,9 @@ img {
   object-fit: contain;
   padding: 6px;
   border-radius: 8px;
-  background-color: var(--bg-secondary);
+  background-color: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text-dark) !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
 }
 
@@ -347,8 +361,10 @@ img {
   margin: 5px;
   border-radius: 30px;
   background: var(--bg-secondary);
+  background-color: var(--bg-secondary) !important;
   border: 1px solid var(--border);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  border-color: var(--border) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18) !important;
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.2s ease,
     border-color 0.2s ease,
@@ -360,7 +376,7 @@ img {
 .skills-pill-text {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-dark);
+  color: var(--text-primary) !important;
   font-family: var(--font-body);
   line-height: 1;
 }
@@ -396,21 +412,6 @@ img {
   .skills-container {
     margin: 60px auto 0;
   }
-
-  .skills-pill {
-    padding: 6px 12px;
-    margin: 4px;
-    gap: 6px;
-  }
-
-  .skills-pill-text {
-    font-size: 0.88rem;
-  }
-
-  .skills-pill svg {
-    width: 18px;
-    height: 18px;
-  }
 }
 
 /* --- Pretty Wrap (Large Mobile 480px to 680px) --- */
@@ -437,44 +438,18 @@ img {
 
 /* --- Pretty Wrap (Small Mobile < 480px) --- */
 @media (max-width: 480px) {
-  .skills-container {
-    margin: 32px auto 0;
-  }
-
   .skills-pill {
     padding: 4px 10px;
-    margin: 3px;
-    gap: 5px;
   }
 
   .skills-pill-text {
     font-size: 0.8rem;
-  }
-
-  .skills-pill svg {
-    width: 16px;
-    height: 16px;
   }
 }
 
 
 .skills-pill:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(214, 167, 86, 0.18);
-  border-color: var(--accent-gold);
-}
-
-.skills-pill {
-  background-color: var(--bg-secondary) !important;
-  border-color: var(--border) !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18) !important;
-}
-
-.skills-pill-text {
-  color: var(--text-primary) !important;
-}
-
-.skills-pill:hover {
   border-color: var(--accent-gold) !important;
   box-shadow: 0 6px 16px rgba(214, 167, 86, 0.18) !important;
 }
@@ -513,6 +488,7 @@ img {
   z-index: 1000;
   background: rgba(18, 20, 23, 0.98);
   border-bottom: 1px solid var(--border);
+  border-bottom-color: var(--border) !important;
   backdrop-filter: blur(10px);
 }
 
@@ -648,6 +624,8 @@ html {
   display: flex;
   flex: 1;
   flex-direction: column;
+  margin: 0;
+  max-width: none;
 }
 
 .project-panel-title {
@@ -840,6 +818,18 @@ html {
       "nav nav"
       "detail skill";
     grid-template-columns: minmax(0, 2.2fr) minmax(280px, 0.8fr);
+    align-items: stretch;
+  }
+
+  .project-detail,
+  .skill-map-panel {
+    align-self: start;
+    height: auto;
+    overflow: visible;
+  }
+
+  .skill-map {
+    min-height: 0;
   }
 }
 
@@ -852,11 +842,6 @@ html {
 #skills .container {
   max-width: 100%;
   padding: 0;
-}
-
-.skill-map {
-  margin: 0;
-  max-width: none;
 }
 
 .skill-map__list {
@@ -916,23 +901,6 @@ html {
   display: block;
 }
 
-@media (min-width: 900px) {
-  .project-explorer {
-    align-items: stretch;
-  }
-
-  .project-detail,
-  .skill-map-panel {
-    align-self: start;
-    height: auto;
-    overflow: visible;
-  }
-
-  .skill-map {
-    min-height: 0;
-  }
-}
-
 /* === 3. Back to Top Button === */
 #backToTop {
   position: fixed;
@@ -969,31 +937,6 @@ html {
   color: var(--bg-primary);
 }
 
-body {
-  --bg-light: var(--bg-primary);
-  --surface: var(--bg-secondary);
-  --text-dark: var(--text-primary);
-  --text-muted: var(--text-secondary);
-  --accent: var(--accent-gold);
-  --border-light: var(--border);
-
-  background-color: var(--bg-light) !important;
-  color: var(--text-dark) !important;
-}
-
-header {
-  background: var(--bg-secondary) !important;
-  border-bottom: 1px solid var(--border) !important;
-}
-
-.top-nav li a {
-  color: var(--text-secondary) !important;
-}
-
-.top-nav li a:hover {
-  color: var(--accent-gold-soft) !important;
-}
-
 header h1,
 header p,
 header i {
@@ -1005,28 +948,11 @@ header .contact-info a {
   text-decoration: underline;
 }
 
-.nav-and-toggle-container {
-  border-bottom-color: var(--border) !important;
-}
-
 #about,
 #projects,
 #skills,
 #skill-map {
   background-color: var(--bg-light) !important;
-}
-
-.fun-fact-container,
-footer,
-img {
-  background-color: var(--surface) !important;
-  color: var(--text-dark) !important;
-  border-color: var(--border) !important;
-}
-
-footer {
-  background-color: var(--bg-secondary) !important;
-  color: var(--text-secondary) !important;
 }
 
 h2,
@@ -1038,20 +964,6 @@ h2,
 p,
 .fun-fact-text {
   color: var(--text-muted) !important;
-}
-
-a {
-  color: var(--accent) !important;
-}
-
-.fun-fact-button {
-  background-color: var(--accent) !important;
-  color: var(--bg-primary) !important;
-}
-
-.fun-fact-button:hover {
-  background-color: var(--accent-gold-soft) !important;
-  color: var(--bg-primary) !important;
 }
 
 /* Custom Scrollbar */
