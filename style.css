@@ -747,13 +747,17 @@ html {
 }
 
 .project-pill-list li {
-  background: rgba(214, 167, 86, 0.16);
-  border: 1px solid rgba(214, 167, 86, 0.52);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 170, 72, 0.35);
   border-radius: 999px;
-  color: var(--accent-gold-soft);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.24);
+  color: var(--accent-gold);
   font-size: 0.85rem;
   font-weight: 600;
   padding: 3px 9px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.42);
 }
 
 .skill-detail__description {
@@ -769,21 +773,25 @@ html {
 }
 
 .skill-detail__project-button {
-  background: transparent;
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 170, 72, 0.35);
   border-radius: 8px;
-  color: var(--text-primary);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.24);
+  color: var(--accent-gold);
   cursor: pointer;
   display: block;
   font: inherit;
   padding: 10px 12px;
   text-align: left;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.42);
   width: 100%;
 }
 
 .skill-detail__project-button:hover,
 .skill-detail__project-button:focus-visible {
-  border-color: var(--accent-gold);
+  border-color: rgba(212, 170, 72, 0.62);
 }
 
 .skill-detail__empty {
