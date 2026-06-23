@@ -384,15 +384,17 @@ function createSkillProjectsList(projects) {
     }
 
     const list = document.createElement("ul");
-    list.className = "skill-detail__projects-list";
+    list.className = "skill-detail__projects-list skill-project-list";
 
     projects.forEach((project) => {
         const item = document.createElement("li");
         const button = document.createElement("button");
+        const label = document.createElement("span");
 
         button.type = "button";
-        button.className = "skill-detail__project-button";
-        button.textContent = getProjectNavLabel(project);
+        button.className = "skill-detail__project-button skill-project-button";
+        label.textContent = getProjectNavLabel(project);
+        button.append(label);
         button.addEventListener("click", () => selectProject(project.id));
 
         item.append(button);

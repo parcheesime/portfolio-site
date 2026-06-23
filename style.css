@@ -794,9 +794,44 @@ html {
   border-color: rgba(212, 170, 72, 0.62);
 }
 
+.project-detail .skill-project-list {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
+  gap: 10px;
+  align-items: stretch;
+  justify-content: start;
+}
+
+.project-detail .skill-project-button {
+  align-items: center;
+  border-radius: 10px;
+  display: flex;
+  height: 64px;
+  padding: 12px 14px;
+  width: 220px;
+}
+
+.project-detail .skill-project-button span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
 .skill-detail__empty {
   color: var(--text-secondary);
   margin: 0;
+}
+
+@media (max-width: 640px) {
+  .project-detail .skill-project-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail .skill-project-button {
+    height: auto;
+    min-height: 52px;
+    width: 100%;
+  }
 }
 
 @media (min-width: 900px) {
