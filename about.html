@@ -27,20 +27,20 @@
     document.head.appendChild(gaScript);
   </script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Aletia Trepte</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Josefin+Sans:wght@500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=10" />
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 
 <body>
   <div class="nav-and-toggle-container">
-    <nav class="top-nav">
+    <nav class="top-nav" aria-label="Primary navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#project-explorer">Projects</a></li>
@@ -49,7 +49,7 @@
       </ul>
     </nav>
   </div>
-  <header>
+  <header aria-label="Site header">
     <div class="header-container">
       <div class="contact-info">
         <h1>Aletia Trepte</h1>
@@ -62,20 +62,19 @@
             data-analytics-event="contact_click" data-analytics-contact-type="github">
             github.com/parcheesime
           </a>
-          <span style="margin-left: 12px; font-weight: bold;">
+          <span class="resume-link-wrapper">
             | <a href="assets/Aletia Trepte 2026.pdf" target="_blank" rel="noopener noreferrer"
-              data-analytics-event="resume_download"
-              style="margin-left: 8px; color: var(--accent); text-decoration: underline;">📄 Download Resume</a>
+              data-analytics-event="resume_download" class="resume-link">📄 Download Resume</a>
           </span>
         </p>
       </div>
       <div class="profile-pic-wrapper">
-        <img src="assets/me2.webp" alt="Aletia Trepte" class="profile-pic" width="120" height="120" />
+        <img src="assets/me2.webp" alt="Aletia Trepte" class="profile-pic" width="120" height="120">
       </div>
     </div>
   </header>
 
-  <main>
+  <main aria-label="About content">
     <section id="about" class="about-page">
       <div class="container">
         <h2 class="section-title">About Me</h2>
@@ -144,17 +143,17 @@
 
           <div class="fun-fact-container">
             <h3>Fun Fact About Me</h3>
-            <button class="fun-fact-button">Click for fun fact</button>
+            <button class="fun-fact-button" type="button">Click for fun fact</button>
             <p id="fact-box" class="fun-fact-text"></p>
           </div>
         </div>
       </div>
     </section>
 
-    <button id="backToTop" title="Back to Top">↑</button>
+    <button id="backToTop" type="button" title="Back to Top">↑</button>
   </main>
 
-  <footer>
+  <footer aria-label="Site footer">
     <p>© 2025 Aletia Trepte</p>
   </footer>
 
