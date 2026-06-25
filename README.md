@@ -1,6 +1,6 @@
 # Aletia Trepte | Portfolio Website
 
-A responsive portfolio site for presenting selected software engineering, data systems, analytics, automation, and civic technology work. The current site centers on a JSON-driven Project Explorer with a connected Skill Map and a dedicated About page.
+A responsive portfolio site for presenting selected software engineering, data systems, analytics, automation, and civic technology work. The current site centers on a JSON-driven Professional Experience section with a connected Skill Map and a dedicated About page.
 
 ## Live Site
 
@@ -8,14 +8,14 @@ A responsive portfolio site for presenting selected software engineering, data s
 
 ## Current Architecture
 
-- `index.html` contains the homepage, professional summary, Project Explorer shell, Skill Map panel, and technology section.
+- `index.html` contains the homepage, professional summary, Professional Experience shell, Skill Map panel, and technology section.
 - `about.html` contains the dedicated About page and Fun Fact interaction.
 - `src/main.js` initializes shared page features on `DOMContentLoaded`.
-- `src/features/project-explorer.js` loads project and skill data, renders the selected project, renders project navigation, and updates Skill Map highlights.
+- `src/features/project-explorer.js` loads professional work and skill data, renders the selected professional highlight, renders navigation, and updates Skill Map highlights.
 - `src/features/analytics.js` centralizes GA4 event tracking helpers.
 - `src/features/back-to-top.js` handles the shared back-to-top button.
 - `src/features/fun-facts.js` powers the About page Fun Fact button when present.
-- `style.css` contains the responsive layout, Project Explorer, Skill Map, technology pills, and shared page styles.
+- `style.css` contains the responsive layout, Professional Experience section, Skill Map, technology pills, and shared page styles.
 
 ## Project Structure
 
@@ -41,9 +41,9 @@ A responsive portfolio site for presenting selected software engineering, data s
     └── icons/
 ```
 
-## Project Explorer
+## Professional Experience
 
-The Project Explorer is the primary homepage experience. It loads `src/data/projects.json`, selects the first ordered project by default, and renders:
+Professional Experience is the primary homepage experience. It loads `src/data/projects.json`, selects the first ordered professional highlight by default, and renders:
 
 - title, organization, role, and dates
 - tools from the `badges` field
@@ -51,11 +51,11 @@ The Project Explorer is the primary homepage experience. It loads `src/data/proj
 - related skills resolved from `skills.json`
 - optional image, metrics, and links when present
 
-Project navigation is rendered as real buttons, supports keyboard navigation, and updates the selected project without reloading JSON.
+Professional experience navigation is rendered as real buttons, supports keyboard navigation, and updates the selected highlight without reloading JSON.
 
 ## Skill Map
 
-The Skill Map loads every skill from `src/data/skills.json`. When a project is selected, `project-explorer.js` compares the selected project's `relatedSkills` IDs against the skill list and applies active styles to matching skills.
+The Skill Map loads every skill from `src/data/skills.json`. When a professional highlight is selected, `project-explorer.js` compares the selected highlight's `relatedSkills` IDs against the skill list and applies active styles to matching skills.
 
 Active skills use both visual styling and text exposed in the DOM so the state is not color-only.
 
@@ -85,11 +85,11 @@ Each skill is an object with:
 - `id`
 - `label`
 
-Project `relatedSkills` values should match skill IDs. Unknown skill IDs fall back to a human-readable version of the ID.
+Professional highlight `relatedSkills` values should match skill IDs. Unknown skill IDs fall back to a human-readable version of the ID.
 
 ## Accessibility
 
-- Project navigation uses native buttons.
+- Professional experience navigation uses native buttons.
 - The selected navigation item uses `aria-current` and `aria-pressed`.
 - Skill Map active states use an additional class and DOM text, not color alone.
 - Focus styles are visible for keyboard users.

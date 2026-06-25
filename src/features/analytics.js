@@ -21,7 +21,7 @@ export function trackEvent(eventName, props = {}) {
                 ...safeProps,
             });
         }
-    } catch (error) {
+    } catch {
         // Analytics should never interrupt portfolio interactions.
     }
 }

@@ -48,8 +48,8 @@ export async function initProjectExplorer() {
         renderProjectNavigation();
         renderSkillMap();
         updateSelectedProject();
-    } catch (error) {
-        renderStatus(detailPanel, "Project details are unavailable right now.");
+    } catch {
+        renderStatus(detailPanel, "Professional experience details are unavailable right now.");
     }
 }
 
@@ -80,18 +80,6 @@ async function loadSkillData() {
     return Array.isArray(skills) ? skills : [];
 }
 
-function getSkillLabels(skillIds = [], skills = []) {
-    const labelsById = new Map(
-        skills
-            .filter((skill) => skill?.id && skill?.label)
-            .map((skill) => [skill.id, skill.label])
-    );
-
-    return skillIds
-        .filter(Boolean)
-        .map((skillId) => labelsById.get(skillId) || humanizeId(skillId));
-}
-
 function renderProjectNavigation() {
     const { navPanel, projects } = explorerState;
     if (!navPanel) return;
@@ -99,7 +87,7 @@ function renderProjectNavigation() {
     navPanel.replaceChildren();
 
     if (projects.length === 0) {
-        renderStatus(navPanel, "Project navigation coming next.");
+        renderStatus(navPanel, "Professional experience navigation coming next.");
         return;
     }
 
@@ -217,7 +205,7 @@ function renderSkillMap() {
 
         const status = document.createElement("span");
         status.className = "skill-map__status";
-        status.textContent = "Used in selected project";
+        status.textContent = "Used in selected professional highlight";
 
         button.append(label, status);
         item.append(button);
@@ -300,7 +288,7 @@ function renderProjectDetail(projectId) {
     container.replaceChildren();
 
     if (!project) {
-        renderStatus(container, "Project details coming next.");
+        renderStatus(container, "Professional experience details coming next.");
         return;
     }
 
@@ -349,8 +337,8 @@ function renderSkillDetail(skillId) {
 
     const summary = document.createElement("p");
     summary.className = "skill-detail__summary";
-    summary.textContent = `Demonstrated in ${projects.length} ${
-        projects.length === 1 ? "project" : "projects"
+    summary.textContent = `Demonstrated in ${projects.length} professional ${
+        projects.length === 1 ? "highlight" : "highlights"
     }`;
     header.append(summary);
 
@@ -379,7 +367,7 @@ function createSkillProjectsList(projects) {
     if (projects.length === 0) {
         const emptyState = document.createElement("p");
         emptyState.className = "skill-detail__empty";
-        emptyState.textContent = "No projects use this skill yet.";
+        emptyState.textContent = "No professional highlights use this skill yet.";
         return emptyState;
     }
 
