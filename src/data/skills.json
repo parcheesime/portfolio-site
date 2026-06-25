@@ -66,5 +66,21 @@
   {
     "id": "docker",
     "label": "Docker"
-  }
+  },
+  {
+  "id": "client",
+  "label": "Client Work"
+},
+{
+  "id": "civic-tech",
+  "label": "Civic Tech"
+},
+{
+  "id": "infrastructure",
+  "label": "Infrastructure"
+},
+{
+  "id": "mobile",
+  "label": "Mobile Development"
+}
 ]

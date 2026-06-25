@@ -8,6 +8,13 @@
         "employer": "BondCliQ",
         "role": "Data Analyst Engineer",
         "dates": "2022-2024",
+        "type": "professional",
+        "group": "bondcliq",
+        "categories": [
+            "automation",
+            "analytics"
+        ],
+        "featured": true,
         "badges": [
             "Python",
             "MailChimp API",
@@ -55,6 +62,13 @@
         "employer": "BondCliQ",
         "role": "Data Analyst Engineer",
         "dates": "2022-2024",
+        "type": "professional",
+        "group": "bondcliq",
+        "categories": [
+            "data-engineering",
+            "analytics"
+        ],
+        "featured": true,
         "badges": [
             "SQL",
             "PySpark",
@@ -100,6 +114,13 @@
         "employer": "BondCliQ",
         "role": "Data Analyst Engineer",
         "dates": "2022-2024",
+        "type": "professional",
+        "group": "bondcliq",
+        "categories": [
+            "automation",
+            "infrastructure"
+        ],
+        "featured": true,
         "badges": [
             "Python",
             "Databricks API",
@@ -142,6 +163,13 @@
         "employer": "Left Field Labs",
         "role": "Software Engineer",
         "dates": "2025-2026",
+        "type": "professional",
+        "group": "left-field-labs",
+        "categories": [
+            "web-engineering",
+            "accessibility"
+        ],
+        "featured": true,
         "badges": [
             "Lit",
             "TypeScript",
@@ -187,6 +215,13 @@
         "employer": "Left Field Labs",
         "role": "Data / Workflow Engineer",
         "dates": "2025",
+        "type": "professional",
+        "group": "left-field-labs",
+        "categories": [
+            "data-engineering",
+            "analytics"
+        ],
+        "featured": true,
         "badges": [
             "SQL",
             "Data Quality",
@@ -195,7 +230,7 @@
         ],
         "relatedSkills": [
             "sql",
-            "analytics",
+            "analytics-reporting",
             "data-quality",
             "data-engineering",
             "workflow-engineering",
@@ -204,24 +239,24 @@
         "code": "-- Validate reporting counts\nSELECT reporting_year,\n       COUNT(*) AS record_count\nFROM sustainability_reporting\nGROUP BY reporting_year;",
         "bullets": [
             {
-                "label": "🧹 Data Validation & Reconciliation",
-                "text": "Validated and reconciled multiple years of sustainability reporting data, investigating discrepancies across interconnected enterprise systems and reporting workflows."
+                "label": "📅 Multi-Year Data Validation",
+                "text": "Loaded, validated, and reconciled sustainability reporting data spanning reporting years 2019–2024, ensuring accurate historical reporting across multiple enterprise systems."
             },
             {
-                "label": "🔄 Data Quality & Deduplication",
-                "text": "Identified reporting inconsistencies, duplicate records, and workflow issues to improve accuracy and reliability of sustainability datasets."
+                "label": "🧹 Data Quality & Reconciliation",
+                "text": "Investigated discrepancies, duplicate records, and reporting exceptions to improve the accuracy, consistency, and reliability of enterprise sustainability datasets."
             },
             {
-                "label": "⚙️ Workflow Operations",
-                "text": "Configured, monitored, tested, and supported reporting workflows across development, staging, and production environments."
+                "label": "⚙️ Enterprise Workflow Operations",
+                "text": "Executed and validated reporting workflows across development, staging, and production environments, creating snapshots and verifying results before releases."
             },
             {
-                "label": "📊 Enterprise Reporting",
-                "text": "Supported sustainability reporting initiatives by validating outputs, investigating failures, and ensuring consistency across reporting systems."
+                "label": "📊 Reporting Validation",
+                "text": "Verified reporting outputs, record counts, and system consistency to support sustainability reporting initiatives and ensure confidence in published results."
             },
             {
-                "label": "🤝 Stakeholder Collaboration",
-                "text": "Worked closely with business and technical stakeholders to prioritize requests, validate requirements, and support operational reporting needs."
+                "label": "🤝 Cross-Functional Collaboration",
+                "text": "Partnered with business and technical stakeholders to investigate issues, validate requirements, prioritize work, and support operational reporting needs."
             }
         ]
     },
@@ -233,7 +268,14 @@
         "organization": "HopeView",
         "employer": "HopeView",
         "role": "Software Engineer",
-        "dates": "2022",
+        "dates": "2024",
+        "type": "professional",
+        "group": "hopeview",
+        "categories": [
+            "mobile",
+            "automation"
+        ],
+        "featured": true,
         "badges": [
             "Back4App",
             "REST APIs",
@@ -268,6 +310,60 @@
         ]
     },
     {
+        "id": "barkey-pet-sitting",
+        "title": "Barkey Pet Sitting Website",
+        "frontTitle": "🐾 Barkey Pet Sitting",
+        "backTitle": "🌐 Client Website & Brand System",
+        "organization": "Barkey Pet Sitting",
+        "employer": null,
+        "role": "Designer, Developer & Maintainer",
+        "dates": "2026–Present",
+        "type": "client",
+        "group": "client-projects",
+        "categories": [
+            "web-engineering",
+            "client"
+        ],
+        "featured": true,
+        "badges": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "GitHub Pages",
+            "Formspree"
+        ],
+        "relatedSkills": [
+            "web-engineering",
+            "accessibility",
+            "analytics-reporting",
+            "workflow-engineering",
+            "code-review"
+        ],
+        "code": "const form = document.querySelector('[data-contact-form]');\n\nform.addEventListener('submit', handleSubmit);\n\n// Validate, submit, and support the client inquiry workflow",
+        "bullets": [
+            {
+                "label": "🐾 Custom Client Website",
+                "text": "Designed and developed a custom multi-page website for a local pet sitting business, translating the client's brand, personality, services, and goals into a polished, responsive online presence."
+            },
+            {
+                "label": "🎨 Brand Identity & User Experience",
+                "text": "Created a cohesive visual identity using custom illustrations, typography, color palettes, and reusable interface components to build a memorable and approachable brand."
+            },
+            {
+                "label": "💻 Responsive Web Development",
+                "text": "Built responsive HTML, CSS, and JavaScript experiences including service pages, FAQs, contact forms, payment information, resource pages, and mobile-friendly navigation."
+            },
+            {
+                "label": "⚙️ Business Operations",
+                "text": "Integrated contact forms, payment workflows, client agreements, analytics, and supporting business resources to simplify communication and improve day-to-day operations."
+            },
+            {
+                "label": "🔧 Ongoing Maintenance & Support",
+                "text": "Continue maintaining the website through content updates, accessibility improvements, feature enhancements, quality assurance, and technical support as the business evolves."
+            }
+        ]
+    },
+    {
         "id": "hack-for-la",
         "title": "District Files",
         "frontTitle": "🏙️ District Files",
@@ -276,6 +372,14 @@
         "employer": null,
         "role": "Civic Data Contributor / Project Maintainer",
         "dates": "2022-Present",
+        "type": "open-source",
+        "group": "hack-for-la",
+        "categories": [
+            "civic-tech",
+            "automation",
+            "data-engineering"
+        ],
+        "featured": true,
         "badges": [
             "Python",
             "GitHub Actions",
@@ -294,7 +398,7 @@
         "bullets": [
             {
                 "label": "🗺️ Civic Data Pipeline",
-                "text": "Maintains an automated workflow that generates and publishes Los Angeles district boundary datasets used by civic technology projects."
+                "text": "Maintains scheduled workflows, repository operations, release management, and contributor documentation for the District Files project."
             },
             {
                 "label": "⚙️ Automation & Operations",
@@ -319,6 +423,14 @@
         "employer": null,
         "role": "Designer & Developer",
         "dates": "2026-Present",
+        "type": "personal",
+        "group": "personal-projects",
+        "categories": [
+            "data-engineering",
+            "infrastructure",
+            "analytics"
+        ],
+        "featured": true,
         "badges": [
             "Python",
             "MongoDB",
