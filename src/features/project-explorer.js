@@ -1,9 +1,9 @@
 const PROJECT_ORDER = [
     "google-io",
     "google-sustainability",
+    "bondcliq-customer-engagement",
     "bondcliq-data-quality",
-    "airthings-dashboard",
-    "hack-for-la",
+    "bondcliq-backup-recovery",
     "hopeview-mobile",
 ];
 
@@ -33,7 +33,11 @@ export async function initProjectExplorer() {
             loadSkillData(),
         ]);
 
-        explorerState.projects = orderProjects(projects);
+        const professionalProjects = projects.filter(
+            (project) => project.type === "professional"
+        );
+
+        explorerState.projects = orderProjects(professionalProjects);
         explorerState.skills = skills;
         explorerState.selectedProjectId = explorerState.projects[0]?.id || null;
         explorerState.selectedSkillId = null;
@@ -55,9 +59,16 @@ export async function initProjectExplorer() {
 
 function orderProjects(projects) {
     const projectsById = new Map(projects.map((project) => [project.id, project]));
-    return PROJECT_ORDER
+    const orderedProjects = PROJECT_ORDER
         .map((projectId) => projectsById.get(projectId))
         .filter(Boolean);
+
+    const orderedProjectIds = new Set(orderedProjects.map((project) => project.id));
+    const remainingProjects = projects.filter(
+        (project) => project?.id && !orderedProjectIds.has(project.id)
+    );
+
+    return [...orderedProjects, ...remainingProjects];
 }
 
 async function loadProjectData() {
