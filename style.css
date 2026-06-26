@@ -184,25 +184,6 @@ footer {
   margin-top: 2rem;
 }
 
-@media (max-width: 768px) {
-  body {
-    padding-top: var(--mobile-nav-height);
-  }
-
-  .header-container {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-
-  .profile-pic {
-    margin-bottom: 1rem;
-  }
-
-  section {
-    scroll-margin-top: 110px;
-  }
-}
-
 section {
   scroll-margin-top: 100px;
   padding: 20px;
@@ -242,8 +223,9 @@ table {
   font-family: var(--font-body);
   font-weight: normal;
   line-height: 1.4;
-  width: max-content;
-  max-width: 250px;
+  inline-size: min(250px, calc(100vw - 2rem));
+  max-inline-size: 250px;
+  overflow-wrap: anywhere;
   white-space: normal;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -584,6 +566,19 @@ img {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-top: var(--mobile-nav-height);
+  }
+
+  .header-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .profile-pic {
+    margin-bottom: 1rem;
+  }
+
   .nav-and-toggle-container {
     align-items: stretch;
     flex-direction: column;
@@ -644,6 +639,26 @@ img {
     display: block;
     padding: 0.8rem 0;
     text-align: left;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2.section-title,
+  h2 {
+    font-size: 1.5rem !important;
+    word-wrap: break-word;
+  }
+
+  .contact-info p,
+  .contact-info a {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  section {
+    scroll-margin-top: 110px;
   }
 }
 
@@ -1138,27 +1153,6 @@ p,
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(214, 167, 86, 0.5);
-}
-
-/* === Mobile Layout Fixes === */
-
-/* Target 1: Responsive Typography & Links */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem !important;
-  }
-
-  h2.section-title,
-  h2 {
-    font-size: 1.5rem !important;
-    word-wrap: break-word;
-  }
-
-  .contact-info p,
-  .contact-info a {
-    word-break: break-word;
-    overflow-wrap: break-word;
-  }
 }
 
 @media (max-width: 500px) {
