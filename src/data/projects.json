@@ -15,6 +15,7 @@
             "analytics"
         ],
         "featured": true,
+        "showOnProjectsPage": false,
         "badges": [
             "Python",
             "MailChimp API",
@@ -69,6 +70,7 @@
             "analytics"
         ],
         "featured": true,
+        "showOnProjectsPage": false,
         "badges": [
             "SQL",
             "PySpark",
@@ -106,6 +108,85 @@
         ]
     },
     {
+        "id": "bondcliq-event-stream-pipeline",
+        "title": "BondCliQ Event Stream Pipeline",
+        "frontTitle": "⚡ BondCliQ Event Stream Pipeline",
+        "backTitle": "📊 Real-Time Market Data Operations",
+        "organization": "BondCliQ",
+        "employer": "BondCliQ",
+        "role": "Data Analyst Engineer",
+        "dates": "2022-2024",
+        "type": "professional",
+        "group": "bondcliq",
+        "categories": [
+            "data-engineering",
+            "analytics"
+        ],
+        "featured": true,
+        "status": "Delivered",
+        "projectCategory": "Data",
+        "projectFilters": [
+            "data"
+        ],
+        "shortDescription": "Streaming data operations and monitoring work for real-time fixed income market data pipelines, with quality checks, dashboard visibility, and production issue investigation.",
+        "stackTags": [
+            "SQL",
+            "PySpark",
+            "Databricks",
+            "Delta Lake",
+            "Streaming Data"
+        ],
+        "outcomes": [
+            "Supported real-time market data pipelines running throughout trading hours.",
+            "Investigated pipeline failures, data anomalies, and processing issues in production workflows.",
+            "Built dashboard visibility into data quality, pipeline health, duplicate records, and operational trends."
+        ],
+        "screenshot": {
+            "src": "",
+            "alt": "BondCliQ event stream pipeline dashboard screenshot",
+            "label": "BondCliQ Pipeline"
+        },
+        "links": {
+            "github": {
+                "href": "https://github.com/parcheesime/Databricks-Portfolio",
+                "label": "BondCliQ code samples"
+            },
+            "live": null,
+            "caseStudy": null
+        },
+        "badges": [
+            "SQL",
+            "PySpark",
+            "Databricks",
+            "Delta Lake"
+        ],
+        "relatedSkills": [
+            "sql",
+            "data-quality",
+            "dashboards-observability",
+            "streaming-data",
+            "data-engineering",
+            "enterprise-data-systems",
+            "automation",
+            "apis"
+        ],
+        "code": "events = read_stream(source)\nquality_checked = validate_events(events)\nquality_checked.writeStream.format(\"delta\")",
+        "bullets": [
+            {
+                "label": "⚡ Streaming Operations",
+                "text": "Supported real-time market data pipelines running throughout trading hours, ensuring reliable delivery of analytics and reporting datasets."
+            },
+            {
+                "label": "📈 Pipeline Visibility",
+                "text": "Built dashboard visibility into production data processing, pipeline health, duplicate records, and operational performance."
+            },
+            {
+                "label": "🔍 Production Investigation",
+                "text": "Investigated pipeline failures, data anomalies, and processing issues by analyzing streaming workflows and production datasets."
+            }
+        ]
+    },
+    {
         "id": "bondcliq-backup-recovery",
         "title": "Databricks Backup & Recovery Platform",
         "frontTitle": "🔁 Databricks Backup & Recovery",
@@ -121,6 +202,7 @@
             "infrastructure"
         ],
         "featured": true,
+        "showOnProjectsPage": false,
         "badges": [
             "Python",
             "Databricks API",
@@ -170,6 +252,35 @@
             "accessibility"
         ],
         "featured": true,
+        "status": "Launched",
+        "cardTitle": "Google I/O 2026",
+        "projectCategory": "Web",
+        "projectFilters": [
+            "web"
+        ],
+        "shortDescription": "Front-end platform work for a high-traffic developer event site, with CMS-driven components, responsive UI, accessibility improvements, and analytics instrumentation.",
+        "stackTags": [
+            "Lit",
+            "TypeScript",
+            "Tailwind",
+            "Eleventy",
+            "Accessibility"
+        ],
+        "outcomes": [
+            "Built and enhanced CMS-driven web components for event content and registration flows.",
+            "Improved keyboard navigation, ARIA support, screen-reader behavior, and reduced-motion experiences.",
+            "Supported production launch phases through reviews, testing, fixes, and deployment coordination."
+        ],
+        "screenshot": {
+            "src": "",
+            "alt": "Google I/O 2026 platform screenshot",
+            "label": "Google I/O"
+        },
+        "links": {
+            "github": null,
+            "live": null,
+            "caseStudy": null
+        },
         "badges": [
             "Lit",
             "TypeScript",
@@ -222,6 +333,34 @@
             "analytics"
         ],
         "featured": true,
+        "status": "Delivered",
+        "cardTitle": "Google Sustainability / Recalc",
+        "projectCategory": "Data",
+        "projectFilters": [
+            "data"
+        ],
+        "shortDescription": "Enterprise sustainability reporting workflow support for Recalc-related data validation, reconciliation, release checks, and stakeholder reporting confidence.",
+        "stackTags": [
+            "SQL",
+            "Data Quality",
+            "Enterprise Workflows",
+            "Reporting Validation"
+        ],
+        "outcomes": [
+            "Validated and reconciled sustainability reporting data across reporting years 2019-2024.",
+            "Investigated discrepancies, duplicates, and reporting exceptions across enterprise datasets.",
+            "Verified outputs and workflow releases across development, staging, and production environments."
+        ],
+        "screenshot": {
+            "src": "",
+            "alt": "Google Sustainability and Recalc reporting workflow screenshot",
+            "label": "Sustainability / Recalc"
+        },
+        "links": {
+            "github": null,
+            "live": null,
+            "caseStudy": null
+        },
         "badges": [
             "SQL",
             "Data Quality",
@@ -276,6 +415,7 @@
             "automation"
         ],
         "featured": true,
+        "showOnProjectsPage": false,
         "badges": [
             "Back4App",
             "REST APIs",
@@ -325,6 +465,42 @@
             "client"
         ],
         "featured": true,
+        "status": "Live",
+        "cardTitle": "Barkey Pet Sitting",
+        "projectCategory": "Client Work",
+        "projectFilters": [
+            "web",
+            "client"
+        ],
+        "shortDescription": "A custom multi-page website and brand system for a local pet sitting business, including service content, contact flows, client resources, analytics, and ongoing maintenance.",
+        "stackTags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "GitHub Pages",
+            "Formspree"
+        ],
+        "outcomes": [
+            "Created a responsive website that translates the client's brand, services, and operations into a polished online presence.",
+            "Integrated contact forms, payment workflows, client agreements, analytics, and supporting business resources.",
+            "Continue maintaining content, accessibility, QA, feature updates, and technical support."
+        ],
+        "screenshot": {
+            "src": "",
+            "alt": "Barkey Pet Sitting website screenshot",
+            "label": "Barkey"
+        },
+        "links": {
+            "github": {
+                "href": "https://github.com/parcheesime/barkey-pet-sitting",
+                "label": "Barkey GitHub"
+            },
+            "live": {
+                "href": "https://barkeypetsitting.com/",
+                "label": "Live site"
+            },
+            "caseStudy": null
+        },
         "badges": [
             "HTML",
             "CSS",
@@ -380,57 +556,42 @@
             "data-engineering"
         ],
         "featured": true,
-        "badges": [
+        "status": "Maintained",
+        "cardTitle": "Hack for LA District Files",
+        "projectCategory": "Civic/Education",
+        "projectFilters": [
+            "data",
+            "civic-education"
+        ],
+        "shortDescription": "Civic data automation for machine-readable district files, scheduled workflows, repository operations, release management, and volunteer contributor support.",
+        "stackTags": [
             "Python",
             "GitHub Actions",
             "GeoJSON",
             "Open Data",
-            "code-review"
+            "JSON"
         ],
-        "relatedSkills": [
-            "python",
-            "sql",
-            "apis",
-            "automation",
-            "workflow-engineering"
+        "outcomes": [
+            "Maintains scheduled workflows and release operations for geographic civic datasets.",
+            "Produces machine-readable GeoJSON and JSON outputs for mapping, analysis, and civic applications.",
+            "Collaborates with volunteer engineering, product, and data contributors to improve public-interest data access."
         ],
-        "code": "python run_district_pipeline.py\n\ngit push origin main\n# GitHub Actions generates updated district files",
-        "bullets": [
-            {
-                "label": "🗺️ Civic Data Pipeline",
-                "text": "Maintains scheduled workflows, repository operations, release management, and contributor documentation for the District Files project."
+        "screenshot": {
+            "src": "",
+            "alt": "Hack for LA District Files civic data project screenshot",
+            "label": "District Files"
+        },
+        "links": {
+            "github": {
+                "href": "https://github.com/hackforla/district-files",
+                "label": "District Files GitHub"
             },
-            {
-                "label": "⚙️ Automation & Operations",
-                "text": "Owns ongoing maintenance of scheduled workflows, data generation processes, repository operations, and release management."
-            },
-            {
-                "label": "📦 Open Data Distribution",
-                "text": "Produces machine-readable geographic datasets including GeoJSON and JSON outputs that support mapping, analysis, and civic applications."
-            },
-            {
-                "label": "🤝 Open Source Collaboration",
-                "text": "Collaborates with volunteers across engineering, product, and data teams to improve accessibility and reliability of public-interest datasets."
+            "live": null,
+            "caseStudy": {
+                "href": "https://github.com/parcheesime/district-files",
+                "label": "Personal fork"
             }
-        ]
-    },
-    {
-        "id": "airthings-dashboard",
-        "title": "Airthings Dashboard",
-        "frontTitle": "🌬️ Airthings Dashboard",
-        "backTitle": "📈 Air Quality Monitoring",
-        "organization": "Personal Project",
-        "employer": null,
-        "role": "Designer & Developer",
-        "dates": "2026-Present",
-        "type": "personal",
-        "group": "personal-projects",
-        "categories": [
-            "data-engineering",
-            "infrastructure",
-            "analytics"
-        ],
-        "featured": true,
+        },
         "badges": [
             "Python",
             "MongoDB",
@@ -464,6 +625,91 @@
             {
                 "label": "🖥️ Linux Infrastructure",
                 "text": "Configured a self-hosted Ubuntu Server environment using Docker, cron jobs, and SSH administration to support continuous data collection and dashboard availability."
+            }
+        ]
+    },
+    {
+        "id": "airthings-dashboard",
+        "title": "Airthings Dashboard",
+        "frontTitle": "🌬️ Airthings Dashboard",
+        "backTitle": "📈 Air Quality Monitoring",
+        "organization": "Personal Project",
+        "employer": null,
+        "role": "Designer & Developer",
+        "dates": "2026-Present",
+        "type": "personal",
+        "group": "personal-projects",
+        "categories": [
+            "data-engineering",
+            "infrastructure",
+            "analytics"
+        ],
+        "featured": true,
+        "status": "In Progress",
+        "projectCategory": "Data",
+        "projectFilters": [
+            "data"
+        ],
+        "shortDescription": "A self-hosted environmental data platform that collects Airthings sensor readings, stores historical measurements, and visualizes long-term indoor air quality trends.",
+        "stackTags": [
+            "Python",
+            "MongoDB",
+            "Streamlit",
+            "Plotly",
+            "Docker"
+        ],
+        "outcomes": [
+            "Built scheduled ingestion workflows for Airthings API readings with duplicate protection and time-series storage.",
+            "Created Streamlit and Plotly views for VOC, particulate matter, temperature, humidity, and trend analysis.",
+            "Configured Ubuntu Server, Docker, cron, and SSH administration for continuous collection."
+        ],
+        "screenshot": {
+            "src": "",
+            "alt": "Airthings Dashboard air quality monitoring screenshot",
+            "label": "Airthings"
+        },
+        "links": {
+            "github": {
+                "href": "https://github.com/parcheesime/airthings-dashboard",
+                "label": "Airthings GitHub"
+            },
+            "live": {
+                "href": "https://airthings-air-quality.streamlit.app/",
+                "label": "Live demo"
+            },
+            "caseStudy": null
+        },
+        "badges": [
+            "Python",
+            "GitHub Actions",
+            "GeoJSON",
+            "Open Data",
+            "code-review"
+        ],
+        "relatedSkills": [
+            "python",
+            "sql",
+            "apis",
+            "automation",
+            "workflow-engineering"
+        ],
+        "code": "python run_district_pipeline.py\n\ngit push origin main\n# GitHub Actions generates updated district files",
+        "bullets": [
+            {
+                "label": "🗺️ Civic Data Pipeline",
+                "text": "Maintains scheduled workflows, repository operations, release management, and contributor documentation for the District Files project."
+            },
+            {
+                "label": "⚙️ Automation & Operations",
+                "text": "Owns ongoing maintenance of scheduled workflows, data generation processes, repository operations, and release management."
+            },
+            {
+                "label": "📦 Open Data Distribution",
+                "text": "Produces machine-readable geographic datasets including GeoJSON and JSON outputs that support mapping, analysis, and civic applications."
+            },
+            {
+                "label": "🤝 Open Source Collaboration",
+                "text": "Collaborates with volunteers across engineering, product, and data teams to improve accessibility and reliability of public-interest datasets."
             }
         ]
     }
