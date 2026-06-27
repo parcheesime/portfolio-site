@@ -745,6 +745,11 @@ html {
   margin-top: 10px;
 }
 
+.homepage-intro a {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 .section-heading {
   margin: 0 0 20px;
   max-width: none;

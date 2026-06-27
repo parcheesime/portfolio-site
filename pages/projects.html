@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
     const GA_MEASUREMENT_ID = "G-TV2XFWPRZQ";
 
@@ -20,15 +22,23 @@
     gtag("js", new Date());
     gtag("config", GA_MEASUREMENT_ID);
 
-    const gaScript = document.createElement("script");
-    gaScript.async = true;
-    gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-    document.head.appendChild(gaScript);
+    function loadAnalyticsScript() {
+      const gaScript = document.createElement("script");
+      gaScript.async = true;
+      gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+      document.head.appendChild(gaScript);
+    }
+
+    window.addEventListener("load", () => {
+      window.setTimeout(loadAnalyticsScript, 3500);
+    }, { once: true });
   </script>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Aletia Trepte</title>
+  <meta name="description"
+    content="Selected software, data, web, dashboard, accessibility, client site, and civic technology projects by Aletia Trepte.">
+  <link rel="canonical" href="https://parcheesime.github.io/portfolio-site/pages/projects.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link

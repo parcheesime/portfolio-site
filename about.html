@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
     // Replace this with your GA4 Measurement ID from Admin > Data streams > Web.
     const GA_MEASUREMENT_ID = "G-TV2XFWPRZQ";
@@ -21,15 +23,23 @@
     gtag("js", new Date());
     gtag("config", GA_MEASUREMENT_ID);
 
-    const gaScript = document.createElement("script");
-    gaScript.async = true;
-    gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-    document.head.appendChild(gaScript);
+    function loadAnalyticsScript() {
+      const gaScript = document.createElement("script");
+      gaScript.async = true;
+      gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+      document.head.appendChild(gaScript);
+    }
+
+    window.addEventListener("load", () => {
+      window.setTimeout(loadAnalyticsScript, 3500);
+    }, { once: true });
   </script>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Aletia Trepte</title>
+  <meta name="description"
+    content="Learn about Aletia Trepte's background in software engineering, data engineering, education, accessibility, analytics, and civic technology.">
+  <link rel="canonical" href="https://parcheesime.github.io/portfolio-site/about.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
