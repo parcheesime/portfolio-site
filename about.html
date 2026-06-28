@@ -88,9 +88,11 @@
   </header>
 
   <main aria-label="About content">
-    <section id="about" class="about-page">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
+    <section id="about" class="about-page" aria-labelledby="about-title">
+      <div class="page-shell">
+        <div class="projects-hero about-hero">
+          <h2 id="about-title">About Me</h2>
+        </div>
         <div class="about-wrapper">
           <div class="about-text">
             <p>
@@ -154,10 +156,25 @@
             </p>
           </div>
 
-          <div class="fun-fact-container">
-            <h3>Fun Fact About Me</h3>
-            <button class="fun-fact-button" type="button">Click for fun fact</button>
-            <p id="fact-box" class="fun-fact-text"></p>
+          <div class="about-card-grid">
+           <section class="projects-cta" aria-labelledby="about-cta-title">
+              <p class="section-kicker">Next</p>
+              <h2 id="about-cta-title">Interested in how I build?</h2>
+              <p>
+                These projects show how I approach frontend development, data workflows, accessibility, and practical
+                problem-solving across real users and real constraints.
+              </p>
+              <div class="projects-cta__actions">
+                <a class="projects-cta__link" href="assets/Aletia Trepte 2026.pdf" target="_blank"
+                  rel="noopener noreferrer" data-analytics-event="resume_download">View Resume</a>
+                <a class="projects-cta__secondary" href="mailto:aletia.trepte@gmail.com">Contact Me</a>
+              </div>
+            </section>
+            <div class="fun-fact-container">
+              <h3>Fun Fact About Me</h3>
+              <button class="fun-fact-button" type="button">Click for fun fact</button>
+              <p id="fact-box" class="fun-fact-text"></p>
+            </div>
           </div>
         </div>
       </div>
