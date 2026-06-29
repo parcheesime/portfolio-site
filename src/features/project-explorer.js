@@ -190,16 +190,20 @@ function handleProjectNavKeydown(event) {
 }
 
 function renderSkillMap() {
-    const { skillMap, skills } = explorerState;
+    const { skillMap, skills, projects } = explorerState;
     if (!skillMap) return;
 
     skillMap.replaceChildren();
+
+    const professionalSkillIds = new Set(
+        projects.flatMap((project) => project?.relatedSkills || [])
+    );
 
     const list = document.createElement("ul");
     list.className = "skill-map__list";
 
     skills.forEach((skill) => {
-        if (!skill?.id || !skill?.label) return;
+        if (!skill?.id || !skill?.label || !professionalSkillIds.has(skill.id)) return;
 
         const item = document.createElement("li");
         const button = document.createElement("button");
