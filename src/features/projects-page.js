@@ -1,10 +1,10 @@
 const PROJECT_PAGE_ORDER = [
-    "google-io",
-    "google-sustainability",
-    "bondcliq-event-stream-pipeline",
     "airthings-dashboard",
     "barkey-pet-sitting",
     "hack-for-la",
+    "static-website-qa-toolkit",
+    "bondcliq-data-quality",
+    "google-io",
 ];
 
 const state = {

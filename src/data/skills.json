@@ -82,5 +82,9 @@
 {
   "id": "mobile",
   "label": "Mobile Development"
+},
+{
+  "id": "quality-engineering",
+  "label": "Quality Engineering"
 }
 ]

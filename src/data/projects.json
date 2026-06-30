@@ -65,18 +65,62 @@
         "dates": "2022-2024",
         "type": "professional",
         "group": "bondcliq",
+
         "categories": [
             "data-engineering",
             "analytics"
         ],
+
         "featured": true,
-        "showOnProjectsPage": false,
+        "showOnProjectsPage": true,
+
+        "status": "Delivered",
+        "cardTitle": "BondCliQ Data Quality & Pipeline Monitoring",
+
+        "projectCategory": "Data",
+
+        "projectFilters": [
+            "data"
+        ],
+
+        "shortDescription": "Designed and supported data quality monitoring for real-time fixed income market data pipelines, building observability dashboards, investigating production issues, and improving the reliability of enterprise data workflows.",
+
+        "stackTags": [
+            "SQL",
+            "PySpark",
+            "Databricks",
+            "Delta Lake",
+            "Streaming Data"
+        ],
+
+        "outcomes": [
+            "Designed and built the company's first data quality and pipeline health dashboard.",
+            "Investigated production pipeline failures, duplicate records, and data anomalies.",
+            "Reduced duplicate bond records by approximately 20% while improving operational visibility."
+        ],
+
+        "screenshot": {
+            "src": "",
+            "alt": "BondCliQ data quality and pipeline monitoring dashboard",
+            "label": "BondCliQ Data Quality"
+        },
+
+        "links": {
+            "github": {
+            "href": "https://github.com/parcheesime/Databricks-Portfolio",
+            "label": "BondCliQ code samples"
+            },
+            "live": null,
+            "caseStudy": null
+        },
+
         "badges": [
             "SQL",
             "PySpark",
             "Databricks",
             "Delta Lake"
         ],
+
         "relatedSkills": [
             "sql",
             "data-quality",
@@ -87,26 +131,28 @@
             "automation",
             "apis"
         ],
+
         "code": "duplicates = bonds\n  .withColumn(\n    \"row_num\",\n    row_number().over(window)\n  )\n  .filter(col(\"row_num\") > 1)",
+
         "bullets": [
             {
-                "label": "📈 Observability Dashboard",
-                "text": "Designed and built the company's first data quality and pipeline health dashboard, providing visibility into production data processing and operational performance."
+            "label": "📈 Observability Dashboard",
+            "text": "Designed and built BondCliQ's first data quality and pipeline health dashboard, providing engineering teams with visibility into production processing, duplicate records, and operational performance."
             },
             {
-                "label": "🔍 Root Cause Analysis",
-                "text": "Investigated pipeline failures, data anomalies, and processing issues by analyzing streaming workflows and production datasets."
+            "label": "🔍 Root Cause Analysis",
+            "text": "Investigated production pipeline failures, data anomalies, and processing issues by analyzing streaming workflows, SQL queries, and enterprise datasets to identify root causes."
             },
             {
-                "label": "🧹 Data Quality Improvements",
-                "text": "Identified and resolved bond matching and duplicate record issues, reducing duplicate entries by approximately 20%."
+            "label": "🧹 Data Quality Improvements",
+            "text": "Identified and resolved duplicate bond matching issues, reducing duplicate records by approximately 20% and improving confidence in downstream analytics."
             },
             {
-                "label": "⚡ Streaming Operations",
-                "text": "Supported real-time market data pipelines running throughout trading hours, ensuring reliable delivery of analytics and reporting datasets."
+            "label": "⚡ Streaming Operations",
+            "text": "Supported real-time market data pipelines during trading hours, helping maintain reliable delivery of production data used throughout the organization."
             }
         ]
-    },
+        },
     {
         "id": "bondcliq-event-stream-pipeline",
         "title": "BondCliQ Event Stream Pipeline",
@@ -253,7 +299,7 @@
         ],
         "featured": true,
         "status": "Launched",
-        "cardTitle": "Google I/O 2026",
+        "cardTitle": "Google I/O Website",
         "projectCategory": "Web",
         "projectFilters": [
             "web"
@@ -625,6 +671,104 @@
             {
                 "label": "🖥️ Linux Infrastructure",
                 "text": "Configured a self-hosted Ubuntu Server environment using Docker, cron jobs, and SSH administration to support continuous data collection and dashboard availability."
+            }
+        ]
+    },
+    {
+        "id": "static-website-qa-toolkit",
+        "title": "Static Website QA Toolkit",
+        "frontTitle": "🛠️ Static Website QA Toolkit",
+        "backTitle": "✅ Automated Website Quality Assurance",
+        "organization": "Personal Project",
+        "employer": null,
+        "role": "Designer & Developer",
+        "dates": "2026–Present",
+        "type": "personal",
+        "group": "personal-projects",
+        "categories": [
+            "automation",
+            "web-engineering",
+            "quality-engineering"
+        ],
+
+        "featured": true,
+        "status": "Active",
+
+        "cardTitle": "Static Website QA Toolkit",
+
+        "projectCategory": "Developer Tools",
+
+        "projectFilters": [
+            "developer-tools"
+        ],
+
+        "shortDescription": "An automated quality assurance toolkit for static websites that combines accessibility, HTML validation, CSS health, JavaScript linting, Lighthouse performance, broken link detection, and design audits into a single repeatable workflow.",
+
+        "stackTags": [
+            "Python",
+            "Node.js",
+            "Lighthouse",
+            "Playwright",
+            "GitHub Actions"
+        ],
+
+        "outcomes": [
+            "Automates quality checks before deployment.",
+            "Generates both machine-readable JSON and human-readable reports.",
+            "Provides a foundation for dashboards, scheduled monitoring, and continuous website quality improvements."
+        ],
+
+        "screenshot": {
+            "src": "",
+            "alt": "Static Website QA Toolkit GitHub repository",
+            "label": "QA Toolkit"
+        },
+
+        "links": {
+            "github": {
+                "href": "https://github.com/parcheesime/static-website-qa-toolkit",
+                "label": "GitHub Repository"
+            },
+            "live": null,
+            "caseStudy": null
+        },
+
+        "badges": [
+            "Python",
+            "Accessibility",
+            "Lighthouse",
+            "HTML",
+            "GitHub Actions"
+        ],
+
+        "relatedSkills": [
+            "python",
+            "automation",
+            "workflow-engineering",
+            "web-engineering",
+            "accessibility",
+            "data-quality",
+            "analytics-reporting"
+        ],
+
+        "code": "make qa\n# Runs HTML, CSS, accessibility, Lighthouse, link, and design audits",
+
+        "bullets": [
+            {
+                "label": "🛠 Unified QA Workflow",
+                "text": "Designed a single command-line workflow that runs HTML validation, CSS health, JavaScript linting, accessibility testing, Lighthouse audits, broken-link detection, and design consistency checks."
+            },
+            {
+                "label": "📊 Structured Reporting",
+                "text": "Built a reporting system that generates both machine-readable JSON and human-readable summaries, enabling dashboards, automation, and AI-assisted review."
+            },
+            {
+                "label": "⚙️ Automation First",
+                "text": "Organized audits into a repeatable workflow suitable for local development, CI/CD pipelines, and scheduled website monitoring."
+            },
+            {
+                "label": "📈 Future Platform",
+                "text": "Designed the toolkit as the foundation for a larger website quality platform with historical reporting, dashboards, multi-site monitoring, and continuous quality tracking."
             }
         ]
     },
