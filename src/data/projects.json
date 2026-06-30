@@ -449,7 +449,7 @@
         "id": "hopeview-mobile",
         "title": "HopeView Mobile Platform",
         "frontTitle": "📱 HopeView Mobile Platform",
-        "backTitle": "🧩 App Data Architecture",
+        "backTitle": "🧩 Mobile Architecture & APIs",
         "organization": "HopeView",
         "employer": "HopeView",
         "role": "Software Engineer",
@@ -463,10 +463,10 @@
         "featured": true,
         "showOnProjectsPage": false,
         "badges": [
-            "Back4App",
+            "Swift",
+            "Core Data",
             "REST APIs",
-            "Node.js",
-            "Mobile Apps"
+            "TDD"
         ],
         "relatedSkills": [
             "apis",
@@ -475,23 +475,23 @@
             "tdd",
             "code-review"
         ],
-        "code": "await fetch(url, {\n  method: 'DELETE',\n  headers: {\n    'X-Parse-Application-Id': APP_ID\n  }\n});",
+        "code": "let request = RequestBuilder(...)\nlet response = try await DataFetcher.fetch(request)\npersistence.save(response)",
         "bullets": [
             {
-                "label": "📱 Mobile Platform Foundations",
-                "text": "Contributed to the early architecture of a mobile application, helping define how application content and user data would be structured and delivered."
+                "label": "🏗️ Mobile Application Architecture",
+                "text": "Developed reusable networking and persistence layers in Swift, establishing a maintainable foundation for scalable mobile application development."
             },
             {
-                "label": "🗂 Data Modeling",
-                "text": "Designed approaches for managing onboarding content, user agreements, instructional resources, and application data required before user interaction."
+                "label": "🔗 REST API Integration",
+                "text": "Built modular REST API integrations with Back4App using RequestBuilder and DataFetcher patterns, supporting secure and reusable client-server communication."
             },
             {
-                "label": "🛠 Environment Automation",
-                "text": "Built automation tooling that generated and populated application data structures while supporting rapid development and testing workflows."
+                "label": "💾 Local Data Persistence",
+                "text": "Implemented Core Data storage and schema relationships to provide reliable local persistence and efficient retrieval of application data."
             },
             {
-                "label": "🧪 Test Environment Management",
-                "text": "Developed teardown and rebuild processes that reset application datasets and supported repeatable testing during early product development."
+                "label": "🧪 Test-Driven Development",
+                "text": "Applied Test-Driven Development (TDD) practices throughout feature development and built tooling to reset and rebuild test environments, enabling repeatable testing and improving long-term code quality."
             }
         ]
     },
