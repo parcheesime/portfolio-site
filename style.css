@@ -810,6 +810,12 @@ html {
   max-width: none;
 }
 
+.experience-projects-cta {
+  display: flex;
+  justify-content: flex-start;
+  margin: 1rem 0 0.5rem;
+}
+
 .project-detail,
 .project-nav,
 .skill-map-panel {
