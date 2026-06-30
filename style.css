@@ -720,22 +720,6 @@ img {
   animation: buttonPulse 1.5s ease-in-out !important;
 }
 
-.section-title {
-  padding-left: 1em;
-  position: relative;
-  display: inline-block;
-}
-
-.section-title::after {
-  content: "";
-  display: block;
-  width: 60%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-soft));
-  margin-top: 6px;
-  border-radius: 2px;
-}
-
 main,
 .container {
   overflow: visible !important;
