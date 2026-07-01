@@ -6,7 +6,9 @@ import time
 
 SCHEMA_VERSION = "1.0"
 TOOL = "html_audit.py"
-COMMAND = "npx html-validate@9 *.html"
+HTML_FILES = sorted(Path(".").glob("*.html")) + sorted(Path("pages").glob("*.html"))
+HTML_FILE_ARGS = [path.as_posix() for path in HTML_FILES]
+COMMAND = "npx html-validate@9 " + " ".join(HTML_FILE_ARGS)
 AUDIT = {
     "id": "html-validation",
     "name": "HTML Validation",
@@ -25,7 +27,7 @@ JSON_REPORT_FILE = REPORT_DIR / "html_validate.json"
 start_time = time.perf_counter()
 
 result = subprocess.run(
-    ["npx", "html-validate@9", "*.html"],
+    ["npx", "html-validate@9", *HTML_FILE_ARGS],
     text=True,
     capture_output=True,
     shell=False,

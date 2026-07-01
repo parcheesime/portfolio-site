@@ -24,7 +24,7 @@ JSON_REPORT_FILE = REPORT_DIR / "accessibility.json"
 
 
 def top_level_html_files():
-    files = sorted(Path(".").glob("*.html"))
+    files = sorted(Path(".").glob("*.html")) + sorted(Path("pages").glob("*.html"))
     return sorted(files, key=lambda path: (path.name != "index.html", path.name))
 
 
@@ -76,7 +76,7 @@ base_url = f"http://127.0.0.1:{port}"
 pages = [
     {
         "path": str(path),
-        "url": f"{base_url}/{path.name}",
+        "url": f"{base_url}/{path.as_posix()}",
     }
     for path in html_files
 ]

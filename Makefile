@@ -19,7 +19,7 @@ check:
 
 	@echo ""
 	@echo "Running Stylelint..."
-	@npx stylelint@16.8.2 "style.css"
+	@npx stylelint@16.8.2 "assets/css/style.css"
 
 	@echo ""
 	@echo "Running ESLint..."

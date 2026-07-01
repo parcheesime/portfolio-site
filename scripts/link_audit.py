@@ -92,7 +92,7 @@ def reference_attributes(tag):
 
 
 def top_level_html_files():
-    files = sorted(Path(".").glob("*.html"))
+    files = sorted(Path(".").glob("*.html")) + sorted(Path("pages").glob("*.html"))
     return sorted(files, key=lambda path: (path.name != "index.html", path.name))
 
 

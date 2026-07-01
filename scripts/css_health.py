@@ -13,7 +13,7 @@ AUDIT = {
     "name": "CSS Health",
     "category": "css",
 }
-CSS_FILE = Path("style.css")
+CSS_FILE = Path("assets/css/style.css")
 REPORT_DIR = Path("reports")
 REPORT_FILE = REPORT_DIR / "css_health.txt"
 JSON_REPORT_FILE = REPORT_DIR / "css_health.json"

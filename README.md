@@ -9,21 +9,22 @@ A responsive portfolio site for presenting selected software engineering, data s
 ## Current Architecture
 
 - `index.html` contains the homepage, professional summary, Professional Experience shell, Skill Map panel, and technology section.
-- `about.html` contains the dedicated About page and Fun Fact interaction.
+- `pages/about.html` contains the dedicated About page and Fun Fact interaction.
 - `src/main.js` initializes shared page features on `DOMContentLoaded`.
 - `src/features/project-explorer.js` loads professional work and skill data, renders the selected professional highlight, renders navigation, and updates Skill Map highlights.
 - `src/features/analytics.js` centralizes GA4 event tracking helpers.
 - `src/features/back-to-top.js` handles the shared back-to-top button.
 - `src/features/fun-facts.js` powers the About page Fun Fact button when present.
-- `style.css` contains the responsive layout, Professional Experience section, Skill Map, technology pills, and shared page styles.
+- `assets/css/style.css` contains the responsive layout, Professional Experience section, Skill Map, technology pills, and shared page styles.
 
 ## Project Structure
 
 ```text
 .
 ├── index.html
-├── about.html
-├── style.css
+├── pages/
+│   ├── about.html
+│   └── projects.html
 ├── src/
 │   ├── main.js
 │   ├── data/
@@ -35,6 +36,8 @@ A responsive portfolio site for presenting selected software engineering, data s
 │       ├── fun-facts.js
 │       └── project-explorer.js
 └── assets/
+    ├── css/
+    │   └── style.css
     ├── Aletia Trepte 2026.pdf
     ├── resume.pdf
     ├── me2.webp

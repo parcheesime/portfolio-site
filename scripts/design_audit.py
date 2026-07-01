@@ -81,7 +81,7 @@ class PageParser(HTMLParser):
 
 
 def top_level_html_files():
-    files = sorted(Path(".").glob("*.html"))
+    files = sorted(Path(".").glob("*.html")) + sorted(Path("pages").glob("*.html"))
     return sorted(files, key=lambda path: (path.name != "index.html", path.name))
 
 
@@ -97,8 +97,8 @@ def local_path_from_href(href):
 def css_files_used_by_site(html_pages):
     css_files = []
 
-    if Path("style.css").exists():
-        css_files.append(Path("style.css"))
+    if Path("assets/css/style.css").exists():
+        css_files.append(Path("assets/css/style.css"))
 
     for page in html_pages:
         parser = parse_html(page)
