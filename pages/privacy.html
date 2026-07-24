@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    const GA_MEASUREMENT_ID = "G-TV2XFWPRZQ";
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag;
+
+    gtag("consent", "default", {
+      analytics_storage: "granted",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+    });
+    gtag("js", new Date());
+    gtag("config", GA_MEASUREMENT_ID);
+
+    function loadAnalyticsScript() {
+      const gaScript = document.createElement("script");
+      gaScript.async = true;
+      gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+      document.head.appendChild(gaScript);
+    }
+
+    window.addEventListener("load", () => {
+      window.setTimeout(loadAnalyticsScript, 3500);
+    }, { once: true });
+  </script>
+
+  <title>Privacy | Aletia Trepte</title>
+  <meta name="description"
+    content="Learn how Aletia Trepte's portfolio uses Google Analytics, cookies, contact links, and third-party services.">
+  <link rel="canonical" href="https://parcheesime.github.io/portfolio-site/pages/privacy.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Josefin+Sans:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=13">
+</head>
+
+<body>
+  <div class="nav-and-toggle-container">
+    <button class="mobile-nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+      aria-controls="primary-nav-links">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <ul id="primary-nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="../index.html#project-explorer">Experience</a></li>
+        <li><a href="../index.html#skill-map">Skills</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <header aria-label="Site header">
+    <div class="header-container">
+      <div class="contact-info">
+        <h1>Aletia Trepte</h1>
+        <p>📞 (619) 707-8130</p>
+        <p>📧 aletia.trepte@gmail.com</p>
+        <p>🌐 <a href="https://www.linkedin.com/in/aletia-trepte" target="_blank" data-analytics-event="linkedin_click"
+            rel="noopener noreferrer">linkedin.com/in/aletia-trepte</a></p>
+        <p>
+          <a href="https://github.com/parcheesime" target="_blank" rel="noopener noreferrer"
+            data-analytics-event="contact_click" data-analytics-contact-type="github">
+            github.com/parcheesime
+          </a>
+        </p>
+      </div>
+      <div class="profile-pic-wrapper">
+        <img src="../assets/me2.webp" alt="Aletia Trepte" class="profile-pic" width="120" height="120">
+      </div>
+    </div>
+  </header>
+
+  <main aria-label="Privacy statement">
+    <section class="privacy-page" aria-labelledby="privacy-title">
+      <div class="page-shell">
+        <div class="projects-hero">
+          <h2 id="privacy-title">Privacy</h2>
+          <p>
+            This statement explains what this personal portfolio collects, how website analytics are used, and the
+            choices available to you.
+          </p>
+        </div>
+
+        <div class="privacy-content">
+          <section class="privacy-section" aria-labelledby="information-title">
+            <h3 id="information-title">Information This Site Collects</h3>
+            <p>
+              This site does not have user accounts, a contact form, or an on-site payment system. It uses Google
+              Analytics to collect website usage information as described below. If you choose to contact me through
+              an email or external profile link, the information you send is handled through that service rather than
+              submitted to this website.
+            </p>
+          </section>
+
+          <section class="privacy-section" aria-labelledby="analytics-title">
+            <h3 id="analytics-title">Google Analytics and Website Usage</h3>
+            <p>
+              This site uses Google Analytics 4 (GA4) to understand general website use. The analytics script is loaded
+              after the page finishes loading. GA4 may collect information such as pages viewed, approximate location,
+              browser and device type, referring source, visit timing, and interactions with selected links or
+              features.
+            </p>
+            <p>
+              The site also sends a limited set of interaction events, such as resume downloads, LinkedIn or GitHub
+              link clicks, and use of the About page’s fun-fact button. Those custom events do not include names, email
+              addresses, message contents, or other information entered by a visitor.
+            </p>
+          </section>
+
+          <section class="privacy-section" aria-labelledby="cookies-title">
+            <h3 id="cookies-title">Cookies and Similar Technologies</h3>
+            <p>
+              Google Analytics may use cookies or similar browser technologies to distinguish visits and measure how
+              the site is used. Analytics storage is enabled by default in the site’s current configuration, while
+              advertising storage and ad-personalization signals are disabled.
+            </p>
+          </section>
+
+          <section class="privacy-section" aria-labelledby="contact-title">
+            <h3 id="contact-title">Contact Links</h3>
+            <p>
+              This portfolio provides email, LinkedIn, GitHub, and phone contact details rather than an on-site form.
+              If you follow one of those links or contact me directly, you choose what information to provide. Your
+              email, phone, browser, or external platform may process that communication under its own privacy terms.
+            </p>
+          </section>
+
+          <section class="privacy-section" aria-labelledby="use-title">
+            <h3 id="use-title">How Information Is Used</h3>
+            <p>
+              Website usage information is used to understand which pages and portfolio features are useful and to
+              improve the site’s content and experience. Information you voluntarily send through a contact method is
+              used to read and respond to your message.
+            </p>
+            <p>This portfolio does not use advertising features and does not sell visitor information.</p>
+          </section>
+
+          <section class="privacy-section" aria-labelledby="third-parties-title">
+            <h3 id="third-parties-title">Third-Party Services and External Links</h3>
+            <p>
+              Google Analytics provides website measurement, and Google Fonts supplies the site’s typefaces from
+              Google’s servers. The portfolio also links to external sites and services, including LinkedIn, GitHub,
+              and project websites. When you load or visit a third-party service, that provider may process information
+              according to its own privacy practices. This statement does not cover external websites.
+            </p>
+          </section>
+
+          <section class="privacy-section" aria-labelledby="choices-title">
+            <h3 id="choices-title">Your Privacy Choices</h3>
+            <p>
+              You can limit or delete cookies through your browser settings, use private-browsing or tracking-protection
+              features, or use a content blocker. You can also install the
+              <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google
+                Analytics Opt-out Browser Add-on</a>.
+            </p>
+            <p>Blocking analytics does not prevent you from viewing the portfolio or using its contact links.</p>
+          </section>
+
+          <section class="privacy-section" aria-labelledby="questions-title">
+            <h3 id="questions-title">Privacy Questions</h3>
+            <p>
+              For questions about this statement or the portfolio’s privacy practices, email
+              <a href="mailto:aletia.trepte@gmail.com">aletia.trepte@gmail.com</a>.
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <button id="backToTop" type="button" title="Back to Top">↑</button>
+  </main>
+
+  <footer aria-label="Site footer">
+    <div class="footer-content">
+      <p>© 2025 Aletia Trepte</p>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+    </div>
+  </footer>
+
+  <script type="module" src="../src/main.js?v=4"></script>
+</body>
+
+</html>
