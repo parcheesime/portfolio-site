@@ -9,7 +9,7 @@ A responsive portfolio site for presenting selected software engineering, data s
 ## Current Architecture
 
 - `index.html` contains the homepage, professional summary, Professional Experience shell, Skill Map panel, and technology section.
-- `pages/about.html` contains the dedicated About page and Fun Fact interaction.
+- `about.html` contains the dedicated About page and Fun Fact interaction.
 - `src/main.js` initializes shared page features on `DOMContentLoaded`.
 - `src/features/project-explorer.js` loads professional work and skill data, renders the selected professional highlight, renders navigation, and updates Skill Map highlights.
 - `src/features/analytics.js` centralizes GA4 event tracking helpers.
@@ -22,9 +22,9 @@ A responsive portfolio site for presenting selected software engineering, data s
 ```text
 .
 ├── index.html
-├── pages/
-│   ├── about.html
-│   └── projects.html
+├── about.html
+├── projects.html
+├── privacy.html
 ├── src/
 │   ├── main.js
 │   ├── data/
