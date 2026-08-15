@@ -463,7 +463,7 @@
         "featured": true,
         "showOnProjectsPage": false,
         "badges": [
-            "Swift",
+            "client-server",
             "Core Data",
             "REST APIs",
             "TDD"
