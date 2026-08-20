@@ -39,7 +39,8 @@ A responsive portfolio site for presenting selected software engineering, data s
     ├── css/
     │   └── style.css
     ├── Aletia Trepte 2026.pdf
-    ├── resume.pdf
+    ├── resumes/
+    │   └── resume.pdf
     ├── me2.webp
     └── icons/
 ```
